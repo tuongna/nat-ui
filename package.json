@@ -29,7 +29,8 @@
     "test": "stencil test --spec",
     "test.watch": "stencil test --spec --watchAll",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepare": "npm run build"
   },
   "devDependencies": {
     "@stencil/core": "^4.38.0",
