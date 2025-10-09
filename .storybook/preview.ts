@@ -1,4 +1,8 @@
-import type { Preview } from '@storybook/react-vite';
+import type { Preview } from '@storybook/web-components';
+import { defineCustomElements } from '../loader';
+
+// Load nat-ui components
+defineCustomElements();
 
 const preview: Preview = {
   parameters: {
@@ -8,11 +12,7 @@ const preview: Preview = {
         date: /Date$/i,
       },
     },
-
     a11y: {
-      // 'todo' - show a11y violations in the test UI only
-      // 'error' - fail CI on a11y violations
-      // 'off' - skip a11y checks entirely
       test: 'todo',
     },
   },
