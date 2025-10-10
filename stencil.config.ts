@@ -2,22 +2,18 @@ import { Config } from '@stencil/core';
 
 export const config: Config = {
   namespace: 'nat-ui',
+  globalStyle: 'src/global/styles/globals.css',
   outputTargets: [
     {
       type: 'dist',
       esmLoaderPath: '../loader',
     },
     {
-      type: 'dist-custom-elements',
-      customElementsExportBehavior: 'bundle',
-    },
-    {
-      type: 'docs-json',
-      file: 'custom-elements.json',
-    },
-    {
       type: 'www',
       serviceWorker: null,
+    },
+    {
+      type: 'docs-readme',
     },
   ],
 };

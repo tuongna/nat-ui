@@ -1,0 +1,163 @@
+:host {
+  display: inline-block;
+}
+
+:host([full-width]) {
+  display: block;
+}
+
+.nat-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--nat-space-2);
+
+  font-family: var(--nat-font-sans);
+  font-weight: var(--nat-font-semibold);
+  text-align: center;
+  white-space: nowrap;
+
+  border: var(--nat-border-width-base) solid transparent;
+  border-radius: var(--nat-radius-lg);
+  cursor: pointer;
+
+  transition: all var(--nat-transition-base);
+
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nat-button:focus-visible {
+  outline: 2px solid var(--nat-focus-ring);
+  outline-offset: 2px;
+}
+
+.nat-button--sm {
+  height: var(--nat-size-sm);
+  padding: 0 var(--nat-space-3);
+  font-size: var(--nat-text-sm);
+}
+
+.nat-button--md {
+  height: var(--nat-size-md);
+  padding: 0 var(--nat-space-5);
+  font-size: var(--nat-text-base);
+}
+
+.nat-button--lg {
+  height: var(--nat-size-lg);
+  padding: 0 var(--nat-space-6);
+  font-size: var(--nat-text-lg);
+}
+
+.nat-button--primary {
+  background: var(--nat-primary);
+  color: var(--nat-white);
+  box-shadow: var(--nat-shadow-sm);
+}
+
+.nat-button--primary:hover:not(:disabled) {
+  background: var(--nat-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--nat-shadow-md);
+}
+
+.nat-button--primary:active:not(:disabled) {
+  background: var(--nat-primary-active);
+  transform: translateY(0);
+  box-shadow: var(--nat-shadow-sm);
+}
+
+.nat-button--secondary {
+  background: var(--nat-bg-surface);
+  color: var(--nat-text-primary);
+  border-color: var(--nat-border-base);
+}
+
+.nat-button--secondary:hover:not(:disabled) {
+  background: var(--nat-bg-subtle);
+  border-color: var(--nat-border-hover);
+}
+
+.nat-button--ghost {
+  background: transparent;
+  color: var(--nat-primary);
+}
+
+.nat-button--ghost:hover:not(:disabled) {
+  background: var(--nat-primary-lighter);
+}
+
+.nat-button--danger {
+  background: var(--nat-error);
+  color: var(--nat-white);
+  box-shadow: var(--nat-shadow-sm);
+}
+
+.nat-button--danger:hover:not(:disabled) {
+  background: var(--nat-error-hover);
+}
+
+.nat-button--disabled {
+  opacity: var(--nat-opacity-50);
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.nat-button--loading {
+  cursor: wait;
+}
+
+.nat-button--loading .nat-button__content {
+  visibility: hidden;
+}
+
+.nat-button--success {
+  background: var(--nat-success);
+  color: var(--nat-white);
+  box-shadow: var(--nat-shadow-sm);
+}
+
+.nat-button--success:hover:not(:disabled) {
+  background: var(--nat-success-hover);
+}
+
+.nat-button--warning {
+  background: var(--nat-warning);
+  color: var(--nat-white);
+  box-shadow: var(--nat-shadow-sm);
+}
+
+.nat-button--warning:hover:not(:disabled) {
+  background: var(--nat-warning-hover);
+}
+
+.nat-button--full-width {
+  width: 100%;
+}
+
+.nat-button__spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  animation: spin var(--nat-transition-smooth) linear infinite;
+}
+
+.nat-button__spinner svg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes spin {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

@@ -5,70 +5,286 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { ButtonSize, ButtonVariant } from "./components/nat-button/nat-button";
+import { InputSize, InputType, InputVariant } from "./components/nat-input/nat-input";
+export { ButtonSize, ButtonVariant } from "./components/nat-button/nat-button";
+export { InputSize, InputType, InputVariant } from "./components/nat-input/nat-input";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
-    }
     interface NatButton {
+        /**
+          * @default false
+         */
+        "disabled": boolean;
+        /**
+          * @default false
+         */
+        "fullWidth": boolean;
+        /**
+          * @default false
+         */
+        "loading": boolean;
+        /**
+          * @default 'md'
+         */
+        "size": ButtonSize;
+        /**
+          * @default 'button'
+         */
+        "type": 'button' | 'submit' | 'reset';
+        /**
+          * @default 'primary'
+         */
+        "variant": ButtonVariant;
+    }
+    interface NatInput {
+        /**
+          * @default 'off'
+         */
+        "autocomplete": string;
+        /**
+          * @default false
+         */
+        "clearable": boolean;
+        /**
+          * @default false
+         */
+        "disabled": boolean;
+        /**
+          * @default ''
+         */
+        "error": string;
+        /**
+          * @default false
+         */
+        "fullWidth": boolean;
+        /**
+          * @default ''
+         */
+        "helperText": string;
+        /**
+          * @default ''
+         */
+        "inputId": string;
+        /**
+          * @default ''
+         */
+        "label": string;
+        "maxLength": number;
+        "minLength": number;
+        /**
+          * @default ''
+         */
+        "name": string;
+        /**
+          * @default ''
+         */
+        "placeholder": string;
+        /**
+          * @default ''
+         */
+        "prefixIcon": string;
+        /**
+          * @default false
+         */
+        "readonly": boolean;
+        /**
+          * @default false
+         */
+        "required": boolean;
+        /**
+          * @default 'md'
+         */
+        "size": InputSize;
+        /**
+          * @default ''
+         */
+        "suffixIcon": string;
+        /**
+          * @default 'text'
+         */
+        "type": InputType;
+        /**
+          * @default ''
+         */
+        "value": string;
+        /**
+          * @default 'default'
+         */
+        "variant": InputVariant;
     }
 }
+export interface NatButtonCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLNatButtonElement;
+}
+export interface NatInputCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLNatInputElement;
+}
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLNatButtonElementEventMap {
+        "natClick": MouseEvent;
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
-    };
     interface HTMLNatButtonElement extends Components.NatButton, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLNatButtonElementEventMap>(type: K, listener: (this: HTMLNatButtonElement, ev: NatButtonCustomEvent<HTMLNatButtonElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLNatButtonElementEventMap>(type: K, listener: (this: HTMLNatButtonElement, ev: NatButtonCustomEvent<HTMLNatButtonElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
     }
     var HTMLNatButtonElement: {
         prototype: HTMLNatButtonElement;
         new (): HTMLNatButtonElement;
     };
+    interface HTMLNatInputElementEventMap {
+        "natChange": string;
+        "natInput": string;
+        "natFocus": void;
+        "natBlur": void;
+        "natClear": void;
+    }
+    interface HTMLNatInputElement extends Components.NatInput, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLNatInputElementEventMap>(type: K, listener: (this: HTMLNatInputElement, ev: NatInputCustomEvent<HTMLNatInputElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLNatInputElementEventMap>(type: K, listener: (this: HTMLNatInputElement, ev: NatInputCustomEvent<HTMLNatInputElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLNatInputElement: {
+        prototype: HTMLNatInputElement;
+        new (): HTMLNatInputElement;
+    };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
         "nat-button": HTMLNatButtonElement;
+        "nat-input": HTMLNatInputElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
-    }
     interface NatButton {
+        /**
+          * @default false
+         */
+        "disabled"?: boolean;
+        /**
+          * @default false
+         */
+        "fullWidth"?: boolean;
+        /**
+          * @default false
+         */
+        "loading"?: boolean;
+        "onNatClick"?: (event: NatButtonCustomEvent<MouseEvent>) => void;
+        /**
+          * @default 'md'
+         */
+        "size"?: ButtonSize;
+        /**
+          * @default 'button'
+         */
+        "type"?: 'button' | 'submit' | 'reset';
+        /**
+          * @default 'primary'
+         */
+        "variant"?: ButtonVariant;
+    }
+    interface NatInput {
+        /**
+          * @default 'off'
+         */
+        "autocomplete"?: string;
+        /**
+          * @default false
+         */
+        "clearable"?: boolean;
+        /**
+          * @default false
+         */
+        "disabled"?: boolean;
+        /**
+          * @default ''
+         */
+        "error"?: string;
+        /**
+          * @default false
+         */
+        "fullWidth"?: boolean;
+        /**
+          * @default ''
+         */
+        "helperText"?: string;
+        /**
+          * @default ''
+         */
+        "inputId"?: string;
+        /**
+          * @default ''
+         */
+        "label"?: string;
+        "maxLength"?: number;
+        "minLength"?: number;
+        /**
+          * @default ''
+         */
+        "name"?: string;
+        "onNatBlur"?: (event: NatInputCustomEvent<void>) => void;
+        "onNatChange"?: (event: NatInputCustomEvent<string>) => void;
+        "onNatClear"?: (event: NatInputCustomEvent<void>) => void;
+        "onNatFocus"?: (event: NatInputCustomEvent<void>) => void;
+        "onNatInput"?: (event: NatInputCustomEvent<string>) => void;
+        /**
+          * @default ''
+         */
+        "placeholder"?: string;
+        /**
+          * @default ''
+         */
+        "prefixIcon"?: string;
+        /**
+          * @default false
+         */
+        "readonly"?: boolean;
+        /**
+          * @default false
+         */
+        "required"?: boolean;
+        /**
+          * @default 'md'
+         */
+        "size"?: InputSize;
+        /**
+          * @default ''
+         */
+        "suffixIcon"?: string;
+        /**
+          * @default 'text'
+         */
+        "type"?: InputType;
+        /**
+          * @default ''
+         */
+        "value"?: string;
+        /**
+          * @default 'default'
+         */
+        "variant"?: InputVariant;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
         "nat-button": NatButton;
+        "nat-input": NatInput;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "nat-button": LocalJSX.NatButton & JSXBase.HTMLAttributes<HTMLNatButtonElement>;
+            "nat-input": LocalJSX.NatInput & JSXBase.HTMLAttributes<HTMLNatInputElement>;
         }
     }
 }

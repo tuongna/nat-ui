@@ -8,44 +8,39 @@
   "collection": "dist/collection/collection-manifest.json",
   "exports": {
     ".": {
+      "types": "./dist/types/index.d.ts",
       "import": "./dist/index.js",
-      "require": "./dist/index.cjs.js",
-      "types": "./dist/types/index.d.ts"
+      "require": "./dist/index.cjs.js"
     },
     "./loader": {
+      "types": "./loader/index.d.ts",
       "import": "./loader/index.js",
-      "require": "./loader/index.cjs.js",
-      "types": "./loader/index.d.ts"
+      "require": "./loader/index.cjs.js"
     },
     "./dist/nat-ui/nat-ui.css": "./dist/nat-ui/nat-ui.css"
   },
   "files": [
     "dist/",
-    "loader/"
+    "loader/",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
   ],
   "scripts": {
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve",
+    "serve": "stencil build --dev --watch --serve",
     "test": "stencil test --spec",
     "test.watch": "stencil test --spec --watchAll",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "test.e2e": "stencil test --e2e",
+    "test.coverage": "stencil test --spec --coverage",
+    "generate": "stencil generate",
+    "prepublishOnly": "npm run build && npm test",
     "prepare": "npm run build"
   },
   "devDependencies": {
     "@stencil/core": "^4.38.0",
-    "@storybook/addon-a11y": "^8.4.7",
-    "@storybook/addon-essentials": "^8.4.7",
-    "@storybook/addon-links": "^8.4.7",
-    "@storybook/web-components": "^8.4.7",
-    "@storybook/web-components-vite": "^8.4.7",
-    "@types/jest": "^29.5.14",
-    "@types/node": "^22.13.5",
-    "jest": "^29.7.0",
-    "jest-cli": "^29.7.0",
-    "lit-html": "^3.2.1",
-    "puppeteer": "^24.3.0",
-    "storybook": "^8.4.7"
+    "@types/jest": "^30.0.0"
   },
   "license": "Apache-2.0",
   "repository": {
