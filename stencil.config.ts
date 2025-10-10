@@ -11,6 +11,7 @@ export const config: Config = {
     {
       type: 'www',
       serviceWorker: null,
+      baseUrl: '/nat-ui/',
     },
     {
       type: 'docs-readme',
