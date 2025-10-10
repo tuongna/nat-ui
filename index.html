@@ -1,177 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-
-    <title>@storybook/core - Storybook</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-    
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    
-    <style>
-      @font-face {
-        font-family: 'Nunito Sans';
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: url('./sb-common-assets/nunito-sans-regular.woff2') format('woff2');
+<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>nat-ui Components</title> <link rel="modulepreload" href="/build/p-D8xeumfs.js"><script type="module" data-stencil data-resources-url="/build/" data-stencil-namespace="nat-ui">import{p as e,g as t,b as a}from"/build/p-D8xeumfs.js";export{s as setNonce}from"/build/p-D8xeumfs.js";var n=()=>{const t=import.meta.url;const a={};if(t!==""){a.resourcesUrl=new URL(".",t).href}return e(a)};n().then((async e=>{await t();return a([["p-0e0d1211",[[257,"nat-button",{variant:[1],size:[1],disabled:[4],loading:[4],fullWidth:[4,"full-width"],type:[1]}],[257,"nat-input",{type:[1],size:[1],variant:[1],value:[1025],placeholder:[1],label:[1],helperText:[1,"helper-text"],error:[1],disabled:[4],readonly:[4],required:[4],clearable:[4],fullWidth:[4,"full-width"],prefixIcon:[1,"prefix-icon"],suffixIcon:[1,"suffix-icon"],maxLength:[2,"max-length"],minLength:[2,"min-length"],autocomplete:[1],name:[1],inputId:[1,"input-id"],isFocused:[32]},null,{value:["valueChanged"]}]]]],e)}));
+//# sourceMappingURL=nat-ui.esm.js.map
+</script> <script nomodule="" src="/build/nat-ui.js" data-stencil></script> <link rel="stylesheet" href="/build/p-00ddb933.css"> <style>body {
+        padding: var(--nat-space-8);
+        max-width: 1400px;
+        margin: 0 auto;
+        background: linear-gradient(135deg, #5b6fe8 0%, #8b5cf6 100%);
+        min-height: 100vh;
       }
 
-      @font-face {
-        font-family: 'Nunito Sans';
-        font-style: italic;
-        font-weight: 400;
-        font-display: swap;
-        src: url('./sb-common-assets/nunito-sans-italic.woff2') format('woff2');
+      .header {
+        text-align: center;
+        color: var(--nat-white);
+        margin-bottom: var(--nat-space-10);
       }
 
-      @font-face {
-        font-family: 'Nunito Sans';
-        font-style: normal;
-        font-weight: 700;
-        font-display: swap;
-        src: url('./sb-common-assets/nunito-sans-bold.woff2') format('woff2');
+      .header h1 {
+        font-size: var(--nat-text-5xl);
+        font-weight: var(--nat-font-bold);
+        margin: 0 0 var(--nat-space-4);
+        letter-spacing: var(--nat-tracking-tight);
       }
 
-      @font-face {
-        font-family: 'Nunito Sans';
-        font-style: italic;
-        font-weight: 700;
-        font-display: swap;
-        src: url('./sb-common-assets/nunito-sans-bold-italic.woff2') format('woff2');
+      .header p {
+        font-size: var(--nat-text-xl);
+        opacity: var(--nat-opacity-90);
+        margin: 0;
+        font-weight: var(--nat-font-medium);
       }
-    </style>
 
-    <link href="./sb-manager/runtime.js" rel="modulepreload" />
-
-    
-    <link href="./sb-addons/storybook-core-core-server-presets-0/common-manager-bundle.js" rel="modulepreload" />
-    
-    <link href="./sb-addons/essentials-controls-1/manager-bundle.js" rel="modulepreload" />
-    
-    <link href="./sb-addons/essentials-actions-2/manager-bundle.js" rel="modulepreload" />
-    
-    <link href="./sb-addons/essentials-docs-3/manager-bundle.js" rel="modulepreload" />
-    
-    <link href="./sb-addons/essentials-backgrounds-4/manager-bundle.js" rel="modulepreload" />
-    
-    <link href="./sb-addons/essentials-viewport-5/manager-bundle.js" rel="modulepreload" />
-    
-    <link href="./sb-addons/essentials-toolbars-6/manager-bundle.js" rel="modulepreload" />
-    
-    <link href="./sb-addons/essentials-measure-7/manager-bundle.js" rel="modulepreload" />
-    
-    <link href="./sb-addons/essentials-outline-8/manager-bundle.js" rel="modulepreload" />
-    
-    <link href="./sb-addons/links-9/manager-bundle.js" rel="modulepreload" />
-    
-    <link href="./sb-addons/a11y-10/manager-bundle.js" rel="modulepreload" />
-       
-
-    <style>
-      #storybook-root[hidden] {
-        display: none !important;
+      .section {
+        background: var(--nat-bg-elevated);
+        border-radius: var(--nat-radius-2xl);
+        padding: var(--nat-space-8);
+        margin-bottom: var(--nat-space-6);
+        box-shadow: var(--nat-shadow-xl);
+        border: 1px solid var(--nat-border-subtle);
       }
-    </style>
 
-    
-  </head>
-  <body>
-    <div id="root"></div>
+      .section h2 {
+        margin-top: 0;
+        color: var(--nat-text-primary);
+        font-size: var(--nat-text-2xl);
+        font-weight: var(--nat-font-semibold);
+        border-bottom: 2px solid var(--nat-primary);
+        padding-bottom: var(--nat-space-3);
+        margin-bottom: var(--nat-space-6);
+      }
 
-    
-    <script>
-      
-        
-          window['FEATURES'] = {
-  "argTypeTargetsV7": true,
-  "legacyDecoratorFileOrder": false,
-  "disallowImplicitActionsInRenderV8": true
-};
-        
-      
-        
-          window['REFS'] = {};
-        
-      
-        
-          window['LOGLEVEL'] = "info";
-        
-      
-        
-          window['DOCS_OPTIONS'] = {
-  "defaultName": "Docs",
-  "autodocs": "tag"
-};
-        
-      
-        
-          window['CONFIG_TYPE'] = "PRODUCTION";
-        
-      
-        
-      
-        
-      
-        
-          window['TAGS_OPTIONS'] = {
-  "dev-only": {
-    "excludeFromDocsStories": true
-  },
-  "docs-only": {
-    "excludeFromSidebar": true
-  },
-  "test-only": {
-    "excludeFromSidebar": true,
-    "excludeFromDocsStories": true
-  }
-};
-        
-      
-        
-          window['STORYBOOK_RENDERER'] = "web-components";
-        
-      
-        
-          window['STORYBOOK_BUILDER'] = "@storybook/builder-vite";
-        
-      
-        
-          window['STORYBOOK_FRAMEWORK'] = "@storybook/web-components-vite";
-        
-      
-    </script>
-    
+      .showcase {
+        display: flex;
+        gap: var(--nat-space-4);
+        flex-wrap: wrap;
+        align-items: center;
+      }
 
-    <script type="module">
-      import './sb-manager/globals-runtime.js';
-      
-      
-        import './sb-addons/storybook-core-core-server-presets-0/common-manager-bundle.js';
-      
-        import './sb-addons/essentials-controls-1/manager-bundle.js';
-      
-        import './sb-addons/essentials-actions-2/manager-bundle.js';
-      
-        import './sb-addons/essentials-docs-3/manager-bundle.js';
-      
-        import './sb-addons/essentials-backgrounds-4/manager-bundle.js';
-      
-        import './sb-addons/essentials-viewport-5/manager-bundle.js';
-      
-        import './sb-addons/essentials-toolbars-6/manager-bundle.js';
-      
-        import './sb-addons/essentials-measure-7/manager-bundle.js';
-      
-        import './sb-addons/essentials-outline-8/manager-bundle.js';
-      
-        import './sb-addons/links-9/manager-bundle.js';
-      
-        import './sb-addons/a11y-10/manager-bundle.js';
-      
-      
-      import './sb-manager/runtime.js';
-    </script>
-  </body>
-</html>
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--nat-space-4);
+        margin-top: var(--nat-space-4);
+      }
+
+      .color-swatch {
+        display: flex;
+        align-items: center;
+        gap: var(--nat-space-3);
+        padding: var(--nat-space-3);
+        border-radius: var(--nat-radius-lg);
+        background: var(--nat-bg-surface);
+        border: 1px solid var(--nat-border-base);
+      }
+
+      .color-box {
+        width: 48px;
+        height: 48px;
+        border-radius: var(--nat-radius-md);
+        box-shadow: var(--nat-shadow-sm);
+      }
+
+      .color-info {
+        flex: 1;
+      }
+
+      .color-name {
+        font-weight: var(--nat-font-semibold);
+        color: var(--nat-text-primary);
+        font-size: var(--nat-text-sm);
+      }
+
+      .color-value {
+        font-size: var(--nat-text-xs);
+        color: var(--nat-text-secondary);
+        font-family: var(--nat-font-mono);
+      }</style> </head> <body> <div class="header"> <h1>🎨 nat-ui</h1> </div> <!-- Colors --> <div class="section"> <h2>Color Palette</h2> <div class="grid"> <div class="color-swatch"> <div class="color-box" style="background: var(--nat-primary);"></div> <div class="color-info"> <div class="color-name">Primary</div> <div class="color-value">#5B6FE8</div> </div> </div> <div class="color-swatch"> <div class="color-box" style="background: var(--nat-success);"></div> <div class="color-info"> <div class="color-name">Success</div> <div class="color-value">#10B981</div> </div> </div> <div class="color-swatch"> <div class="color-box" style="background: var(--nat-warning);"></div> <div class="color-info"> <div class="color-name">Warning</div> <div class="color-value">#F59E0B</div> </div> </div> <div class="color-swatch"> <div class="color-box" style="background: var(--nat-error);"></div> <div class="color-info"> <div class="color-name">Error</div> <div class="color-value">#EF4444</div> </div> </div> </div> </div> <!-- Buttons - Variants --> <div class="section"> <h2>Button Variants</h2> <div class="showcase"> <nat-button variant="primary">Primary</nat-button> <nat-button variant="secondary">Secondary</nat-button> <nat-button variant="ghost">Ghost</nat-button> <nat-button variant="danger">Danger</nat-button> </div> </div> <!-- Buttons - Sizes --> <div class="section"> <h2>Button Sizes</h2> <div class="showcase"> <nat-button variant="primary" size="sm">Small</nat-button> <nat-button variant="primary" size="md">Medium</nat-button> <nat-button variant="primary" size="lg">Large</nat-button> </div> </div> <!-- Buttons - States --> <div class="section"> <h2>Button States</h2> <div class="showcase"> <nat-button variant="primary" disabled="">Disabled</nat-button> <nat-button variant="primary" loading="">Loading</nat-button> <nat-button variant="success">Success</nat-button> <nat-button variant="warning">Warning</nat-button> </div> </div> <!-- Input Component --> <div class="section"> <h2>Input - Basic</h2> <div style="display: grid; gap: var(--nat-space-4); max-width: 600px;"> <nat-input label="Email" type="email" placeholder="Enter your email" helper-text="We'll never share your email"></nat-input> <nat-input label="Password" type="password" placeholder="Enter password" required=""></nat-input> <nat-input label="Phone" type="tel" placeholder="+1 (555) 000-0000"></nat-input> </div> </div> <!-- Input Sizes --> <div class="section"> <h2>Input - Sizes</h2> <div style="display: grid; gap: var(--nat-space-4); max-width: 600px;"> <nat-input size="sm" placeholder="Small input"></nat-input> <nat-input size="md" placeholder="Medium input"></nat-input> <nat-input size="lg" placeholder="Large input"></nat-input> </div> </div> <!-- Input Variants --> <div class="section"> <h2>Input - Variants</h2> <div style="display: grid; gap: var(--nat-space-4); max-width: 600px;"> <nat-input variant="default" label="Default" placeholder="Default variant"></nat-input> <nat-input variant="filled" label="Filled" placeholder="Filled variant"></nat-input> <nat-input variant="flushed" label="Flushed" placeholder="Flushed variant"></nat-input> </div> </div> <!-- Input States --> <div class="section"> <h2>Input - States</h2> <div style="display: grid; gap: var(--nat-space-4); max-width: 600px;"> <nat-input label="With Error" error="This field is required" value="invalid@"></nat-input> <nat-input label="Disabled" disabled="" value="Disabled input"></nat-input> <nat-input label="Readonly" readonly="" value="Readonly input"></nat-input> <nat-input label="Clearable" clearable="" value="Clear me" placeholder="Type something"></nat-input> </div> </div> <!-- Input Interactive --> <div class="section"> <h2>Input - Interactive Test</h2> <div style="display: grid; gap: var(--nat-space-4); max-width: 600px;"> <nat-input id="test-input" label="Type something" clearable="" placeholder="Start typing..."></nat-input> <div style="padding: var(--nat-space-4); background: var(--nat-bg-surface); border-radius: var(--nat-radius-lg);"> <div style="font-size: var(--nat-text-sm); color: var(--nat-text-secondary); margin-bottom: var(--nat-space-2);"> Output: </div> <div id="input-output" style="font-family: var(--nat-font-mono); font-size: var(--nat-text-sm); color: var(--nat-primary);"></div> </div> </div> </div></body></html>
