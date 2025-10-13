@@ -1,93 +1,106 @@
 <!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>nat-ui Components</title> <script type="module" src="./build/nat-ui.esm.js"></script> <script nomodule="" src="./build/nat-ui.js"></script> <link rel="stylesheet" href="./build/p-00ddb933.css"> <style>body {
-        padding: var(--nat-space-8);
-        max-width: 1400px;
-        margin: 0 auto;
-        background: linear-gradient(135deg, #5b6fe8 0%, #8b5cf6 100%);
-        min-height: 100vh;
-      }
+      padding: var(--nat-space-8);
+      max-width: 1400px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #5b6fe8 0%, #8b5cf6 100%);
+      min-height: 100vh;
+    }
 
-      .header {
-        text-align: center;
-        color: var(--nat-white);
-        margin-bottom: var(--nat-space-10);
-      }
+    .header {
+      text-align: center;
+      color: var(--nat-white);
+      margin-bottom: var(--nat-space-10);
+    }
 
-      .header h1 {
-        font-size: var(--nat-text-5xl);
-        font-weight: var(--nat-font-bold);
-        margin: 0 0 var(--nat-space-4);
-        letter-spacing: var(--nat-tracking-tight);
-      }
+    .header h1 {
+      font-size: var(--nat-text-5xl);
+      font-weight: var(--nat-font-bold);
+      margin: 0 0 var(--nat-space-4);
+      letter-spacing: var(--nat-tracking-tight);
+    }
 
-      .header p {
-        font-size: var(--nat-text-xl);
-        opacity: var(--nat-opacity-90);
-        margin: 0;
-        font-weight: var(--nat-font-medium);
-      }
+    .header p {
+      font-size: var(--nat-text-xl);
+      opacity: var(--nat-opacity-90);
+      margin: 0;
+      font-weight: var(--nat-font-medium);
+    }
 
-      .section {
-        background: var(--nat-bg-elevated);
-        border-radius: var(--nat-radius-2xl);
-        padding: var(--nat-space-8);
-        margin-bottom: var(--nat-space-6);
-        box-shadow: var(--nat-shadow-xl);
-        border: 1px solid var(--nat-border-subtle);
-      }
+    .section {
+      background: var(--nat-bg-elevated);
+      border-radius: var(--nat-radius-2xl);
+      padding: var(--nat-space-8);
+      margin-bottom: var(--nat-space-6);
+      box-shadow: var(--nat-shadow-xl);
+      border: 1px solid var(--nat-border-subtle);
+    }
 
-      .section h2 {
-        margin-top: 0;
-        color: var(--nat-text-primary);
-        font-size: var(--nat-text-2xl);
-        font-weight: var(--nat-font-semibold);
-        border-bottom: 2px solid var(--nat-primary);
-        padding-bottom: var(--nat-space-3);
-        margin-bottom: var(--nat-space-6);
-      }
+    .section h2 {
+      margin-top: 0;
+      color: var(--nat-text-primary);
+      font-size: var(--nat-text-2xl);
+      font-weight: var(--nat-font-semibold);
+      border-bottom: 2px solid var(--nat-primary);
+      padding-bottom: var(--nat-space-3);
+      margin-bottom: var(--nat-space-6);
+    }
 
-      .showcase {
-        display: flex;
-        gap: var(--nat-space-4);
-        flex-wrap: wrap;
-        align-items: center;
-      }
+    .showcase {
+      display: flex;
+      gap: var(--nat-space-4);
+      flex-wrap: wrap;
+      align-items: center;
+    }
 
-      .grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: var(--nat-space-4);
-        margin-top: var(--nat-space-4);
-      }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: var(--nat-space-4);
+      margin-top: var(--nat-space-4);
+    }
 
-      .color-swatch {
-        display: flex;
-        align-items: center;
-        gap: var(--nat-space-3);
-        padding: var(--nat-space-3);
-        border-radius: var(--nat-radius-lg);
-        background: var(--nat-bg-surface);
-        border: 1px solid var(--nat-border-base);
-      }
+    .color-swatch {
+      display: flex;
+      align-items: center;
+      gap: var(--nat-space-3);
+      padding: var(--nat-space-3);
+      border-radius: var(--nat-radius-lg);
+      background: var(--nat-bg-surface);
+      border: 1px solid var(--nat-border-base);
+    }
 
-      .color-box {
-        width: 48px;
-        height: 48px;
-        border-radius: var(--nat-radius-md);
-        box-shadow: var(--nat-shadow-sm);
-      }
+    .color-box {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--nat-radius-md);
+      box-shadow: var(--nat-shadow-sm);
+    }
 
-      .color-info {
-        flex: 1;
-      }
+    .color-info {
+      flex: 1;
+    }
 
-      .color-name {
-        font-weight: var(--nat-font-semibold);
-        color: var(--nat-text-primary);
-        font-size: var(--nat-text-sm);
-      }
+    .color-name {
+      font-weight: var(--nat-font-semibold);
+      color: var(--nat-text-primary);
+      font-size: var(--nat-text-sm);
+    }
 
-      .color-value {
-        font-size: var(--nat-text-xs);
-        color: var(--nat-text-secondary);
-        font-family: var(--nat-font-mono);
-      }</style> </head> <body> <div class="header"> <h1>🎨 nat-ui</h1> </div> <!-- Colors --> <div class="section"> <h2>Color Palette</h2> <div class="grid"> <div class="color-swatch"> <div class="color-box" style="background: var(--nat-primary);"></div> <div class="color-info"> <div class="color-name">Primary</div> <div class="color-value">#5B6FE8</div> </div> </div> <div class="color-swatch"> <div class="color-box" style="background: var(--nat-success);"></div> <div class="color-info"> <div class="color-name">Success</div> <div class="color-value">#10B981</div> </div> </div> <div class="color-swatch"> <div class="color-box" style="background: var(--nat-warning);"></div> <div class="color-info"> <div class="color-name">Warning</div> <div class="color-value">#F59E0B</div> </div> </div> <div class="color-swatch"> <div class="color-box" style="background: var(--nat-error);"></div> <div class="color-info"> <div class="color-name">Error</div> <div class="color-value">#EF4444</div> </div> </div> </div> </div> <!-- Buttons - Variants --> <div class="section"> <h2>Button Variants</h2> <div class="showcase"> <nat-button variant="primary">Primary</nat-button> <nat-button variant="secondary">Secondary</nat-button> <nat-button variant="ghost">Ghost</nat-button> <nat-button variant="danger">Danger</nat-button> </div> </div> <!-- Buttons - Sizes --> <div class="section"> <h2>Button Sizes</h2> <div class="showcase"> <nat-button variant="primary" size="sm">Small</nat-button> <nat-button variant="primary" size="md">Medium</nat-button> <nat-button variant="primary" size="lg">Large</nat-button> </div> </div> <!-- Buttons - States --> <div class="section"> <h2>Button States</h2> <div class="showcase"> <nat-button variant="primary" disabled="">Disabled</nat-button> <nat-button variant="primary" loading="">Loading</nat-button> <nat-button variant="success">Success</nat-button> <nat-button variant="warning">Warning</nat-button> </div> </div> <!-- Input Component --> <div class="section"> <h2>Input - Basic</h2> <div style="display: grid; gap: var(--nat-space-4); max-width: 600px;"> <nat-input label="Email" type="email" placeholder="Enter your email" helper-text="We'll never share your email"></nat-input> <nat-input label="Password" type="password" placeholder="Enter password" required=""></nat-input> <nat-input label="Phone" type="tel" placeholder="+1 (555) 000-0000"></nat-input> </div> </div> <!-- Input Sizes --> <div class="section"> <h2>Input - Sizes</h2> <div style="display: grid; gap: var(--nat-space-4); max-width: 600px;"> <nat-input size="sm" placeholder="Small input"></nat-input> <nat-input size="md" placeholder="Medium input"></nat-input> <nat-input size="lg" placeholder="Large input"></nat-input> </div> </div> <!-- Input Variants --> <div class="section"> <h2>Input - Variants</h2> <div style="display: grid; gap: var(--nat-space-4); max-width: 600px;"> <nat-input variant="default" label="Default" placeholder="Default variant"></nat-input> <nat-input variant="filled" label="Filled" placeholder="Filled variant"></nat-input> <nat-input variant="flushed" label="Flushed" placeholder="Flushed variant"></nat-input> </div> </div> <!-- Input States --> <div class="section"> <h2>Input - States</h2> <div style="display: grid; gap: var(--nat-space-4); max-width: 600px;"> <nat-input label="With Error" error="This field is required" value="invalid@"></nat-input> <nat-input label="Disabled" disabled="" value="Disabled input"></nat-input> <nat-input label="Readonly" readonly="" value="Readonly input"></nat-input> <nat-input label="Clearable" clearable="" value="Clear me" placeholder="Type something"></nat-input> </div> </div> <!-- Input Interactive --> <div class="section"> <h2>Input - Interactive Test</h2> <div style="display: grid; gap: var(--nat-space-4); max-width: 600px;"> <nat-input id="test-input" label="Type something" clearable="" placeholder="Start typing..."></nat-input> <div style="padding: var(--nat-space-4); background: var(--nat-bg-surface); border-radius: var(--nat-radius-lg);"> <div style="font-size: var(--nat-text-sm); color: var(--nat-text-secondary); margin-bottom: var(--nat-space-2);"> Output: </div> <div id="input-output" style="font-family: var(--nat-font-mono); font-size: var(--nat-text-sm); color: var(--nat-primary);"></div> </div> </div> </div></body></html>
+    .color-value {
+      font-size: var(--nat-text-xs);
+      color: var(--nat-text-secondary);
+      font-family: var(--nat-font-mono);
+    }</style> </head> <body> <div class="header"> <h1>🎨 nat-ui</h1> </div> <!-- Colors --> <div class="section"> <h2>Color Palette</h2> <div class="grid"> <div class="color-swatch"> <div class="color-box" style="background: var(--nat-primary);"></div> <div class="color-info"> <div class="color-name">Primary</div> <div class="color-value">#5B6FE8</div> </div> </div> <div class="color-swatch"> <div class="color-box" style="background: var(--nat-success);"></div> <div class="color-info"> <div class="color-name">Success</div> <div class="color-value">#10B981</div> </div> </div> <div class="color-swatch"> <div class="color-box" style="background: var(--nat-warning);"></div> <div class="color-info"> <div class="color-name">Warning</div> <div class="color-value">#F59E0B</div> </div> </div> <div class="color-swatch"> <div class="color-box" style="background: var(--nat-error);"></div> <div class="color-info"> <div class="color-name">Error</div> <div class="color-value">#EF4444</div> </div> </div> </div> </div> <!-- Buttons - Variants --> <div class="section"> <h2>Button Variants</h2> <div class="showcase"> <nat-button variant="primary">Primary</nat-button> <nat-button variant="secondary">Secondary</nat-button> <nat-button variant="ghost">Ghost</nat-button> <nat-button variant="danger">Danger</nat-button> </div> </div> <!-- Buttons - Sizes --> <div class="section"> <h2>Button Sizes</h2> <div class="showcase"> <nat-button variant="primary" size="sm">Small</nat-button> <nat-button variant="primary" size="md">Medium</nat-button> <nat-button variant="primary" size="lg">Large</nat-button> </div> </div> <!-- Buttons - States --> <div class="section"> <h2>Button States</h2> <div class="showcase"> <nat-button variant="primary" disabled="">Disabled</nat-button> <nat-button variant="primary" loading="">Loading</nat-button> <nat-button variant="success">Success</nat-button> <nat-button variant="warning">Warning</nat-button> </div> </div> <!-- Input Component --> <div class="section"> <h2>Input - Basic</h2> <div style="display: grid; gap: var(--nat-space-4); max-width: 600px;"> <nat-input label="Email" type="email" placeholder="Enter your email" helper-text="We'll never share your email"></nat-input> <nat-input label="Password" type="password" placeholder="Enter password" required=""></nat-input> <nat-input label="Phone" type="tel" placeholder="+1 (555) 000-0000"></nat-input> </div> </div> <!-- Input Sizes --> <div class="section"> <h2>Input - Sizes</h2> <div style="display: grid; gap: var(--nat-space-4); max-width: 600px;"> <nat-input size="sm" placeholder="Small input"></nat-input> <nat-input size="md" placeholder="Medium input"></nat-input> <nat-input size="lg" placeholder="Large input"></nat-input> </div> </div> <!-- Input Variants --> <div class="section"> <h2>Input - Variants</h2> <div style="display: grid; gap: var(--nat-space-4); max-width: 600px;"> <nat-input variant="default" label="Default" placeholder="Default variant"></nat-input> <nat-input variant="filled" label="Filled" placeholder="Filled variant"></nat-input> <nat-input variant="flushed" label="Flushed" placeholder="Flushed variant"></nat-input> </div> </div> <!-- Input States --> <div class="section"> <h2>Input - States</h2> <div style="display: grid; gap: var(--nat-space-4); max-width: 600px;"> <nat-input label="With Error" error="This field is required" value="invalid@"></nat-input> <nat-input label="Disabled" disabled="" value="Disabled input"></nat-input> <nat-input label="Readonly" readonly="" value="Readonly input"></nat-input> <nat-input label="Clearable" clearable="" value="Clear me" placeholder="Type something"></nat-input> </div> </div> <!-- Input Interactive --> <div class="section"> <h2>Input - Interactive Test</h2> <div style="display: grid; gap: var(--nat-space-4); max-width: 600px;"> <nat-input id="test-input" label="Type something" clearable="" placeholder="Start typing..."></nat-input> <div style="padding: var(--nat-space-4); background: var(--nat-bg-surface); border-radius: var(--nat-radius-lg);"> <div style="font-size: var(--nat-text-sm); color: var(--nat-text-secondary); margin-bottom: var(--nat-space-2);"> Output: </div> <div id="input-output" style="font-family: var(--nat-font-mono); font-size: var(--nat-text-sm); color: var(--nat-primary);"></div> </div> </div> </div> <div class="section"> <h2>Textarea Component</h2> <nat-textarea label="Message" placeholder="Write your message here..." rows="4" clearable="" helper-text="Max 500 characters" maxlength="500"></nat-textarea> <nat-textarea label="Error example" error="This field is required" required=""></nat-textarea> <nat-textarea label="Disabled" disabled="" value="Cannot edit this"></nat-textarea> </div> <div class="section"> <h2>Select Component</h2> <nat-select label="Choose an option" placeholder="Select something" fullwidth="" error="" value=""></nat-select> </div> <script>
+    const options = [
+      { value: 'option1', label: 'Option 1' },
+      { value: 'option2', label: 'Option 2' },
+      { value: 'option3', label: 'Option 3', disabled: true },
+      { value: 'option4', label: 'Option 4' }
+    ];
+
+    const selectEl = document.querySelector('nat-select');
+    selectEl.options = options;
+    selectEl.addEventListener('natChange', (e) => {
+      console.log('Selected:', e.detail);
+    });
+  </script> </body></html>
