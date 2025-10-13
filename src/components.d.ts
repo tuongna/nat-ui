@@ -112,6 +112,99 @@ export namespace Components {
          */
         "variant": InputVariant;
     }
+    interface NatSelect {
+        /**
+          * Disabled state
+          * @default false
+         */
+        "disabled": boolean;
+        /**
+          * Error message
+          * @default ''
+         */
+        "error": string;
+        /**
+          * Full width style
+          * @default false
+         */
+        "fullWidth": boolean;
+        /**
+          * Label text
+          * @default ''
+         */
+        "label": string;
+        /**
+          * Option items in [{ value, label, disabled? }]
+          * @default []
+         */
+        "options": { value: string; label: string; disabled?: boolean }[];
+        /**
+          * Placeholder text when no value selected
+          * @default 'Select an option'
+         */
+        "placeholder": string;
+        /**
+          * Selected value
+          * @default ''
+         */
+        "value": string;
+    }
+    interface NatTextarea {
+        /**
+          * @default false
+         */
+        "clearable": boolean;
+        /**
+          * @default false
+         */
+        "disabled": boolean;
+        /**
+          * @default ''
+         */
+        "error": string;
+        /**
+          * @default false
+         */
+        "fullWidth": boolean;
+        /**
+          * @default ''
+         */
+        "helperText": string;
+        /**
+          * @default ''
+         */
+        "label": string;
+        "maxLength": number;
+        "minLength": number;
+        /**
+          * @default ''
+         */
+        "name": string;
+        /**
+          * @default ''
+         */
+        "placeholder": string;
+        /**
+          * @default false
+         */
+        "readonly": boolean;
+        /**
+          * @default false
+         */
+        "required": boolean;
+        /**
+          * @default 3
+         */
+        "rows": number;
+        /**
+          * @default ''
+         */
+        "textareaId": string;
+        /**
+          * @default ''
+         */
+        "value": string;
+    }
 }
 export interface NatButtonCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -120,6 +213,14 @@ export interface NatButtonCustomEvent<T> extends CustomEvent<T> {
 export interface NatInputCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLNatInputElement;
+}
+export interface NatSelectCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLNatSelectElement;
+}
+export interface NatTextareaCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLNatTextareaElement;
 }
 declare global {
     interface HTMLNatButtonElementEventMap {
@@ -160,9 +261,49 @@ declare global {
         prototype: HTMLNatInputElement;
         new (): HTMLNatInputElement;
     };
+    interface HTMLNatSelectElementEventMap {
+        "natChange": string;
+    }
+    interface HTMLNatSelectElement extends Components.NatSelect, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLNatSelectElementEventMap>(type: K, listener: (this: HTMLNatSelectElement, ev: NatSelectCustomEvent<HTMLNatSelectElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLNatSelectElementEventMap>(type: K, listener: (this: HTMLNatSelectElement, ev: NatSelectCustomEvent<HTMLNatSelectElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLNatSelectElement: {
+        prototype: HTMLNatSelectElement;
+        new (): HTMLNatSelectElement;
+    };
+    interface HTMLNatTextareaElementEventMap {
+        "natChange": string;
+        "natInput": string;
+        "natFocus": void;
+        "natBlur": void;
+        "natClear": void;
+    }
+    interface HTMLNatTextareaElement extends Components.NatTextarea, HTMLStencilElement {
+        addEventListener<K extends keyof HTMLNatTextareaElementEventMap>(type: K, listener: (this: HTMLNatTextareaElement, ev: NatTextareaCustomEvent<HTMLNatTextareaElementEventMap[K]>) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | AddEventListenerOptions): void;
+        addEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | AddEventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLNatTextareaElementEventMap>(type: K, listener: (this: HTMLNatTextareaElement, ev: NatTextareaCustomEvent<HTMLNatTextareaElementEventMap[K]>) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof DocumentEventMap>(type: K, listener: (this: Document, ev: DocumentEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener<K extends keyof HTMLElementEventMap>(type: K, listener: (this: HTMLElement, ev: HTMLElementEventMap[K]) => any, options?: boolean | EventListenerOptions): void;
+        removeEventListener(type: string, listener: EventListenerOrEventListenerObject, options?: boolean | EventListenerOptions): void;
+    }
+    var HTMLNatTextareaElement: {
+        prototype: HTMLNatTextareaElement;
+        new (): HTMLNatTextareaElement;
+    };
     interface HTMLElementTagNameMap {
         "nat-button": HTMLNatButtonElement;
         "nat-input": HTMLNatInputElement;
+        "nat-select": HTMLNatSelectElement;
+        "nat-textarea": HTMLNatTextareaElement;
     }
 }
 declare namespace LocalJSX {
@@ -274,9 +415,110 @@ declare namespace LocalJSX {
          */
         "variant"?: InputVariant;
     }
+    interface NatSelect {
+        /**
+          * Disabled state
+          * @default false
+         */
+        "disabled"?: boolean;
+        /**
+          * Error message
+          * @default ''
+         */
+        "error"?: string;
+        /**
+          * Full width style
+          * @default false
+         */
+        "fullWidth"?: boolean;
+        /**
+          * Label text
+          * @default ''
+         */
+        "label"?: string;
+        "onNatChange"?: (event: NatSelectCustomEvent<string>) => void;
+        /**
+          * Option items in [{ value, label, disabled? }]
+          * @default []
+         */
+        "options"?: { value: string; label: string; disabled?: boolean }[];
+        /**
+          * Placeholder text when no value selected
+          * @default 'Select an option'
+         */
+        "placeholder"?: string;
+        /**
+          * Selected value
+          * @default ''
+         */
+        "value"?: string;
+    }
+    interface NatTextarea {
+        /**
+          * @default false
+         */
+        "clearable"?: boolean;
+        /**
+          * @default false
+         */
+        "disabled"?: boolean;
+        /**
+          * @default ''
+         */
+        "error"?: string;
+        /**
+          * @default false
+         */
+        "fullWidth"?: boolean;
+        /**
+          * @default ''
+         */
+        "helperText"?: string;
+        /**
+          * @default ''
+         */
+        "label"?: string;
+        "maxLength"?: number;
+        "minLength"?: number;
+        /**
+          * @default ''
+         */
+        "name"?: string;
+        "onNatBlur"?: (event: NatTextareaCustomEvent<void>) => void;
+        "onNatChange"?: (event: NatTextareaCustomEvent<string>) => void;
+        "onNatClear"?: (event: NatTextareaCustomEvent<void>) => void;
+        "onNatFocus"?: (event: NatTextareaCustomEvent<void>) => void;
+        "onNatInput"?: (event: NatTextareaCustomEvent<string>) => void;
+        /**
+          * @default ''
+         */
+        "placeholder"?: string;
+        /**
+          * @default false
+         */
+        "readonly"?: boolean;
+        /**
+          * @default false
+         */
+        "required"?: boolean;
+        /**
+          * @default 3
+         */
+        "rows"?: number;
+        /**
+          * @default ''
+         */
+        "textareaId"?: string;
+        /**
+          * @default ''
+         */
+        "value"?: string;
+    }
     interface IntrinsicElements {
         "nat-button": NatButton;
         "nat-input": NatInput;
+        "nat-select": NatSelect;
+        "nat-textarea": NatTextarea;
     }
 }
 export { LocalJSX as JSX };
@@ -285,6 +527,8 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "nat-button": LocalJSX.NatButton & JSXBase.HTMLAttributes<HTMLNatButtonElement>;
             "nat-input": LocalJSX.NatInput & JSXBase.HTMLAttributes<HTMLNatInputElement>;
+            "nat-select": LocalJSX.NatSelect & JSXBase.HTMLAttributes<HTMLNatSelectElement>;
+            "nat-textarea": LocalJSX.NatTextarea & JSXBase.HTMLAttributes<HTMLNatTextareaElement>;
         }
     }
 }

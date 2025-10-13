@@ -1,0 +1,121 @@
+:host {
+  display: block;
+}
+
+.nat-textarea-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nat-space-2);
+}
+
+.nat-textarea-container--full-width {
+  width: 100%;
+}
+
+.nat-textarea-label {
+  font-size: var(--nat-text-sm);
+  font-weight: var(--nat-font-medium);
+  color: var(--nat-text-primary);
+  display: flex;
+  align-items: center;
+  gap: var(--nat-space-1);
+}
+
+.nat-textarea-required {
+  color: var(--nat-error);
+}
+
+.nat-textarea-wrapper {
+  position: relative;
+  border: var(--nat-border-width-base) solid var(--nat-border-base);
+  border-radius: var(--nat-radius-lg);
+  background: var(--nat-bg-elevated);
+  transition: all var(--nat-transition-base);
+  display: flex;
+}
+
+.nat-textarea-wrapper:hover:not(.nat-textarea-wrapper--disabled) {
+  border-color: var(--nat-border-hover);
+}
+
+.nat-textarea-wrapper--focused {
+  border-color: var(--nat-focus-ring);
+  box-shadow: 0 0 0 3px rgba(91, 111, 232, 0.1);
+}
+
+.nat-textarea-wrapper--error {
+  border-color: var(--nat-error);
+}
+
+.nat-textarea-wrapper--error.nat-textarea-wrapper--focused {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.nat-textarea-wrapper--disabled {
+  opacity: var(--nat-opacity-50);
+  cursor: not-allowed;
+  background: var(--nat-bg-subtle);
+}
+
+.nat-textarea {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  background: transparent;
+  resize: vertical;
+  font-family: var(--nat-font-sans);
+  font-size: var(--nat-text-base);
+  color: var(--nat-text-primary);
+  padding: var(--nat-space-2) var(--nat-space-3);
+  outline: none;
+}
+
+.nat-textarea::placeholder {
+  color: var(--nat-text-placeholder);
+}
+
+.nat-textarea:disabled {
+  cursor: not-allowed;
+}
+
+.nat-textarea:focus {
+  outline: none;
+}
+
+.nat-textarea-clear {
+  position: absolute;
+  top: 50%;
+  right: var(--nat-space-3);
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--nat-text-tertiary);
+  user-select: none;
+  padding: 0;
+  line-height: 1;
+  overflow: visible;
+  border-radius: var(--nat-radius-sm);
+  transition: color var(--nat-transition-fast);
+  z-index: 1;
+}
+
+.nat-textarea-clear:hover {
+  color: var(--nat-text-primary);
+}
+
+.nat-textarea-clear:focus {
+  outline: 2px solid var(--nat-focus-ring);
+  outline-offset: 2px;
+}
+
+.nat-textarea-message {
+  font-size: var(--nat-text-xs);
+  color: var(--nat-text-secondary);
+  padding-left: var(--nat-space-1);
+}
+
+.nat-textarea-message--error {
+  color: var(--nat-error);
+}
