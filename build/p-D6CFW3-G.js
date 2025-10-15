@@ -1,0 +1,2 @@
+const n=()=>{if(typeof window!=="undefined"){if(!window.__iconLibraries){window.__iconLibraries=new Map}return window.__iconLibraries}if(!globalThis.__iconLibraries){globalThis.__iconLibraries=new Map}return globalThis.__iconLibraries};function i(i,o){n().set(i,o);console.log(`Registered icon library: ${i}`)}function o(i){return n().get(i)}function r(i){n().delete(i)}function e(){return Array.from(n().keys())}export{e as a,o as g,i as r,r as u};
+//# sourceMappingURL=p-D6CFW3-G.js.map
