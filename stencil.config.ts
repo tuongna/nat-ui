@@ -3,10 +3,16 @@ import { Config } from '@stencil/core';
 export const config: Config = {
   namespace: 'nat-ui',
   globalStyle: 'src/global/styles/globals.css',
+
   outputTargets: [
     {
       type: 'dist',
       esmLoaderPath: '../loader',
+    },
+    {
+      type: 'dist-custom-elements',
+      customElementsExportBehavior: 'auto-define-custom-elements',
+      externalRuntime: false,
     },
     {
       type: 'www',
@@ -16,4 +22,8 @@ export const config: Config = {
       type: 'docs-readme',
     },
   ],
+
+  testing: {
+    browserHeadless: true,
+  },
 };
