@@ -1,27 +1,42 @@
+# Build outputs
 dist/
 www/
 loader/
+
+# Auto-generated
 src/components.d.ts
+src/components/**/readme.md
 
-*~
-*.sw[mnpcod]
-*.log
-*.lock
-*.tmp
-*.tmp.*
-log.txt
-*.sublime-project
-*.sublime-workspace
+# Dependencies
+node_modules/
 
+# IDE
 .stencil/
 .idea/
 .vscode/
 .sass-cache/
 .versions/
-node_modules/
-$RECYCLE.BIN/
+*.sublime-project
+*.sublime-workspace
 
+# Editor temp files
+*~
+*.sw[mnpcod]
+*.tmp
+*.tmp.*
+
+# Logs
+*.log
+log.txt
+
+# Lock files
+*.lock
+
+# OS files
 .DS_Store
 Thumbs.db
 UserInterfaceState.xcuserstate
+$RECYCLE.BIN/
+
+# Environment
 .env
