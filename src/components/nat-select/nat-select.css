@@ -3,7 +3,9 @@
   font-family: var(--nat-font-sans);
 }
 
-/* Container */
+/* ============================================
+ * CONTAINER
+ * ============================================ */
 .nat-select-container {
   display: flex;
   flex-direction: column;
@@ -15,7 +17,9 @@
   width: 100%;
 }
 
-/* Label */
+/* ============================================
+ * LABEL
+ * ============================================ */
 .nat-select-label {
   font-size: var(--nat-text-sm);
   font-weight: var(--nat-font-medium);
@@ -24,16 +28,17 @@
 
 .nat-select-required {
   color: var(--nat-error);
-  margin-left: 0.25rem;
+  margin-left: var(--nat-space-1);
 }
 
-/* Select box */
+/* ============================================
+ * SELECT BOX
+ * ============================================ */
 .nat-select {
   position: relative;
   background: var(--nat-bg-elevated);
   border: 1px solid var(--nat-border-base);
   border-radius: var(--nat-radius-lg);
-  padding: var(--nat-space-3);
   font-size: var(--nat-text-base);
   color: var(--nat-text-primary);
   cursor: pointer;
@@ -41,25 +46,61 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: border-color var(--nat-transition-base);
+  transition: border-color var(--nat-transition-base), box-shadow var(--nat-transition-base);
 }
 
-.nat-select:hover:not(.nat-select-disabled) {
+.nat-select:hover:not(.nat-select--disabled) {
   border-color: var(--nat-border-hover);
 }
 
-.nat-select-open {
+.nat-select:focus-visible {
+  outline: 2px solid var(--nat-focus-ring);
+  outline-offset: 2px;
+}
+
+.nat-select--open {
   border-color: var(--nat-focus-ring);
   box-shadow: 0 0 0 3px rgba(91, 111, 232, 0.1);
 }
 
-.nat-select-disabled {
+.nat-select--error {
+  border-color: var(--nat-error);
+}
+
+.nat-select--error.nat-select--open {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.nat-select--disabled {
   opacity: var(--nat-opacity-50);
   cursor: not-allowed;
   background: var(--nat-bg-subtle);
 }
 
-/* Value */
+/* ============================================
+ * SIZES
+ * ============================================ */
+.nat-select--sm {
+  height: var(--nat-size-sm);
+  padding: 0 var(--nat-space-2);
+  font-size: var(--nat-text-sm);
+}
+
+.nat-select--md {
+  height: var(--nat-size-md);
+  padding: 0 var(--nat-space-3);
+  font-size: var(--nat-text-base);
+}
+
+.nat-select--lg {
+  height: var(--nat-size-lg);
+  padding: 0 var(--nat-space-4);
+  font-size: var(--nat-text-lg);
+}
+
+/* ============================================
+ * VALUE
+ * ============================================ */
 .nat-select-value {
   flex: 1 1 auto;
   white-space: nowrap;
@@ -71,71 +112,102 @@
   color: var(--nat-text-placeholder);
 }
 
-/* Arrow */
+/* ============================================
+ * ARROW
+ * ============================================ */
 .nat-select-arrow {
   flex-shrink: 0;
   color: var(--nat-text-secondary);
-  font-size: var(--nat-text-lg);
   margin-left: var(--nat-space-2);
   user-select: none;
+  display: flex;
+  align-items: center;
+  transition: transform var(--nat-transition-base);
 }
 
-/* Options list */
+.nat-select-arrow--open {
+  transform: rotate(180deg);
+}
+
+.nat-select-arrow svg {
+  display: block;
+}
+
+/* ============================================
+ * OPTIONS LIST (POPUP)
+ * ============================================ */
 .nat-select-options {
-  position: absolute;
-  top: calc(100% + 8px);
-  left: 0;
-  right: 0;
+  position: fixed;
   background: var(--nat-bg-elevated);
   border: 1px solid var(--nat-border-base);
   border-radius: var(--nat-radius-lg);
-  max-height: 200px;
   overflow-y: auto;
+  overflow-x: hidden;
   box-shadow: var(--nat-shadow-xl);
   z-index: var(--nat-z-dropdown);
-  padding: 0;
+  padding: var(--nat-space-1) 0;
   margin: 0;
   list-style: none;
   font-size: var(--nat-text-base);
 }
 
+/* ============================================
+ * OPTION ITEMS
+ * ============================================ */
 .nat-select-option {
   padding: var(--nat-space-2) var(--nat-space-3);
   cursor: pointer;
   color: var(--nat-text-primary);
   user-select: none;
-  transition: background var(--nat-transition-fast);
+  transition: background-color var(--nat-transition-fast);
 }
 
-.nat-select-option.selected {
+.nat-select-option--selected {
   background: var(--nat-primary);
   color: var(--nat-white);
+  font-weight: var(--nat-font-semibold);
 }
 
-.nat-select-option:hover:not(.disabled) {
+.nat-select-option--focused:not(.nat-select-option--disabled) {
+  background: var(--nat-primary-lighter);
+}
+
+.nat-select-option--selected.nat-select-option--focused {
   background: var(--nat-primary-hover);
-  color: var(--nat-white);
 }
 
-.nat-select-option.disabled {
+.nat-select-option:hover:not(.nat-select-option--disabled):not(.nat-select-option--selected) {
+  background: var(--nat-bg-subtle);
+}
+
+.nat-select-option--selected:hover {
+  background: var(--nat-primary-hover);
+}
+
+.nat-select-option--disabled {
   color: var(--nat-text-disabled);
   cursor: not-allowed;
+  opacity: var(--nat-opacity-50);
 }
 
-.nat-select-option-disabled {
-  padding: var(--nat-space-2) var(--nat-space-3);
-  color: var(--nat-text-disabled);
-  cursor: default;
+.nat-select-option--empty {
+  padding: var(--nat-space-3);
+  color: var(--nat-text-tertiary);
+  text-align: center;
   font-style: italic;
+  cursor: default;
 }
 
-/* Message */
+/* ============================================
+ * MESSAGE
+ * ============================================ */
 .nat-select-message {
   font-size: var(--nat-text-xs);
   color: var(--nat-text-secondary);
-  margin-top: var(--nat-space-1);
+  padding-left: var(--nat-space-1);
+  min-height: 1.25rem;
 }
 
-.nat-select-message-error {
+.nat-select-message--error {
   color: var(--nat-error);
 }

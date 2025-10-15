@@ -2,6 +2,9 @@
   display: block;
 }
 
+/* ============================================
+ * CONTAINER
+ * ============================================ */
 .nat-input-container {
   display: flex;
   flex-direction: column;
@@ -12,6 +15,9 @@
   width: 100%;
 }
 
+/* ============================================
+ * LABEL
+ * ============================================ */
 .nat-input-label {
   font-size: var(--nat-text-sm);
   font-weight: var(--nat-font-medium);
@@ -26,6 +32,9 @@
   font-size: var(--nat-text-base);
 }
 
+/* ============================================
+ * WRAPPER
+ * ============================================ */
 .nat-input-wrapper {
   position: relative;
   display: flex;
@@ -34,7 +43,7 @@
   background: var(--nat-bg-elevated);
   border: var(--nat-border-width-base) solid var(--nat-border-base);
   border-radius: var(--nat-radius-lg);
-  transition: all var(--nat-transition-base);
+  transition: border-color var(--nat-transition-base), box-shadow var(--nat-transition-base), background-color var(--nat-transition-base);
 }
 
 .nat-input-wrapper:hover:not(.nat-input-wrapper--disabled) {
@@ -60,6 +69,9 @@
   background: var(--nat-bg-subtle);
 }
 
+/* ============================================
+ * SIZES
+ * ============================================ */
 .nat-input-wrapper--sm {
   height: var(--nat-size-sm);
   padding: 0 var(--nat-space-2);
@@ -75,6 +87,9 @@
   padding: 0 var(--nat-space-4);
 }
 
+/* ============================================
+ * VARIANTS
+ * ============================================ */
 .nat-input-wrapper--filled {
   background: var(--nat-bg-surface);
   border-color: transparent;
@@ -82,6 +97,10 @@
 
 .nat-input-wrapper--filled:hover:not(.nat-input-wrapper--disabled) {
   background: var(--nat-bg-subtle);
+}
+
+.nat-input-wrapper--filled.nat-input-wrapper--focused {
+  border-color: var(--nat-focus-ring);
 }
 
 .nat-input-wrapper--flushed {
@@ -93,6 +112,14 @@
   padding-right: 0;
 }
 
+.nat-input-wrapper--flushed.nat-input-wrapper--focused {
+  border-bottom-color: var(--nat-focus-ring);
+  box-shadow: none;
+}
+
+/* ============================================
+ * INPUT ELEMENT
+ * ============================================ */
 .nat-input {
   flex: 1;
   min-width: 0;
@@ -113,6 +140,7 @@
   cursor: not-allowed;
 }
 
+/* Size-specific font sizes */
 .nat-input-wrapper--sm .nat-input {
   font-size: var(--nat-text-sm);
 }
@@ -121,6 +149,7 @@
   font-size: var(--nat-text-lg);
 }
 
+/* Remove number input spinners */
 .nat-input[type='number']::-webkit-inner-spin-button,
 .nat-input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
@@ -131,14 +160,21 @@
   -moz-appearance: textfield;
 }
 
-.nat-input-prefix,
-.nat-input-suffix {
+/* ============================================
+ * PREFIX & SUFFIX (SLOTS)
+ * ============================================ */
+::slotted([slot='prefix-icon']),
+::slotted([slot='suffix-icon']) {
   display: flex;
   align-items: center;
   color: var(--nat-text-secondary);
   flex-shrink: 0;
+  font-size: 1.25rem;
 }
 
+/* ============================================
+ * CLEAR BUTTON
+ * ============================================ */
 .nat-input-clear {
   display: flex;
   align-items: center;
@@ -151,7 +187,7 @@
   color: var(--nat-text-tertiary);
   cursor: pointer;
   border-radius: var(--nat-radius-sm);
-  transition: all var(--nat-transition-fast);
+  transition: color var(--nat-transition-fast), background-color var(--nat-transition-fast);
   flex-shrink: 0;
 }
 
@@ -160,15 +196,24 @@
   background: var(--nat-bg-subtle);
 }
 
+.nat-input-clear:focus-visible {
+  outline: 2px solid var(--nat-focus-ring);
+  outline-offset: 2px;
+}
+
 .nat-input-clear svg {
   width: 16px;
   height: 16px;
 }
 
+/* ============================================
+ * MESSAGE
+ * ============================================ */
 .nat-input-message {
   font-size: var(--nat-text-xs);
   color: var(--nat-text-secondary);
   padding-left: var(--nat-space-1);
+  min-height: 1.25rem;
 }
 
 .nat-input-message--error {

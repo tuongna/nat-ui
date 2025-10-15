@@ -1,0 +1,177 @@
+:host {
+  display: inline-block;
+}
+
+/* ============================================
+ * CONTAINER
+ * ============================================ */
+.nat-checkbox-container {
+  align-items: center;
+  cursor: pointer;
+  display: inline-flex;
+  gap: var(--nat-space-2);
+  position: relative;
+  user-select: none;
+}
+
+.nat-checkbox-container--disabled {
+  cursor: not-allowed;
+  opacity: var(--nat-opacity-50);
+}
+
+/* ============================================
+ * WRAPPER
+ * ============================================ */
+.nat-checkbox-wrapper {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* ============================================
+ * HIDDEN INPUT
+ * ============================================ */
+.nat-checkbox-input {
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+}
+
+/* ============================================
+ * CHECKBOX BOX
+ * ============================================ */
+.nat-checkbox {
+  align-items: center;
+  background: var(--nat-bg-elevated);
+  border: 2px solid var(--nat-border-base);
+  border-radius: var(--nat-radius-sm);
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  transition: background-color var(--nat-transition-base), border-color var(--nat-transition-base), transform var(--nat-transition-fast);
+}
+
+/* Size variants */
+.nat-checkbox-container--sm .nat-checkbox {
+  height: 16px;
+  width: 16px;
+}
+
+.nat-checkbox-container--md .nat-checkbox {
+  height: 20px;
+  width: 20px;
+}
+
+.nat-checkbox-container--lg .nat-checkbox {
+  height: 24px;
+  width: 24px;
+}
+
+/* Hover state */
+.nat-checkbox-container:not(.nat-checkbox-container--disabled):hover .nat-checkbox {
+  border-color: var(--nat-border-hover);
+}
+
+/* Focus state */
+.nat-checkbox-container--focused .nat-checkbox {
+  outline: 2px solid var(--nat-focus-ring);
+  outline-offset: 2px;
+}
+
+/* Checked state */
+.nat-checkbox--checked {
+  background: var(--nat-primary);
+  border-color: var(--nat-primary);
+}
+
+.nat-checkbox--checked:hover {
+  background: var(--nat-primary-hover);
+  border-color: var(--nat-primary-hover);
+}
+
+/* Indeterminate state */
+.nat-checkbox--indeterminate {
+  background: var(--nat-primary);
+  border-color: var(--nat-primary);
+}
+
+/* Disabled state */
+.nat-checkbox--disabled {
+  background: var(--nat-bg-subtle);
+  border-color: var(--nat-border-base);
+}
+
+/* ============================================
+ * CHECKBOX ICON
+ * ============================================ */
+.nat-checkbox-icon {
+  color: var(--nat-white);
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform var(--nat-transition-fast) ease-out, opacity var(--nat-transition-fast) ease-out;
+}
+
+.nat-checkbox-container--sm .nat-checkbox-icon {
+  height: 12px;
+  width: 12px;
+}
+
+.nat-checkbox-container--md .nat-checkbox-icon {
+  height: 14px;
+  width: 14px;
+}
+
+.nat-checkbox-container--lg .nat-checkbox-icon {
+  height: 16px;
+  width: 16px;
+}
+
+@keyframes nat-checkbox-check {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ============================================
+ * LABEL
+ * ============================================ */
+.nat-checkbox-label {
+  color: var(--nat-text-primary);
+  font-size: var(--nat-text-base);
+  line-height: var(--nat-leading-normal);
+}
+
+.nat-checkbox-container--sm .nat-checkbox-label {
+  font-size: var(--nat-text-sm);
+}
+
+.nat-checkbox-container--lg .nat-checkbox-label {
+  font-size: var(--nat-text-lg);
+}
+
+.nat-checkbox-container--disabled .nat-checkbox-label {
+  color: var(--nat-text-disabled);
+}
+
+/* ============================================
+ * ACCESSIBILITY
+ * ============================================ */
+.nat-checkbox-input:focus-visible + .nat-checkbox {
+  outline: 2px solid var(--nat-focus-ring);
+  outline-offset: 2px;
+}

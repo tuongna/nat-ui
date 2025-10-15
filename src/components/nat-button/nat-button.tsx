@@ -1,21 +1,68 @@
 import { Component, Host, h, Prop, Event, EventEmitter } from '@stencil/core';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger';
+/**
+ * Visual style variants for the button
+ */
+export type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'danger' | 'success' | 'warning';
+
+/**
+ * Size variants for the button
+ */
 export type ButtonSize = 'sm' | 'md' | 'lg';
 
+/**
+ * @slot - Button content (text, icons, etc.)
+ */
 @Component({
   tag: 'nat-button',
   styleUrl: 'nat-button.css',
   shadow: true,
 })
 export class NatButton {
+  /**
+   * The visual style variant of the button
+   * @default 'primary'
+   */
   @Prop() variant: ButtonVariant = 'primary';
+
+  /**
+   * The size of the button
+   * @default 'md'
+   */
   @Prop() size: ButtonSize = 'md';
+
+  /**
+   * If true, the button is disabled and cannot be interacted with
+   * @default false
+   */
   @Prop() disabled: boolean = false;
+
+  /**
+   * If true, displays a loading spinner and disables interaction
+   * @default false
+   */
   @Prop() loading: boolean = false;
+
+  /**
+   * If true, the button will take up the full width of its container
+   * @default false
+   */
   @Prop() fullWidth: boolean = false;
+
+  /**
+   * The HTML button type attribute
+   * @default 'button'
+   */
   @Prop() type: 'button' | 'submit' | 'reset' = 'button';
 
+  /**
+   * Aria label for the button (accessibility)
+   */
+  @Prop() ariaLabel?: string;
+
+  /**
+   * Emitted when the button is clicked (not fired when disabled or loading)
+   */
   @Event() natClick: EventEmitter<MouseEvent>;
 
   private handleClick = (event: MouseEvent) => {
@@ -44,13 +91,13 @@ export class NatButton {
           class={classes}
           disabled={this.disabled || this.loading}
           onClick={this.handleClick}
+          aria-label={this.ariaLabel}
+          aria-busy={this.loading ? 'true' : 'false'}
+          aria-disabled={this.disabled ? 'true' : 'false'}
         >
           {this.loading && (
-            <span class="nat-button__spinner">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none" opacity="0.25" />
-                <path d="M12 2a10 10 0 0 1 10 10" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="round" />
-              </svg>
+            <span class="nat-button__spinner" aria-hidden="true">
+              {/* CSS border spinner - simpler & no transform conflict */}
             </span>
           )}
           <span class="nat-button__content">

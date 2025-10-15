@@ -6,6 +6,9 @@
   display: block;
 }
 
+/* ============================================
+ * BASE BUTTON
+ * ============================================ */
 .nat-button {
   position: relative;
   display: inline-flex;
@@ -22,7 +25,8 @@
   border-radius: var(--nat-radius-lg);
   cursor: pointer;
 
-  transition: all var(--nat-transition-base);
+  /* Remove all for smoother transitions */
+  transition: background-color var(--nat-transition-base), border-color var(--nat-transition-base), box-shadow var(--nat-transition-base), color var(--nat-transition-base);
 
   user-select: none;
   -webkit-user-select: none;
@@ -34,6 +38,9 @@
   outline-offset: 2px;
 }
 
+/* ============================================
+ * SIZES
+ * ============================================ */
 .nat-button--sm {
   height: var(--nat-size-sm);
   padding: 0 var(--nat-space-3);
@@ -52,6 +59,11 @@
   font-size: var(--nat-text-lg);
 }
 
+/* ============================================
+ * VARIANTS
+ * ============================================ */
+
+/* Primary */
 .nat-button--primary {
   background: var(--nat-primary);
   color: var(--nat-white);
@@ -60,16 +72,15 @@
 
 .nat-button--primary:hover:not(:disabled) {
   background: var(--nat-primary-hover);
-  transform: translateY(-1px);
   box-shadow: var(--nat-shadow-md);
 }
 
 .nat-button--primary:active:not(:disabled) {
   background: var(--nat-primary-active);
-  transform: translateY(0);
   box-shadow: var(--nat-shadow-sm);
 }
 
+/* Secondary */
 .nat-button--secondary {
   background: var(--nat-bg-surface);
   color: var(--nat-text-primary);
@@ -81,6 +92,11 @@
   border-color: var(--nat-border-hover);
 }
 
+.nat-button--secondary:active:not(:disabled) {
+  background: var(--nat-bg-elevated);
+}
+
+/* Ghost */
 .nat-button--ghost {
   background: transparent;
   color: var(--nat-primary);
@@ -90,6 +106,11 @@
   background: var(--nat-primary-lighter);
 }
 
+.nat-button--ghost:active:not(:disabled) {
+  background: rgba(91, 111, 232, 0.15);
+}
+
+/* Danger */
 .nat-button--danger {
   background: var(--nat-error);
   color: var(--nat-white);
@@ -98,12 +119,54 @@
 
 .nat-button--danger:hover:not(:disabled) {
   background: var(--nat-error-hover);
+  box-shadow: var(--nat-shadow-md);
 }
 
+.nat-button--danger:active:not(:disabled) {
+  background: #dc2626;
+  box-shadow: var(--nat-shadow-sm);
+}
+
+/* Success */
+.nat-button--success {
+  background: var(--nat-success);
+  color: var(--nat-white);
+  box-shadow: var(--nat-shadow-sm);
+}
+
+.nat-button--success:hover:not(:disabled) {
+  background: var(--nat-success-hover);
+  box-shadow: var(--nat-shadow-md);
+}
+
+.nat-button--success:active:not(:disabled) {
+  background: #059669;
+  box-shadow: var(--nat-shadow-sm);
+}
+
+/* Warning */
+.nat-button--warning {
+  background: var(--nat-warning);
+  color: var(--nat-white);
+  box-shadow: var(--nat-shadow-sm);
+}
+
+.nat-button--warning:hover:not(:disabled) {
+  background: var(--nat-warning-hover);
+  box-shadow: var(--nat-shadow-md);
+}
+
+.nat-button--warning:active:not(:disabled) {
+  background: #d97706;
+  box-shadow: var(--nat-shadow-sm);
+}
+
+/* ============================================
+ * STATES
+ * ============================================ */
 .nat-button--disabled {
   opacity: var(--nat-opacity-50);
   cursor: not-allowed;
-  transform: none !important;
 }
 
 .nat-button--loading {
@@ -114,50 +177,46 @@
   visibility: hidden;
 }
 
-.nat-button--success {
-  background: var(--nat-success);
-  color: var(--nat-white);
-  box-shadow: var(--nat-shadow-sm);
-}
-
-.nat-button--success:hover:not(:disabled) {
-  background: var(--nat-success-hover);
-}
-
-.nat-button--warning {
-  background: var(--nat-warning);
-  color: var(--nat-white);
-  box-shadow: var(--nat-shadow-sm);
-}
-
-.nat-button--warning:hover:not(:disabled) {
-  background: var(--nat-warning-hover);
-}
-
 .nat-button--full-width {
   width: 100%;
 }
 
+/* ============================================
+ * SPINNER (CSS Border Version - No Transform Conflict)
+ * ============================================ */
 .nat-button__spinner {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  width: 20px;
-  height: 20px;
-  animation: spin var(--nat-transition-smooth) linear infinite;
+  width: 16px;
+  height: 16px;
+  margin-left: -8px;
+  margin-top: -8px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: nat-button-spin 0.6s linear infinite;
 }
 
-.nat-button__spinner svg {
-  width: 100%;
-  height: 100%;
+/* Size-specific spinners */
+.nat-button--sm .nat-button__spinner {
+  width: 14px;
+  height: 14px;
+  margin-left: -7px;
+  margin-top: -7px;
+  border-width: 1.5px;
 }
 
-@keyframes spin {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
+.nat-button--lg .nat-button__spinner {
+  width: 18px;
+  height: 18px;
+  margin-left: -9px;
+  margin-top: -9px;
+  border-width: 2.5px;
+}
+
+@keyframes nat-button-spin {
   to {
-    transform: translate(-50%, -50%) rotate(360deg);
+    transform: rotate(360deg);
   }
 }

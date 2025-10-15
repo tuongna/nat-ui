@@ -2,6 +2,9 @@
   display: block;
 }
 
+/* ============================================
+ * CONTAINER
+ * ============================================ */
 .nat-textarea-container {
   display: flex;
   flex-direction: column;
@@ -12,6 +15,9 @@
   width: 100%;
 }
 
+/* ============================================
+ * LABEL
+ * ============================================ */
 .nat-textarea-label {
   font-size: var(--nat-text-sm);
   font-weight: var(--nat-font-medium);
@@ -25,12 +31,15 @@
   color: var(--nat-error);
 }
 
+/* ============================================
+ * WRAPPER
+ * ============================================ */
 .nat-textarea-wrapper {
   position: relative;
   border: var(--nat-border-width-base) solid var(--nat-border-base);
   border-radius: var(--nat-radius-lg);
   background: var(--nat-bg-elevated);
-  transition: all var(--nat-transition-base);
+  transition: border-color var(--nat-transition-base), box-shadow var(--nat-transition-base);
   display: flex;
 }
 
@@ -57,17 +66,20 @@
   background: var(--nat-bg-subtle);
 }
 
+/* ============================================
+ * TEXTAREA ELEMENT
+ * ============================================ */
 .nat-textarea {
   flex: 1;
   min-width: 0;
   border: none;
   background: transparent;
-  resize: vertical;
   font-family: var(--nat-font-sans);
   font-size: var(--nat-text-base);
   color: var(--nat-text-primary);
-  padding: var(--nat-space-2) var(--nat-space-3);
+  padding: var(--nat-space-3);
   outline: none;
+  line-height: var(--nat-leading-normal);
 }
 
 .nat-textarea::placeholder {
@@ -78,39 +90,79 @@
   cursor: not-allowed;
 }
 
-.nat-textarea:focus {
-  outline: none;
+/* Resize variants */
+.nat-textarea--resize-none {
+  resize: none;
 }
 
+.nat-textarea--resize-vertical {
+  resize: vertical;
+}
+
+.nat-textarea--resize-horizontal {
+  resize: horizontal;
+}
+
+.nat-textarea--resize-both {
+  resize: both;
+}
+
+.nat-textarea--auto-resize {
+  resize: none;
+  overflow-y: hidden;
+}
+
+/* ============================================
+ * CLEAR BUTTON
+ * ============================================ */
 .nat-textarea-clear {
   position: absolute;
-  top: 50%;
+  top: var(--nat-space-3);
   right: var(--nat-space-3);
-  transform: translateY(-50%);
-  background: transparent;
-  border: none;
-  font-size: 1rem;
-  cursor: pointer;
-  color: var(--nat-text-tertiary);
-  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
   padding: 0;
-  line-height: 1;
-  overflow: visible;
+  border: none;
+  background: transparent;
+  color: var(--nat-text-tertiary);
+  cursor: pointer;
   border-radius: var(--nat-radius-sm);
-  transition: color var(--nat-transition-fast);
+  transition: color var(--nat-transition-fast), background-color var(--nat-transition-fast);
+  flex-shrink: 0;
   z-index: 1;
 }
 
 .nat-textarea-clear:hover {
   color: var(--nat-text-primary);
+  background: var(--nat-bg-subtle);
 }
 
-.nat-textarea-clear:focus {
+.nat-textarea-clear:focus-visible {
   outline: 2px solid var(--nat-focus-ring);
   outline-offset: 2px;
 }
 
+.nat-textarea-clear svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ============================================
+ * FOOTER (MESSAGE + COUNTER)
+ * ============================================ */
+.nat-textarea-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--nat-space-2);
+  min-height: 1.25rem;
+}
+
 .nat-textarea-message {
+  flex: 1;
   font-size: var(--nat-text-xs);
   color: var(--nat-text-secondary);
   padding-left: var(--nat-space-1);
@@ -118,4 +170,11 @@
 
 .nat-textarea-message--error {
   color: var(--nat-error);
+}
+
+.nat-textarea-counter {
+  font-size: var(--nat-text-xs);
+  color: var(--nat-text-tertiary);
+  white-space: nowrap;
+  padding-right: var(--nat-space-1);
 }
