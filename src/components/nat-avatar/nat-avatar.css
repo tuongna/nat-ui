@@ -1,0 +1,44 @@
+:host {
+  display: inline-block;
+}
+
+.avatar {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--nat-radius-full);
+  overflow: hidden;
+  background: var(--nat-primary);
+  color: var(--nat-text-inverse);
+  font-weight: var(--nat-font-semibold);
+  font-family: var(--nat-font-sans);
+}
+
+.avatar--sm {
+  width: var(--nat-size-sm);
+  height: var(--nat-size-sm);
+  font-size: var(--nat-text-xs);
+}
+
+.avatar--md {
+  width: var(--nat-size-md);
+  height: var(--nat-size-md);
+  font-size: var(--nat-text-sm);
+}
+
+.avatar--lg {
+  width: var(--nat-size-xl);
+  height: var(--nat-size-xl);
+  font-size: var(--nat-text-lg);
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar__initials {
+  user-select: none;
+}

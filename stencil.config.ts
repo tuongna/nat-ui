@@ -20,6 +20,11 @@ export const config: Config = {
     },
     {
       type: 'docs-readme',
+      footer: '',
+    },
+    {
+      type: 'docs-json',
+      file: 'docs/components.json',
     },
   ],
 

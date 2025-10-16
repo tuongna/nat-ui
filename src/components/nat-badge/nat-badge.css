@@ -1,0 +1,67 @@
+:host {
+  display: inline-flex;
+}
+
+.badge {
+  align-items: center;
+  border-radius: var(--nat-radius-full);
+  display: inline-flex;
+  font-weight: var(--nat-font-semibold);
+  justify-content: center;
+  line-height: var(--nat-leading-none);
+  font-family: var(--nat-font-sans);
+  transition: var(--nat-transition-fast);
+}
+
+.badge--sm {
+  font-size: var(--nat-text-xs);
+  padding: var(--nat-space-0-5) var(--nat-space-1-5);
+  min-width: 18px;
+  height: 18px;
+}
+
+.badge--md {
+  font-size: var(--nat-text-sm);
+  padding: var(--nat-space-1) var(--nat-space-2);
+  min-width: 22px;
+  height: 22px;
+}
+
+.badge--lg {
+  font-size: var(--nat-text-base);
+  padding: var(--nat-space-1-5) var(--nat-space-3);
+  min-width: 26px;
+  height: 26px;
+}
+
+.badge--primary {
+  background: var(--nat-primary);
+  color: var(--nat-text-inverse);
+}
+
+.badge--success {
+  background: var(--nat-success);
+  color: var(--nat-text-inverse);
+}
+
+.badge--danger {
+  background: var(--nat-error);
+  color: var(--nat-text-inverse);
+}
+
+.badge--warning {
+  background: var(--nat-warning);
+  color: var(--nat-text-inverse);
+}
+
+.badge--info {
+  background: var(--nat-info);
+  color: var(--nat-text-inverse);
+}
+
+.badge__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: var(--nat-radius-full);
+  background: currentColor;
+}

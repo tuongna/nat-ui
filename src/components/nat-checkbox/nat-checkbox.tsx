@@ -119,7 +119,7 @@ export class NatCheckbox {
   private handleChange = (event: Event) => {
     const target = event.target as HTMLInputElement;
     this.checked = target.checked;
-    this.indeterminate = false; // Clear indeterminate on user interaction
+    this.indeterminate = false;
     this.natChange.emit(this.checked);
   };
 
