@@ -233,6 +233,42 @@
   --nat-opacity-100: 1;
 }
 
+:root[data-theme='mist'] {
+  --nat-bg-base: rgba(255, 255, 255, 0.55);
+  --nat-bg-surface: rgba(255, 255, 255, 0.45);
+  --nat-bg-elevated: rgba(255, 255, 255, 0.65);
+  --nat-bg-overlay: rgba(0, 0, 0, 0.35);
+  --nat-bg-subtle: rgba(255, 255, 255, 0.3);
+
+  --nat-text-primary: #1f1f1f;
+  --nat-text-secondary: #4a4a4a;
+  --nat-text-tertiary: #737373;
+  --nat-text-quaternary: #a3a3a3;
+  --nat-text-inverse: #ffffff;
+  --nat-text-disabled: #a3a3a3;
+  --nat-text-placeholder: #b3b3b3;
+
+  --nat-border-base: rgba(255, 255, 255, 0.25);
+  --nat-border-strong: rgba(255, 255, 255, 0.35);
+  --nat-border-subtle: rgba(255, 255, 255, 0.15);
+  --nat-border-hover: rgba(255, 255, 255, 0.35);
+  --nat-border-focus: var(--nat-primary-500);
+  --nat-border-disabled: rgba(255, 255, 255, 0.2);
+
+  --nat-interactive-default: var(--nat-primary-500);
+  --nat-interactive-hover: var(--nat-primary-600);
+  --nat-interactive-active: var(--nat-primary-700);
+  --nat-interactive-disabled: var(--nat-gray-300);
+
+  --nat-glass-bg: rgba(255, 255, 255, 0.4);
+  --nat-glass-bg-strong: rgba(255, 255, 255, 0.55);
+  --nat-glass-border: rgba(255, 255, 255, 0.2);
+  --nat-glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  --nat-glass-blur: blur(18px);
+  --nat-glass-blur-strong: blur(24px);
+}
+
+
 @media (prefers-color-scheme: dark) {
   :root {
     --nat-primary: var(--nat-primary-400);
