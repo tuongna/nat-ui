@@ -40,14 +40,9 @@
       .hero {
         display: flex;
         align-items: center;
-        gap: 30px;
         margin-bottom: 40px;
-        padding: 20px;
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 20px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        
       }
 
       .hero-logo {
@@ -61,7 +56,7 @@
       .hero-content h1 {
         color: white;
         font-size: 2rem;
-        margin-bottom: 8px;
+        margin: 0 0 8px 0;
         text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
       }
 
@@ -91,7 +86,6 @@
         padding: var(--nat-space-8);
         margin-bottom: var(--nat-space-6);
         box-shadow: var(--nat-shadow-xl);
-        border: 1px solid var(--nat-border-subtle);
       }
 
       .section h2 {
