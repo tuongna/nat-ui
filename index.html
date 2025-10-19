@@ -1,7 +1,7 @@
 <!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>nat-ui Components</title> <script type="module" src="./build/nat-ui.esm.js"></script> <script nomodule="" src="./build/nat-ui.js"></script> <script type="module">
       import { setupDefaultIconLibraries } from '/build/index.esm.js';
       setupDefaultIconLibraries();
-    </script> <link rel="stylesheet" href="./build/p-7c65d279.css"> <style>body {
+    </script> <link rel="stylesheet" href="./build/p-bedd15f9.css"> <style>body {
         padding: 40px;
         background: linear-gradient(-45deg, #667eea, #764ba2, #f093fb, #4facfe);
         background-size: 400% 400%;
@@ -29,7 +29,6 @@
         align-items: center;
         margin-bottom: 40px;
         flex-direction: column;
-        
       }
 
       .hero-logo {
@@ -130,7 +129,137 @@
         font-size: var(--nat-text-xs);
         color: var(--nat-text-secondary);
         font-family: var(--nat-font-mono);
-      }</style> </head> <body> <div class="container"> <!-- Compact Hero with Logo on Left --> <div class="hero"> <div class="hero-logo"> <nat-logo size="100" animated=""></nat-logo> </div> <div class="hero-content"> <h1>NAT-UI Component Library</h1> <p>iOS 26-inspired Web Components with Liquid Glass Aesthetic</p> <div class="hero-meta"> <span>11/35 Components</span> <span>v1.0.0</span> <span>MIT License</span> </div> </div> </div> </div> <!-- Colors --> <div class="section"> <h2>Color Palette</h2> <div class="grid"> <div class="color-swatch"> <div class="color-box" style="background: var(--nat-primary);"></div> <div class="color-info"> <div class="color-name">Primary</div> <div class="color-value">#5B6FE8</div> </div> </div> <div class="color-swatch"> <div class="color-box" style="background: var(--nat-success);"></div> <div class="color-info"> <div class="color-name">Success</div> <div class="color-value">#10B981</div> </div> </div> <div class="color-swatch"> <div class="color-box" style="background: var(--nat-warning);"></div> <div class="color-info"> <div class="color-name">Warning</div> <div class="color-value">#F59E0B</div> </div> </div> <div class="color-swatch"> <div class="color-box" style="background: var(--nat-error);"></div> <div class="color-info"> <div class="color-name">Error</div> <div class="color-value">#EF4444</div> </div> </div> </div> </div> <!-- Icons --> <div class="section"> <h2>Icon Component</h2> <div style="display: flex; gap: var(--nat-space-4); align-items: center;"> <nat-icon name="check" style="width: 24px; height: 24px; color: var(--nat-success);"></nat-icon> <nat-icon name="x" style="width: 24px; height: 24px; color: var(--nat-error);"></nat-icon> <nat-icon name="chevron-down" style="width: 24px; height: 24px;"></nat-icon> <nat-icon name="settings" style="width: 24px; height: 24px;"></nat-icon> <nat-icon name="search" style="width: 24px; height: 24px;"></nat-icon> </div> <div style="margin-top: var(--nat-space-4);"> <h3>Different Libraries</h3> <div style="display: flex; gap: var(--nat-space-4); align-items: center;"> <div style="text-align: center;"> <nat-icon name="check" library="lucide" style="width: 32px; height: 32px;"></nat-icon> <div style="font-size: var(--nat-text-xs); margin-top: var(--nat-space-1);">Lucide</div> </div> <div style="text-align: center;"> <nat-icon name="check" library="heroicons" style="width: 32px; height: 32px;"></nat-icon> <div style="font-size: var(--nat-text-xs); margin-top: var(--nat-space-1);">Heroicons</div> </div> <div style="text-align: center;"> <nat-icon name="check" library="tabler" style="width: 32px; height: 32px;"></nat-icon> <div style="font-size: var(--nat-text-xs); margin-top: var(--nat-space-1);">Tabler</div> </div> <div style="text-align: center;"> <nat-icon name="check-lg" library="bootstrap" style="width: 32px; height: 32px;"></nat-icon> <div style="font-size: var(--nat-text-xs); margin-top: var(--nat-space-1);">Bootstrap</div> </div> </div> </div> </div> <!-- Buttons - Variants --> <div class="section"> <h2>Button Variants</h2> <div class="showcase"> <nat-button variant="primary">Primary</nat-button> <nat-button variant="secondary">Secondary</nat-button> <nat-button variant="ghost">Ghost</nat-button> <nat-button variant="danger">Danger</nat-button> </div> </div> <!-- Buttons - Sizes --> <div class="section"> <h2>Button Sizes</h2> <div class="showcase"> <nat-button variant="primary" size="sm">Small</nat-button> <nat-button variant="primary" size="md">Medium</nat-button> <nat-button variant="primary" size="lg">Large</nat-button> </div> </div> <!-- Buttons - States --> <div class="section"> <h2>Button States</h2> <div class="showcase"> <nat-button variant="primary" disabled="">Disabled</nat-button> <nat-button variant="primary" loading="">Loading</nat-button> <nat-button variant="success">Success</nat-button> <nat-button variant="warning">Warning</nat-button> </div> </div> <!-- Input Component --> <div class="section"> <h2>Input - Basic</h2> <div style="display: grid; gap: var(--nat-space-4); max-width: 600px;"> <nat-input label="Email" type="email" placeholder="Enter your email" helper-text="We'll never share your email"></nat-input> <nat-input label="Password" type="password" placeholder="Enter password" required=""></nat-input> <nat-input label="Phone" type="tel" placeholder="+1 (555) 000-0000"></nat-input> </div> </div> <!-- Input Sizes --> <div class="section"> <h2>Input - Sizes</h2> <div style="display: grid; gap: var(--nat-space-4); max-width: 600px;"> <nat-input size="sm" placeholder="Small input"></nat-input> <nat-input size="md" placeholder="Medium input"></nat-input> <nat-input size="lg" placeholder="Large input"></nat-input> </div> </div> <!-- Input Variants --> <div class="section"> <h2>Input - Variants</h2> <div style="display: grid; gap: var(--nat-space-4); max-width: 600px;"> <nat-input variant="default" label="Default" placeholder="Default variant"></nat-input> <nat-input variant="filled" label="Filled" placeholder="Filled variant"></nat-input> <nat-input variant="flushed" label="Flushed" placeholder="Flushed variant"></nat-input> </div> </div> <!-- Input States --> <div class="section"> <h2>Input - States</h2> <div style="display: grid; gap: var(--nat-space-4); max-width: 600px;"> <nat-input label="With Error" error="This field is required" value="invalid@"></nat-input> <nat-input label="Disabled" disabled="" value="Disabled input"></nat-input> <nat-input label="Readonly" readonly="" value="Readonly input"></nat-input> <nat-input label="Clearable" clearable="" value="Clear me" placeholder="Type something"></nat-input> </div> </div> <!-- Input Interactive --> <div class="section"> <h2>Input - Interactive Test</h2> <div style="display: grid; gap: var(--nat-space-4); max-width: 600px;"> <nat-input id="test-input" label="Type something" clearable="" placeholder="Start typing..."></nat-input> <div style="padding: var(--nat-space-4); background: var(--nat-bg-surface); border-radius: var(--nat-radius-lg);"> <div style="font-size: var(--nat-text-sm); color: var(--nat-text-secondary); margin-bottom: var(--nat-space-2);">Output:</div> <div id="input-output" style="font-family: var(--nat-font-mono); font-size: var(--nat-text-sm); color: var(--nat-primary);"></div> </div> </div> </div> <div class="section"> <h2>Textarea Component</h2> <nat-textarea label="Message" placeholder="Write your message here..." rows="4" clearable="" helper-text="Max 500 characters" maxlength="500"></nat-textarea> <nat-textarea label="Error example" error="This field is required" required=""></nat-textarea> <nat-textarea label="Disabled" disabled="" value="Cannot edit this"></nat-textarea> </div> <div class="section"> <h2>Select Component</h2> <nat-select label="Choose an option" placeholder="Select something" fullwidth="" error="" value=""></nat-select> </div> <div class="section"> <h2>Checkbox Component</h2> <div style="display: flex; flex-direction: column; gap: var(--nat-space-4);"> <!-- Basic --> <div> <h3 style="margin: 0 0 var(--nat-space-2);">Basic</h3> <nat-checkbox label="Accept terms and conditions"></nat-checkbox> </div> <!-- Sizes --> <div> <h3 style="margin: 0 0 var(--nat-space-2);">Sizes</h3> <div style="display: flex; gap: var(--nat-space-4);"> <nat-checkbox size="sm" label="Small"></nat-checkbox> <nat-checkbox size="md" label="Medium"></nat-checkbox> <nat-checkbox size="lg" label="Large"></nat-checkbox> </div> </div> <!-- States --> <div> <h3 style="margin: 0 0 var(--nat-space-2);">States</h3> <div style="display: flex; flex-direction: column; gap: var(--nat-space-2);"> <nat-checkbox label="Unchecked"></nat-checkbox> <nat-checkbox label="Checked" checked=""></nat-checkbox> <nat-checkbox label="Indeterminate" id="indeterminate"></nat-checkbox> <nat-checkbox label="Disabled" disabled=""></nat-checkbox> <nat-checkbox label="Disabled Checked" disabled="" checked=""></nat-checkbox> </div> <script>
+      }
+
+      /* Theme Switcher Styles */
+      .theme-option {
+        cursor: pointer;
+        transition: transform var(--nat-transition-base);
+        border-radius: var(--nat-radius-lg);
+        padding: var(--nat-space-4);
+        border: 2px solid transparent;
+      }
+
+      .theme-option:hover {
+        transform: translateY(-4px);
+        border-color: var(--nat-border-hover);
+      }
+
+      .theme-option.active {
+        border-color: var(--nat-primary);
+        background: var(--nat-primary-lighter);
+      }
+
+      .theme-preview {
+        width: 100%;
+        height: 120px;
+        border-radius: var(--nat-radius-md);
+        overflow: hidden;
+        box-shadow: var(--nat-shadow-md);
+        border: 1px solid var(--nat-border-base);
+      }
+
+      .theme-preview__bar {
+        height: 24px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      }
+
+      .theme-preview__content {
+        padding: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      .theme-preview__text {
+        height: 8px;
+        border-radius: 4px;
+      }
+
+      .theme-preview__text:first-child {
+        width: 80%;
+      }
+
+      .theme-preview__text:last-child {
+        width: 60%;
+      }
+
+      /* System Theme Preview */
+      .theme-preview--system {
+        background: linear-gradient(135deg, #ffffff 50%, #1a1a1a 50%);
+      }
+
+      .theme-preview--system .theme-preview__bar {
+        background: linear-gradient(135deg, #f5f5f5 50%, #2d2d2d 50%);
+      }
+
+      .theme-preview--system .theme-preview__text {
+        background: linear-gradient(135deg, #d4d4d4 50%, #525252 50%);
+      }
+
+      /* Light Theme Preview */
+      .theme-preview--light {
+        background: #ffffff;
+      }
+
+      .theme-preview--light .theme-preview__bar {
+        background: #f5f5f5;
+      }
+
+      .theme-preview--light .theme-preview__text {
+        background: #d4d4d4;
+      }
+
+      /* Dark Theme Preview */
+      .theme-preview--dark {
+        background: #1a1a1a;
+      }
+
+      .theme-preview--dark .theme-preview__bar {
+        background: #2d2d2d;
+      }
+
+      .theme-preview--dark .theme-preview__text {
+        background: #525252;
+      }
+
+      /* Mist Theme Preview */
+      .theme-preview--mist {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5));
+        backdrop-filter: blur(10px);
+      }
+
+      .theme-preview--mist .theme-preview__bar {
+        background: rgba(255, 255, 255, 0.8);
+      }
+
+      .theme-preview--mist .theme-preview__text {
+        background: rgba(0, 0, 0, 0.2);
+      }</style> </head> <body> <div class="container"> <!-- Compact Hero with Logo on Left --> <div class="hero"> <div class="hero-logo"> <nat-logo size="100" animated=""></nat-logo> </div> <div class="hero-content"> <h1>NAT-UI Component Library</h1> <p>iOS 26-inspired Web Components with Liquid Glass Aesthetic</p> <div class="hero-meta"> <span>11/35 Components</span> <span>v1.0.0</span> <span>MIT License</span> </div> </div> </div> </div> <!-- Theme Switcher Section --> <div class="section"> <h2>Theme Switcher</h2> <nat-card elevation="md"> <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;"> <!-- System Theme --> <div class="theme-option" data-theme="system" onclick="setTheme('system')"> <div class="theme-preview theme-preview--system"> <div class="theme-preview__bar"></div> <div class="theme-preview__content"> <div class="theme-preview__text"></div> <div class="theme-preview__text"></div> </div> </div> <div style="margin-top: 12px; text-align: center;"> <strong style="color: var(--nat-text-primary);">System</strong> <div style="font-size: 0.875rem; color: var(--nat-text-secondary);">Follow system preference</div> </div> </div> <!-- Light Theme --> <!-- <div class="theme-option" data-theme="light" onclick="setTheme('light')">
+            <div class="theme-preview theme-preview--light">
+              <div class="theme-preview__bar"></div>
+              <div class="theme-preview__content">
+                <div class="theme-preview__text"></div>
+                <div class="theme-preview__text"></div>
+              </div>
+            </div>
+            <div style="margin-top: 12px; text-align: center">
+              <strong style="color: var(--nat-text-primary)">Light</strong>
+              <div style="font-size: 0.875rem; color: var(--nat-text-secondary)">Clean and bright</div>
+            </div>
+          </div> --> <!-- Dark Theme --> <!-- <div class="theme-option" data-theme="dark" onclick="setTheme('dark')">
+            <div class="theme-preview theme-preview--dark">
+              <div class="theme-preview__bar"></div>
+              <div class="theme-preview__content">
+                <div class="theme-preview__text"></div>
+                <div class="theme-preview__text"></div>
+              </div>
+            </div>
+            <div style="margin-top: 12px; text-align: center">
+              <strong style="color: var(--nat-text-primary)">Dark</strong>
+              <div style="font-size: 0.875rem; color: var(--nat-text-secondary)">Easy on the eyes</div>
+            </div>
+          </div> --> <!-- Mist Theme --> <div class="theme-option" data-theme="mist" onclick="setTheme('mist')"> <div class="theme-preview theme-preview--mist"> <div class="theme-preview__bar"></div> <div class="theme-preview__content"> <div class="theme-preview__text"></div> <div class="theme-preview__text"></div> </div> </div> <div style="margin-top: 12px; text-align: center;"> <strong style="color: var(--nat-text-primary);">Mist</strong> <div style="font-size: 0.875rem; color: var(--nat-text-secondary);">Liquid glass aesthetic</div> </div> </div> </div> <!-- Current Theme Indicator --> <nat-divider></nat-divider> <div style="text-align: center; color: var(--nat-text-secondary); font-size: 0.875rem;"> Current theme: <strong id="current-theme-label" style="color: var(--nat-primary);">System</strong> </div> </nat-card> </div> <!-- Colors --> <div class="section"> <h2>Color Palette</h2> <div class="grid"> <div class="color-swatch"> <div class="color-box" style="background: var(--nat-primary);"></div> <div class="color-info"> <div class="color-name">Primary</div> <div class="color-value">#5B6FE8</div> </div> </div> <div class="color-swatch"> <div class="color-box" style="background: var(--nat-success);"></div> <div class="color-info"> <div class="color-name">Success</div> <div class="color-value">#10B981</div> </div> </div> <div class="color-swatch"> <div class="color-box" style="background: var(--nat-warning);"></div> <div class="color-info"> <div class="color-name">Warning</div> <div class="color-value">#F59E0B</div> </div> </div> <div class="color-swatch"> <div class="color-box" style="background: var(--nat-error);"></div> <div class="color-info"> <div class="color-name">Error</div> <div class="color-value">#EF4444</div> </div> </div> </div> </div> <!-- Icons --> <div class="section"> <h2>Icon Component</h2> <div style="display: flex; gap: var(--nat-space-4); align-items: center;"> <nat-icon name="check" style="width: 24px; height: 24px; color: var(--nat-success);"></nat-icon> <nat-icon name="x" style="width: 24px; height: 24px; color: var(--nat-error);"></nat-icon> <nat-icon name="chevron-down" style="width: 24px; height: 24px;"></nat-icon> <nat-icon name="settings" style="width: 24px; height: 24px;"></nat-icon> <nat-icon name="search" style="width: 24px; height: 24px;"></nat-icon> </div> <div style="margin-top: var(--nat-space-4);"> <h3>Different Libraries</h3> <div style="display: flex; gap: var(--nat-space-4); align-items: center;"> <div style="text-align: center;"> <nat-icon name="check" library="lucide" style="width: 32px; height: 32px;"></nat-icon> <div style="font-size: var(--nat-text-xs); margin-top: var(--nat-space-1);">Lucide</div> </div> <div style="text-align: center;"> <nat-icon name="check" library="heroicons" style="width: 32px; height: 32px;"></nat-icon> <div style="font-size: var(--nat-text-xs); margin-top: var(--nat-space-1);">Heroicons</div> </div> <div style="text-align: center;"> <nat-icon name="check" library="tabler" style="width: 32px; height: 32px;"></nat-icon> <div style="font-size: var(--nat-text-xs); margin-top: var(--nat-space-1);">Tabler</div> </div> <div style="text-align: center;"> <nat-icon name="check-lg" library="bootstrap" style="width: 32px; height: 32px;"></nat-icon> <div style="font-size: var(--nat-text-xs); margin-top: var(--nat-space-1);">Bootstrap</div> </div> </div> </div> </div> <!-- Buttons - Variants --> <div class="section"> <h2>Button Variants</h2> <div class="showcase"> <nat-button variant="primary">Primary</nat-button> <nat-button variant="secondary">Secondary</nat-button> <nat-button variant="ghost">Ghost</nat-button> <nat-button variant="danger">Danger</nat-button> </div> </div> <!-- Buttons - Sizes --> <div class="section"> <h2>Button Sizes</h2> <div class="showcase"> <nat-button variant="primary" size="sm">Small</nat-button> <nat-button variant="primary" size="md">Medium</nat-button> <nat-button variant="primary" size="lg">Large</nat-button> </div> </div> <!-- Buttons - States --> <div class="section"> <h2>Button States</h2> <div class="showcase"> <nat-button variant="primary" disabled="">Disabled</nat-button> <nat-button variant="primary" loading="">Loading</nat-button> <nat-button variant="success">Success</nat-button> <nat-button variant="warning">Warning</nat-button> </div> </div> <!-- Input Component --> <div class="section"> <h2>Input - Basic</h2> <div style="display: grid; gap: var(--nat-space-4); max-width: 600px;"> <nat-input label="Email" type="email" placeholder="Enter your email" helper-text="We'll never share your email"></nat-input> <nat-input label="Password" type="password" placeholder="Enter password" required=""></nat-input> <nat-input label="Phone" type="tel" placeholder="+1 (555) 000-0000"></nat-input> </div> </div> <!-- Input Sizes --> <div class="section"> <h2>Input - Sizes</h2> <div style="display: grid; gap: var(--nat-space-4); max-width: 600px;"> <nat-input size="sm" placeholder="Small input"></nat-input> <nat-input size="md" placeholder="Medium input"></nat-input> <nat-input size="lg" placeholder="Large input"></nat-input> </div> </div> <!-- Input Variants --> <div class="section"> <h2>Input - Variants</h2> <div style="display: grid; gap: var(--nat-space-4); max-width: 600px;"> <nat-input variant="default" label="Default" placeholder="Default variant"></nat-input> <nat-input variant="filled" label="Filled" placeholder="Filled variant"></nat-input> <nat-input variant="flushed" label="Flushed" placeholder="Flushed variant"></nat-input> </div> </div> <!-- Input States --> <div class="section"> <h2>Input - States</h2> <div style="display: grid; gap: var(--nat-space-4); max-width: 600px;"> <nat-input label="With Error" error="This field is required" value="invalid@"></nat-input> <nat-input label="Disabled" disabled="" value="Disabled input"></nat-input> <nat-input label="Readonly" readonly="" value="Readonly input"></nat-input> <nat-input label="Clearable" clearable="" value="Clear me" placeholder="Type something"></nat-input> </div> </div> <!-- Input Interactive --> <div class="section"> <h2>Input - Interactive Test</h2> <div style="display: grid; gap: var(--nat-space-4); max-width: 600px;"> <nat-input id="test-input" label="Type something" clearable="" placeholder="Start typing..."></nat-input> <div style="padding: var(--nat-space-4); background: var(--nat-bg-surface); border-radius: var(--nat-radius-lg);"> <div style="font-size: var(--nat-text-sm); color: var(--nat-text-secondary); margin-bottom: var(--nat-space-2);">Output:</div> <div id="input-output" style="font-family: var(--nat-font-mono); font-size: var(--nat-text-sm); color: var(--nat-primary);"></div> </div> </div> </div> <div class="section"> <h2>Textarea Component</h2> <nat-textarea label="Message" placeholder="Write your message here..." rows="4" clearable="" helper-text="Max 500 characters" maxlength="500"></nat-textarea> <nat-textarea label="Error example" error="This field is required" required=""></nat-textarea> <nat-textarea label="Disabled" disabled="" value="Cannot edit this"></nat-textarea> </div> <div class="section"> <h2>Select Component</h2> <nat-select label="Choose an option" placeholder="Select something" fullwidth="" error="" value=""></nat-select> </div> <div class="section"> <h2>Checkbox Component</h2> <div style="display: flex; flex-direction: column; gap: var(--nat-space-4);"> <!-- Basic --> <div> <h3 style="margin: 0 0 var(--nat-space-2);">Basic</h3> <nat-checkbox label="Accept terms and conditions"></nat-checkbox> </div> <!-- Sizes --> <div> <h3 style="margin: 0 0 var(--nat-space-2);">Sizes</h3> <div style="display: flex; gap: var(--nat-space-4);"> <nat-checkbox size="sm" label="Small"></nat-checkbox> <nat-checkbox size="md" label="Medium"></nat-checkbox> <nat-checkbox size="lg" label="Large"></nat-checkbox> </div> </div> <!-- States --> <div> <h3 style="margin: 0 0 var(--nat-space-2);">States</h3> <div style="display: flex; flex-direction: column; gap: var(--nat-space-2);"> <nat-checkbox label="Unchecked"></nat-checkbox> <nat-checkbox label="Checked" checked=""></nat-checkbox> <nat-checkbox label="Indeterminate" id="indeterminate"></nat-checkbox> <nat-checkbox label="Disabled" disabled=""></nat-checkbox> <nat-checkbox label="Disabled Checked" disabled="" checked=""></nat-checkbox> </div> <script>
             document.getElementById('indeterminate').indeterminate = true;
           </script> </div> <!-- With Rich Content --> <div> <h3 style="margin: 0 0 var(--nat-space-2);">With Rich Content</h3> <nat-checkbox> I agree to the <a href="#" style="color: var(--nat-primary);">Terms of Service</a> and <a href="#" style="color: var(--nat-primary);">Privacy Policy</a> </nat-checkbox> </div> <!-- Interactive Example --> <div> <h3 style="margin: 0 0 var(--nat-space-2);">Select All Example</h3> <div style="display: flex; flex-direction: column; gap: var(--nat-space-2);"> <nat-checkbox id="select-all-demo" label="Select All" style="font-weight: 600;"></nat-checkbox> <div style="padding-left: var(--nat-space-6); display: flex; flex-direction: column; gap: var(--nat-space-2);"> <nat-checkbox class="child-demo" label="Option 1"></nat-checkbox> <nat-checkbox class="child-demo" label="Option 2"></nat-checkbox> <nat-checkbox class="child-demo" label="Option 3"></nat-checkbox> </div> </div> <script>
             const selectAllDemo = document.getElementById('select-all-demo');
@@ -159,22 +288,17 @@
                 child.checked = e.detail;
               });
             });
-          </script> </div> </div> </div> <div class="section"> <h2>Badge Component</h2> <div style="display: flex; gap: 10px; align-items: center;"> <nat-badge variant="primary">5</nat-badge> <nat-badge variant="success" count="99"></nat-badge> <nat-badge variant="danger" count="10"></nat-badge> <nat-badge variant="warning" count="3"></nat-badge> <nat-badge variant="info" count="1"></nat-badge> </div> <h3>Sizes</h3> <div style="display: flex; gap: 10px; align-items: center;"> <nat-badge size="sm" count="5"></nat-badge> <nat-badge size="md" count="5"></nat-badge> <nat-badge size="lg" count="5"></nat-badge> </div> <h3>Dot Indicator</h3> <div style="display: flex; gap: 10px; align-items: center;"> <nat-badge variant="primary" dot=""></nat-badge> <nat-badge variant="success" dot=""></nat-badge> <nat-badge variant="danger" dot=""></nat-badge> </div> </div> <div class="section"> <h2>Divider Component</h2> <p>Content above</p> <nat-divider></nat-divider> <p>Content below</p> <h3>With Text</h3> <nat-divider>OR</nat-divider> <h3>Vertical</h3> <div style="display: flex; height: 50px; align-items: center;"> <span>Left</span> <nat-divider orientation="vertical"></nat-divider> <span>Right</span> </div> </div> <div class="section"> <h2>Avatar Component</h2> <h3>With Initials</h3> <div style="display: flex; gap: 10px;"> <nat-avatar name="John Doe" size="sm"></nat-avatar> <nat-avatar name="Jane Smith" size="md"></nat-avatar> <nat-avatar name="Bob Wilson" size="lg"></nat-avatar> </div> <h3>With Image</h3> <div style="display: flex; gap: 10px;"> <nat-avatar src="https://i.pravatar.cc/150?img=1" size="sm"></nat-avatar> <nat-avatar src="https://i.pravatar.cc/150?img=2" size="md"></nat-avatar> <nat-avatar src="https://i.pravatar.cc/150?img=3" size="lg"></nat-avatar> </div> <h3>Fallback (broken image)</h3> <nat-avatar src="invalid-url.jpg" name="Error User"></nat-avatar> </div> <div class="section"> <h2>Spinner Component</h2> <div style="display: flex; gap: 20px; align-items: center;"> <nat-spinner size="sm"></nat-spinner> <nat-spinner size="md"></nat-spinner> <nat-spinner size="lg"></nat-spinner> </div> <h3>In Button</h3> <nat-button loading="">Loading...</nat-button> </div> <div class="section"> <h2>Breadcrumb Component</h2> <nav role="navigation" aria-label="Breadcrumb"> <nat-breadcrumb> <nat-breadcrumb-item href="/">Home</nat-breadcrumb-item> <nat-breadcrumb-item href="/docs">Documentation</nat-breadcrumb-item> <nat-breadcrumb-item active="">Components</nat-breadcrumb-item> </nat-breadcrumb> </nav> <h3>Long Path</h3> <nat-breadcrumb> <nat-breadcrumb-item href="/">Home</nat-breadcrumb-item> <nat-breadcrumb-item href="/products">Products</nat-breadcrumb-item> <nat-breadcrumb-item href="/products/electronics">Electronics</nat-breadcrumb-item> <nat-breadcrumb-item href="/products/electronics/phones">Phones</nat-breadcrumb-item> <nat-breadcrumb-item active="">iPhone 15 Pro</nat-breadcrumb-item> </nat-breadcrumb> </div> <script>
-      const options = [
-        { value: 'option1', label: 'Option 1' },
-        { value: 'option2', label: 'Option 2' },
-        { value: 'option3', label: 'Option 3', disabled: true },
-        { value: 'option4', label: 'Option 4' },
-      ];
+          </script> </div> </div> </div> <div class="section"> <h2>Badge Component</h2> <div style="display: flex; gap: 10px; align-items: center;"> <nat-badge variant="primary">5</nat-badge> <nat-badge variant="success" count="99"></nat-badge> <nat-badge variant="danger" count="10"></nat-badge> <nat-badge variant="warning" count="3"></nat-badge> <nat-badge variant="info" count="1"></nat-badge> </div> <h3>Sizes</h3> <div style="display: flex; gap: 10px; align-items: center;"> <nat-badge size="sm" count="5"></nat-badge> <nat-badge size="md" count="5"></nat-badge> <nat-badge size="lg" count="5"></nat-badge> </div> <h3>Dot Indicator</h3> <div style="display: flex; gap: 10px; align-items: center;"> <nat-badge variant="primary" dot=""></nat-badge> <nat-badge variant="success" dot=""></nat-badge> <nat-badge variant="danger" dot=""></nat-badge> </div> </div> <div class="section"> <h2>Divider Component</h2> <p>Content above</p> <nat-divider></nat-divider> <p>Content below</p> <h3>With Text</h3> <nat-divider>OR</nat-divider> <h3>Vertical</h3> <div style="display: flex; height: 50px; align-items: center;"> <span>Left</span> <nat-divider orientation="vertical"></nat-divider> <span>Right</span> </div> </div> <div class="section"> <h2>Avatar Component</h2> <h3>With Initials</h3> <div style="display: flex; gap: 10px;"> <nat-avatar name="John Doe" size="sm"></nat-avatar> <nat-avatar name="Jane Smith" size="md"></nat-avatar> <nat-avatar name="Bob Wilson" size="lg"></nat-avatar> </div> <h3>With Image</h3> <div style="display: flex; gap: 10px;"> <nat-avatar src="https://i.pravatar.cc/150?img=1" size="sm"></nat-avatar> <nat-avatar src="https://i.pravatar.cc/150?img=2" size="md"></nat-avatar> <nat-avatar src="https://i.pravatar.cc/150?img=3" size="lg"></nat-avatar> </div> <h3>Fallback (broken image)</h3> <nat-avatar src="invalid-url.jpg" name="Error User"></nat-avatar> </div> <div class="section"> <h2>Spinner Component</h2> <div style="display: flex; gap: 20px; align-items: center;"> <nat-spinner size="sm"></nat-spinner> <nat-spinner size="md"></nat-spinner> <nat-spinner size="lg"></nat-spinner> </div> <h3>In Button</h3> <nat-button loading="">Loading...</nat-button> </div> <div class="section"> <h2>Breadcrumb Component</h2> <nav role="navigation" aria-label="Breadcrumb"> <nat-breadcrumb> <nat-breadcrumb-item href="/">Home</nat-breadcrumb-item> <nat-breadcrumb-item href="/docs">Documentation</nat-breadcrumb-item> <nat-breadcrumb-item active="">Components</nat-breadcrumb-item> </nat-breadcrumb> </nav> <h3>Long Path</h3> <nat-breadcrumb> <nat-breadcrumb-item href="/">Home</nat-breadcrumb-item> <nat-breadcrumb-item href="/products">Products</nat-breadcrumb-item> <nat-breadcrumb-item href="/products/electronics">Electronics</nat-breadcrumb-item> <nat-breadcrumb-item href="/products/electronics/phones">Phones</nat-breadcrumb-item> <nat-breadcrumb-item active="">iPhone 15 Pro</nat-breadcrumb-item> </nat-breadcrumb> </div> <div class="section"> <h2>Radio Component</h2> <h3>Basic Usage</h3> <div style="display: flex; flex-direction: column; gap: 12px;"> <nat-radio name="option" value="1" checked="">Option 1</nat-radio> <nat-radio name="option" value="2">Option 2</nat-radio> <nat-radio name="option" value="3">Option 3</nat-radio> </div> <h3>Sizes</h3> <div style="display: flex; flex-direction: column; gap: 12px;"> <nat-radio name="size" value="sm" size="sm" checked="">Small</nat-radio> <nat-radio name="size" value="md" size="md">Medium</nat-radio> <nat-radio name="size" value="lg" size="lg">Large</nat-radio> </div> <h3>Label Position</h3> <div style="display: flex; flex-direction: column; gap: 12px;"> <nat-radio name="position" value="right" checked="">Label Right (default)</nat-radio> <nat-radio name="position" value="left" label-position="left">Label Left</nat-radio> </div> <h3>Disabled</h3> <div style="display: flex; flex-direction: column; gap: 12px;"> <nat-radio name="disabled" value="1" disabled="">Disabled unchecked</nat-radio> <nat-radio name="disabled2" value="2" disabled="" checked="">Disabled checked</nat-radio> </div> <h3>Radio Group Example</h3> <nat-card> <h4 style="margin: 0 0 12px 0; color: var(--nat-text-primary);">Choose your plan</h4> <div style="display: flex; flex-direction: column; gap: 12px;"> <nat-radio name="plan" value="free" checked=""> <div> <strong>Free</strong> <div style="font-size: 0.875rem; color: var(--nat-text-secondary);">Basic features for personal use</div> </div> </nat-radio> <nat-radio name="plan" value="pro"> <div> <strong>Pro - $9/month</strong> <div style="font-size: 0.875rem; color: var(--nat-text-secondary);">Advanced features for professionals</div> </div> </nat-radio> <nat-radio name="plan" value="enterprise"> <div> <strong>Enterprise - Custom</strong> <div style="font-size: 0.875rem; color: var(--nat-text-secondary);">Custom solutions for teams</div> </div> </nat-radio> </div> </nat-card> </div> <div class="section"> <h2>Switch Component</h2> <h3>Basic Usage</h3> <div style="display: flex; flex-direction: column; gap: 12px;"> <nat-switch checked="">Enabled by default</nat-switch> <nat-switch>Disabled by default</nat-switch> <nat-switch disabled="">Disabled state</nat-switch> <nat-switch disabled="" checked="">Disabled checked</nat-switch> </div> <h3>Sizes</h3> <div style="display: flex; flex-direction: column; gap: 12px;"> <nat-switch size="sm" checked="">Small</nat-switch> <nat-switch size="md" checked="">Medium</nat-switch> <nat-switch size="lg" checked="">Large</nat-switch> </div> <h3>Colors</h3> <div style="display: flex; flex-direction: column; gap: 12px;"> <nat-switch color="primary" checked="">Primary (default)</nat-switch> <nat-switch color="success" checked="">Success</nat-switch> <nat-switch color="warning" checked="">Warning</nat-switch> <nat-switch color="danger" checked="">Danger</nat-switch> </div> <h3>Label Position</h3> <div style="display: flex; flex-direction: column; gap: 12px;"> <nat-switch checked="">Label Right (default)</nat-switch> <nat-switch label-position="left" checked="">Label Left</nat-switch> </div> <h3>Loading State</h3> <div style="display: flex; flex-direction: column; gap: 12px;"> <nat-switch loading="">Processing...</nat-switch> <nat-switch loading="" checked="">Saving changes...</nat-switch> </div> <h3>Settings Panel Example</h3> <nat-card> <h4 style="margin: 0 0 16px 0; color: var(--nat-text-primary);">Notification Settings</h4> <div style="display: flex; flex-direction: column; gap: 16px;"> <div> <nat-switch id="email-notif" checked=""> <div> <strong>Email Notifications</strong> <div style="font-size: 0.875rem; color: var(--nat-text-secondary);">Receive notifications via email</div> </div> </nat-switch> </div> <nat-divider></nat-divider> <div> <nat-switch id="push-notif" checked="" color="success"> <div> <strong>Push Notifications</strong> <div style="font-size: 0.875rem; color: var(--nat-text-secondary);">Get push notifications on your device</div> </div> </nat-switch> </div> <nat-divider></nat-divider> <div> <nat-switch id="sms-notif"> <div> <strong>SMS Notifications</strong> <div style="font-size: 0.875rem; color: var(--nat-text-secondary);">Receive text message alerts</div> </div> </nat-switch> </div> </div> </nat-card> <h3>Interactive Demo</h3> <nat-card> <div style="display: flex; align-items: center; justify-content: space-between;"> <div> <strong>Dark Mode</strong> <div style="font-size: 0.875rem; color: var(--nat-text-secondary);">Toggle dark theme</div> </div> <nat-switch id="dark-mode-toggle"></nat-switch> </div> </nat-card> </div> <div class="section"> <h2>Alert Component</h2> <h3>Basic Variants</h3> <div style="display: flex; flex-direction: column; gap: 12px;"> <nat-alert variant="info"> <span slot="title">Information</span> This is an informational alert with some details. </nat-alert> <nat-alert variant="success"> <span slot="title">Success</span> Your changes have been saved successfully! </nat-alert> <nat-alert variant="warning"> <span slot="title">Warning</span> Please review your settings before proceeding. </nat-alert> <nat-alert variant="danger"> <span slot="title">Error</span> An error occurred while processing your request. </nat-alert> </div> <h3>Outline Style</h3> <div style="display: flex; flex-direction: column; gap: 12px;"> <nat-alert variant="info" outline=""> <span slot="title">Tip</span> Use keyboard shortcuts to navigate faster. </nat-alert> <nat-alert variant="success" outline=""> File uploaded successfully. </nat-alert> <nat-alert variant="warning" outline=""> Your session will expire in 5 minutes. </nat-alert> <nat-alert variant="danger" outline=""> Failed to connect to server. </nat-alert> </div> <h3>Sizes</h3> <div style="display: flex; flex-direction: column; gap: 12px;"> <nat-alert variant="info" size="sm"> <span slot="title">Small Alert</span> Compact alert for tight spaces. </nat-alert> <nat-alert variant="success" size="md"> <span slot="title">Medium Alert</span> Default size for most use cases. </nat-alert> <nat-alert variant="warning" size="lg"> <span slot="title">Large Alert</span> Prominent alert for important messages. </nat-alert> </div> <h3>Closable Alerts</h3> <div style="display: flex; flex-direction: column; gap: 12px;"> <nat-alert variant="info" closable=""> <span slot="title">Dismissible Alert</span> Click the × button to close this alert. </nat-alert> <nat-alert variant="success" closable="" outline=""> You can dismiss this notification. </nat-alert> </div> <h3>Without Icon</h3> <div style="display: flex; flex-direction: column; gap: 12px;"> <nat-alert variant="info" show-icon="false"> <span slot="title">No Icon Alert</span> This alert doesn't display an icon. </nat-alert> </div> <h3>With Action Buttons</h3> <div style="display: flex; flex-direction: column; gap: 12px;"> <nat-alert variant="info" closable=""> <span slot="title">Update Available</span> A new version is available. Would you like to update now? <div slot="actions"> <nat-button size="sm" variant="primary">Update</nat-button> <nat-button size="sm" variant="ghost">Later</nat-button> </div> </nat-alert> <nat-alert variant="warning" outline="" closable=""> <span slot="title">Unsaved Changes</span> You have unsaved changes. Do you want to save them before leaving? <div slot="actions"> <nat-button size="sm" variant="primary">Save</nat-button> <nat-button size="sm" variant="ghost">Discard</nat-button> </div> </nat-alert> </div> <h3>Real-world Examples</h3> <div style="display: flex; flex-direction: column; gap: 12px;"> <nat-alert variant="success" closable=""> <span slot="title">Payment Successful</span> Your payment of $49.99 has been processed successfully. Receipt sent to your email. </nat-alert> <nat-alert variant="danger" outline=""> <span slot="title">Connection Lost</span> Unable to connect to the server. Please check your internet connection and try again. <div slot="actions"> <nat-button size="sm" variant="primary">Retry</nat-button> </div> </nat-alert> <nat-alert variant="warning"> <span slot="title">Storage Almost Full</span> You're using 95% of your storage space. Consider upgrading your plan. <div slot="actions"> <nat-button size="sm" variant="primary">Upgrade</nat-button> <nat-button size="sm" variant="ghost">Manage Storage</nat-button> </div> </nat-alert> </div> </div> <div class="section"> <h2>Tooltip Component</h2> <h3>Basic Usage</h3> <div style="display: flex; gap: 20px; flex-wrap: wrap;"> <nat-tooltip content="This is a tooltip"> <nat-button slot="trigger">Hover me</nat-button> </nat-tooltip> <nat-tooltip content="Click to show tooltip" trigger="click"> <nat-button slot="trigger" variant="secondary">Click me</nat-button> </nat-tooltip> <nat-tooltip content="Focus to show tooltip" trigger="focus"> <nat-input slot="trigger" placeholder="Focus me"></nat-input> </nat-tooltip> </div> <h3>Placements</h3> <div style="display: flex; gap: 20px; flex-wrap: wrap; align-items: center;"> <nat-tooltip content="Tooltip on top" placement="top"> <nat-button slot="trigger">Top</nat-button> </nat-tooltip> <nat-tooltip content="Tooltip on bottom" placement="bottom"> <nat-button slot="trigger">Bottom</nat-button> </nat-tooltip> <nat-tooltip content="Tooltip on left" placement="left"> <nat-button slot="trigger">Left</nat-button> </nat-tooltip> <nat-tooltip content="Tooltip on right" placement="right"> <nat-button slot="trigger">Right</nat-button> </nat-tooltip> </div> <h3>Sizes</h3> <div style="display: flex; gap: 20px; flex-wrap: wrap;"> <nat-tooltip content="Small tooltip" size="sm"> <nat-button slot="trigger" size="sm">Small</nat-button> </nat-tooltip> <nat-tooltip content="Medium tooltip with more content" size="md"> <nat-button slot="trigger">Medium</nat-button> </nat-tooltip> <nat-tooltip content="Large tooltip with even more content that can span multiple lines" size="lg"> <nat-button slot="trigger" size="lg">Large</nat-button> </nat-tooltip> </div> <h3>Disabled</h3> <div style="display: flex; gap: 20px;"> <nat-tooltip content="This won't show" disabled=""> <nat-button slot="trigger">Disabled tooltip</nat-button> </nat-tooltip> </div> <h3>Custom Delays</h3> <div style="display: flex; gap: 20px;"> <nat-tooltip content="Shows immediately" show-delay="0"> <nat-button slot="trigger">No delay</nat-button> </nat-tooltip> <nat-tooltip content="Shows after 1 second" show-delay="1000"> <nat-button slot="trigger">1s delay</nat-button> </nat-tooltip> </div> <h3>Rich Content (using slot)</h3> <div style="display: flex; gap: 20px; flex-wrap: wrap;"> <nat-tooltip> <nat-button slot="trigger" variant="primary"> User Info </nat-button> <div slot=""> <strong>John Doe</strong><br> Senior Developer<br> john@example.com </div> </nat-tooltip> <nat-tooltip placement="bottom"> <nat-badge slot="trigger" variant="primary" count="5"></nat-badge> <div slot="">You have 5 new notifications</div> </nat-tooltip> </div> <h3>Practical Examples</h3> <nat-card> <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;"> <nat-tooltip content="Copy to clipboard"> <nat-button slot="trigger" size="sm" variant="ghost"> 📋 </nat-button> </nat-tooltip> <nat-tooltip content="Share this content"> <nat-button slot="trigger" size="sm" variant="ghost"> 🔗 </nat-button> </nat-tooltip> <nat-tooltip content="Download file"> <nat-button slot="trigger" size="sm" variant="ghost"> ⬇️ </nat-button> </nat-tooltip> <nat-tooltip content="Add to favorites"> <nat-button slot="trigger" size="sm" variant="ghost"> ⭐ </nat-button> </nat-tooltip> <nat-tooltip placement="bottom"> <nat-button slot="trigger" size="sm" variant="ghost"> ℹ️ </nat-button> <div slot=""> <strong>Help &amp; Support</strong><br> Click for more information about this feature. </div> </nat-tooltip> </div> </nat-card> <h3>With Form Elements</h3> <nat-card> <div style="display: flex; flex-direction: column; gap: 16px;"> <nat-tooltip content="Enter your full name" placement="right"> <nat-input slot="trigger" label="Name" placeholder="John Doe"></nat-input> </nat-tooltip> <nat-tooltip content="We'll never share your email" placement="right"> <nat-input slot="trigger" label="Email" type="email" placeholder="john@example.com"></nat-input> </nat-tooltip> <nat-tooltip placement="right"> <nat-checkbox slot="trigger">Subscribe to newsletter</nat-checkbox> <div slot="">Get weekly updates about new features and tips</div> </nat-tooltip> </div> </nat-card> </div> <div class="section"> <h2>Modal Component</h2> <h3>Basic Usage</h3> <div style="display: flex; gap: 12px; flex-wrap: wrap;"> <nat-button id="modal-basic-trigger">Open Basic Modal</nat-button> <nat-modal id="modal-basic"> <div slot="header">Modal Title</div> <p style="margin: 0;">This is a basic modal dialog.</p> <div slot="footer"> <nat-button variant="ghost" id="modal-basic-cancel">Cancel</nat-button> <nat-button variant="primary" id="modal-basic-ok">OK</nat-button> </div> </nat-modal> </div> <h3>Sizes</h3> <div style="display: flex; gap: 12px; flex-wrap: wrap;"> <nat-button id="modal-sm-trigger" size="sm">Small</nat-button> <nat-modal id="modal-sm" size="sm"> <div slot="header">Small Modal</div> <p style="margin: 0;">This is a small modal (400px max-width).</p> <div slot="footer"> <nat-button size="sm" id="modal-sm-close">Close</nat-button> </div> </nat-modal> <nat-button id="modal-md-trigger">Medium</nat-button> <nat-modal id="modal-md" size="md"> <div slot="header">Medium Modal</div> <p style="margin: 0;">This is a medium modal (600px max-width).</p> <div slot="footer"> <nat-button id="modal-md-close">Close</nat-button> </div> </nat-modal> <nat-button id="modal-lg-trigger" size="lg">Large</nat-button> <nat-modal id="modal-lg" size="lg"> <div slot="header">Large Modal</div> <p style="margin: 0;">This is a large modal (800px max-width).</p> <div slot="footer"> <nat-button size="lg" id="modal-lg-close">Close</nat-button> </div> </nat-modal> </div> <h3>Centered</h3> <nat-button id="modal-centered-trigger">Centered Modal</nat-button> <nat-modal id="modal-centered" centered=""> <div slot="header">Centered Modal</div> <p style="margin: 0;">This modal is vertically centered.</p> <div slot="footer"> <nat-button id="modal-centered-close">Close</nat-button> </div> </nat-modal> <h3>Without Close Button</h3> <nat-button id="modal-no-close-trigger" variant="secondary">No Close Button</nat-button> <nat-modal id="modal-no-close" closable="false" close-on-backdrop="false"> <div slot="header">Confirm Action</div> <p style="margin: 0;">You must choose an option to proceed.</p> <div slot="footer"> <nat-button variant="ghost" id="modal-no-close-cancel">Cancel</nat-button> <nat-button variant="primary" id="modal-no-close-confirm">Confirm</nat-button> </div> </nat-modal> <h3>Long Content (Scrollable)</h3> <nat-button id="modal-scroll-trigger">Long Content</nat-button> <nat-modal id="modal-scroll"> <div slot="header">Terms and Conditions</div> <div> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p> <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p> <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p> <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> </div> <div slot="footer"> <nat-button variant="ghost" id="modal-scroll-decline">Decline</nat-button> <nat-button variant="primary" id="modal-scroll-accept">Accept</nat-button> </div> </nat-modal> <h3>Form Example</h3> <nat-button id="modal-form-trigger" variant="primary">Create Account</nat-button> <nat-modal id="modal-form"> <div slot="header">Create New Account</div> <div style="display: flex; flex-direction: column; gap: 16px;"> <nat-input label="Full Name" placeholder="John Doe"></nat-input> <nat-input label="Email" type="email" placeholder="john@example.com"></nat-input> <nat-input label="Password" type="password" placeholder="••••••••"></nat-input> <nat-checkbox>I agree to the terms and conditions</nat-checkbox> </div> <div slot="footer"> <nat-button variant="ghost" id="modal-form-cancel">Cancel</nat-button> <nat-button variant="primary" id="modal-form-submit">Create Account</nat-button> </div> </nat-modal> <h3>Confirmation Dialog</h3> <nat-button id="modal-confirm-trigger" variant="danger">Delete Item</nat-button> <nat-modal id="modal-confirm" size="sm" centered=""> <div slot="header">Confirm Deletion</div> <nat-alert variant="warning" show-icon="true"> This action cannot be undone. Are you sure you want to delete this item? </nat-alert> <div slot="footer"> <nat-button variant="ghost" id="modal-confirm-cancel">Cancel</nat-button> <nat-button variant="danger" id="modal-confirm-delete">Delete</nat-button> </div> </nat-modal> </div> <script>
+      /**
+       * NAT-UI Demo Scripts
+       * Consolidated component event handlers and demo utilities
+       */
 
-      const selectEl = document.querySelector('nat-select');
-      selectEl.options = options;
-      selectEl.addEventListener('natChange', e => {
-        console.log('Selected:', e.detail);
-      });
-    </script> <script>
-      // Initialize icon libraries for dev mode
-      (function () {
+      // ============================================================================
+      // ICON LIBRARIES INITIALIZATION
+      // ============================================================================
+
+      (function initIconLibraries() {
         // Ensure global registry exists
         if (!window.__iconLibraries) {
           window.__iconLibraries = new Map();
@@ -211,4 +335,254 @@
 
         console.log('✅ Icon libraries initialized:', window.__iconLibraries.size, 'libraries');
       })();
+
+      // ============================================================================
+      // MODAL COMPONENTS
+      // ============================================================================
+
+      function initModals() {
+        // Basic modal
+        document.getElementById('modal-basic-trigger')?.addEventListener('click', () => {
+          document.getElementById('modal-basic').open = true;
+        });
+        document.getElementById('modal-basic-cancel')?.addEventListener('click', () => {
+          document.getElementById('modal-basic').open = false;
+        });
+        document.getElementById('modal-basic-ok')?.addEventListener('click', () => {
+          document.getElementById('modal-basic').open = false;
+        });
+
+        // Size modals
+        ['sm', 'md', 'lg'].forEach(size => {
+          document.getElementById(`modal-${size}-trigger`)?.addEventListener('click', () => {
+            document.getElementById(`modal-${size}`).open = true;
+          });
+          document.getElementById(`modal-${size}-close`)?.addEventListener('click', () => {
+            document.getElementById(`modal-${size}`).open = false;
+          });
+        });
+
+        // Centered modal
+        document.getElementById('modal-centered-trigger')?.addEventListener('click', () => {
+          document.getElementById('modal-centered').open = true;
+        });
+        document.getElementById('modal-centered-close')?.addEventListener('click', () => {
+          document.getElementById('modal-centered').open = false;
+        });
+
+        // No close button modal
+        document.getElementById('modal-no-close-trigger')?.addEventListener('click', () => {
+          document.getElementById('modal-no-close').open = true;
+        });
+        document.getElementById('modal-no-close-cancel')?.addEventListener('click', () => {
+          document.getElementById('modal-no-close').open = false;
+        });
+        document.getElementById('modal-no-close-confirm')?.addEventListener('click', () => {
+          document.getElementById('modal-no-close').open = false;
+        });
+
+        // Scroll modal
+        document.getElementById('modal-scroll-trigger')?.addEventListener('click', () => {
+          document.getElementById('modal-scroll').open = true;
+        });
+        document.getElementById('modal-scroll-decline')?.addEventListener('click', () => {
+          document.getElementById('modal-scroll').open = false;
+        });
+        document.getElementById('modal-scroll-accept')?.addEventListener('click', () => {
+          document.getElementById('modal-scroll').open = false;
+        });
+
+        // Form modal
+        document.getElementById('modal-form-trigger')?.addEventListener('click', () => {
+          document.getElementById('modal-form').open = true;
+        });
+        document.getElementById('modal-form-cancel')?.addEventListener('click', () => {
+          document.getElementById('modal-form').open = false;
+        });
+        document.getElementById('modal-form-submit')?.addEventListener('click', () => {
+          console.log('Form submitted');
+          document.getElementById('modal-form').open = false;
+        });
+
+        // Confirm modal
+        document.getElementById('modal-confirm-trigger')?.addEventListener('click', () => {
+          document.getElementById('modal-confirm').open = true;
+        });
+        document.getElementById('modal-confirm-cancel')?.addEventListener('click', () => {
+          document.getElementById('modal-confirm').open = false;
+        });
+        document.getElementById('modal-confirm-delete')?.addEventListener('click', () => {
+          console.log('Item deleted');
+          document.getElementById('modal-confirm').open = false;
+        });
+
+        // Modal event listeners
+        document.querySelectorAll('nat-modal').forEach(modal => {
+          modal.addEventListener('natOpen', () => {
+            console.log('Modal opened');
+          });
+          modal.addEventListener('natClose', () => {
+            console.log('Modal closed');
+          });
+        });
+      }
+
+      // ============================================================================
+      // ALERT COMPONENTS
+      // ============================================================================
+
+      function initAlerts() {
+        document.querySelectorAll('nat-alert').forEach(alert => {
+          alert.addEventListener('natClose', () => {
+            console.log('Alert closed');
+          });
+        });
+      }
+
+      // ============================================================================
+      // SWITCH COMPONENTS
+      // ============================================================================
+
+      function initSwitches() {
+        document.querySelectorAll('nat-switch').forEach(switchEl => {
+          switchEl.addEventListener('natChange', e => {
+            console.log('Switch changed:', e.detail);
+          });
+        });
+
+        // Dark mode toggle example
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        if (darkModeToggle) {
+          darkModeToggle.addEventListener('natChange', e => {
+            if (e.detail.checked) {
+              document.documentElement.style.colorScheme = 'dark';
+            } else {
+              document.documentElement.style.colorScheme = 'light';
+            }
+          });
+        }
+      }
+
+      // ============================================================================
+      // RADIO COMPONENTS
+      // ============================================================================
+
+      function initRadios() {
+        document.querySelectorAll('nat-radio').forEach(radio => {
+          radio.addEventListener('natChange', e => {
+            console.log('Radio changed:', e.detail);
+          });
+        });
+      }
+
+      // ============================================================================
+      // SELECT COMPONENTS
+      // ============================================================================
+
+      function initSelects() {
+        const options = [
+          { value: 'option1', label: 'Option 1' },
+          { value: 'option2', label: 'Option 2' },
+          { value: 'option3', label: 'Option 3', disabled: true },
+          { value: 'option4', label: 'Option 4' },
+        ];
+
+        const selectEl = document.querySelector('nat-select');
+        if (selectEl) {
+          selectEl.options = options;
+          selectEl.addEventListener('natChange', e => {
+            console.log('Selected:', e.detail);
+          });
+        }
+      }
+
+      // ============================================================================
+      // GLOBAL INITIALIZATION
+      // ============================================================================
+
+      document.addEventListener('DOMContentLoaded', () => {
+        console.log('🚀 NAT-UI Demo loaded');
+
+        // Initialize all components
+        initModals();
+        initAlerts();
+        initSwitches();
+        initRadios();
+        initSelects();
+
+        console.log('✅ All components initialized');
+      });
+
+      // ============================================================================
+      // UTILITY FUNCTIONS
+      // ============================================================================
+
+      /**
+       * Theme switcher helper
+       * @param {string} theme - 'default' or 'mist'
+       */
+      window.setTheme = theme => {
+        if (theme === 'default') {
+          document.documentElement.removeAttribute('data-theme');
+        } else {
+          document.documentElement.setAttribute('data-theme', theme);
+        }
+        console.log(`🎨 Theme changed to: ${theme}`);
+      };
+
+      // ============================================================================
+      // THEME SWITCHER
+      // ============================================================================
+
+      function setTheme(theme) {
+        const html = document.documentElement;
+        const themeLabel = document.getElementById('current-theme-label');
+
+        // Remove active class from all options
+        document.querySelectorAll('.theme-option').forEach(option => {
+          option.classList.remove('active');
+        });
+
+        // Add active class to selected option
+        const selectedOption = document.querySelector(`.theme-option[data-theme="${theme}"]`);
+        if (selectedOption) {
+          selectedOption.classList.add('active');
+        }
+
+        switch (theme) {
+          case 'system':
+            html.removeAttribute('data-theme');
+            html.style.colorScheme = '';
+            themeLabel.textContent = 'System';
+            break;
+
+          case 'light':
+            html.removeAttribute('data-theme');
+            html.style.colorScheme = 'light';
+            themeLabel.textContent = 'Light';
+            break;
+
+          case 'dark':
+            html.removeAttribute('data-theme');
+            html.style.colorScheme = 'dark';
+            themeLabel.textContent = 'Dark';
+            break;
+
+          case 'mist':
+            html.setAttribute('data-theme', 'mist');
+            html.style.colorScheme = 'light';
+            themeLabel.textContent = 'Mist';
+            break;
+        }
+
+        // Save preference to localStorage
+        localStorage.setItem('nat-ui-theme', theme);
+        console.log(`🎨 Theme changed to: ${theme}`);
+      }
+
+      // Load saved theme on page load
+      document.addEventListener('DOMContentLoaded', () => {
+        const savedTheme = localStorage.getItem('nat-ui-theme') || 'system';
+        setTheme(savedTheme);
+      });
     </script> </body></html>
