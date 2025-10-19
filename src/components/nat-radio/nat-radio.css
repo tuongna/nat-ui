@@ -1,0 +1,152 @@
+:host {
+  display: inline-block;
+}
+
+.radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--nat-space-2);
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  font-family: var(--nat-font-sans);
+  color: var(--nat-text-primary);
+  transition: var(--nat-transition-base);
+}
+
+.radio--disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Hidden native input */
+.radio__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Custom radio control */
+.radio__control {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: var(--nat-radius-full);
+  background: var(--nat-bg-elevated);
+  border: 2px solid var(--nat-border-base);
+  transition: all var(--nat-transition-base);
+  box-shadow: var(--nat-shadow-sm);
+}
+
+/* Radio dot */
+.radio__dot {
+  display: block;
+  border-radius: var(--nat-radius-full);
+  background: var(--nat-primary);
+  transform: scale(0);
+  transition: transform var(--nat-transition-smooth);
+}
+
+/* Sizes */
+.radio--sm .radio__control {
+  width: 16px;
+  height: 16px;
+}
+
+.radio--sm .radio__dot {
+  width: 8px;
+  height: 8px;
+}
+
+.radio--sm .radio__label {
+  font-size: var(--nat-text-sm);
+}
+
+.radio--md .radio__control {
+  width: 20px;
+  height: 20px;
+}
+
+.radio--md .radio__dot {
+  width: 10px;
+  height: 10px;
+}
+
+.radio--md .radio__label {
+  font-size: var(--nat-text-base);
+}
+
+.radio--lg .radio__control {
+  width: 24px;
+  height: 24px;
+}
+
+.radio--lg .radio__dot {
+  width: 12px;
+  height: 12px;
+}
+
+.radio--lg .radio__label {
+  font-size: var(--nat-text-lg);
+}
+
+/* Label position */
+.radio--label-left {
+  flex-direction: row-reverse;
+}
+
+/* Checked state */
+.radio--checked .radio__control {
+  background: var(--nat-primary-lighter);
+  border-color: var(--nat-primary);
+}
+
+.radio--checked .radio__dot {
+  transform: scale(1);
+}
+
+/* Focus state */
+.radio--focus .radio__control {
+  outline: 2px solid var(--nat-focus-ring);
+  outline-offset: 2px;
+}
+
+/* Hover state */
+.radio:hover:not(.radio--disabled) .radio__control {
+  border-color: var(--nat-border-hover);
+}
+
+.radio--checked:hover:not(.radio--disabled) .radio__control {
+  border-color: var(--nat-primary-hover);
+  background: var(--nat-primary-light);
+}
+
+/* Disabled state */
+.radio--disabled .radio__control {
+  background: var(--nat-bg-subtle);
+  border-color: var(--nat-border-disabled);
+}
+
+.radio--disabled .radio__dot {
+  background: var(--nat-interactive-disabled);
+}
+
+/* Label styles */
+.radio__label {
+  line-height: var(--nat-leading-normal);
+  color: inherit;
+}
+
+.radio__label:empty {
+  display: none;
+}
+
+/* Mist theme */
+:host-context(:root[data-theme='mist']) .radio__control {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}

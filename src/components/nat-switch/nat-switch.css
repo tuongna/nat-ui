@@ -1,0 +1,244 @@
+:host {
+  display: inline-block;
+}
+
+.switch {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--nat-space-3);
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  font-family: var(--nat-font-sans);
+  color: var(--nat-text-primary);
+}
+
+.switch--disabled,
+.switch--loading {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Hidden native input */
+.switch__input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Track (background) */
+.switch__track {
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+  border-radius: var(--nat-radius-full);
+  background: var(--nat-gray-300);
+  transition: background-color var(--nat-transition-smooth);
+  box-shadow: var(--nat-shadow-inner);
+}
+
+/* Thumb (slider) */
+.switch__thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--nat-radius-full);
+  background: var(--nat-white);
+  box-shadow: var(--nat-shadow-md);
+  transition: all var(--nat-transition-smooth);
+  will-change: transform;
+}
+
+/* Sizes */
+.switch--sm .switch__track {
+  width: 32px;
+  height: 18px;
+}
+
+.switch--sm .switch__thumb {
+  width: 14px;
+  height: 14px;
+}
+
+.switch--sm.switch--checked .switch__thumb {
+  transform: translateX(14px);
+}
+
+.switch--sm .switch__label {
+  font-size: var(--nat-text-sm);
+}
+
+.switch--md .switch__track {
+  width: 44px;
+  height: 24px;
+}
+
+.switch--md .switch__thumb {
+  width: 20px;
+  height: 20px;
+}
+
+.switch--md.switch--checked .switch__thumb {
+  transform: translateX(20px);
+}
+
+.switch--md .switch__label {
+  font-size: var(--nat-text-base);
+}
+
+.switch--lg .switch__track {
+  width: 56px;
+  height: 32px;
+}
+
+.switch--lg .switch__thumb {
+  width: 28px;
+  height: 28px;
+}
+
+.switch--lg.switch--checked .switch__thumb {
+  transform: translateX(24px);
+}
+
+.switch--lg .switch__label {
+  font-size: var(--nat-text-lg);
+}
+
+/* Label position */
+.switch--label-left {
+  flex-direction: row-reverse;
+}
+
+/* Color variants - checked state */
+.switch--primary.switch--checked .switch__track {
+  background: var(--nat-primary);
+}
+
+.switch--success.switch--checked .switch__track {
+  background: var(--nat-success);
+}
+
+.switch--warning.switch--checked .switch__track {
+  background: var(--nat-warning);
+}
+
+.switch--danger.switch--checked .switch__track {
+  background: var(--nat-error);
+}
+
+/* Focus state */
+.switch--focus .switch__track {
+  outline: 2px solid var(--nat-focus-ring);
+  outline-offset: 2px;
+}
+
+/* Hover state */
+.switch:hover:not(.switch--disabled):not(.switch--loading) .switch__track {
+  background: var(--nat-gray-400);
+}
+
+.switch--primary.switch--checked:hover:not(.switch--disabled):not(.switch--loading) .switch__track {
+  background: var(--nat-primary-hover);
+}
+
+.switch--success.switch--checked:hover:not(.switch--disabled):not(.switch--loading) .switch__track {
+  background: var(--nat-success-hover);
+}
+
+.switch--warning.switch--checked:hover:not(.switch--disabled):not(.switch--loading) .switch__track {
+  background: var(--nat-warning-hover);
+}
+
+.switch--danger.switch--checked:hover:not(.switch--disabled):not(.switch--loading) .switch__track {
+  background: var(--nat-error-hover);
+}
+
+/* Disabled state */
+.switch--disabled .switch__track {
+  background: var(--nat-bg-subtle);
+}
+
+.switch--disabled .switch__thumb {
+  box-shadow: none;
+}
+
+/* Loading spinner */
+.switch__spinner {
+  width: 12px;
+  height: 12px;
+  animation: spin 0.8s linear infinite;
+}
+
+.switch--sm .switch__spinner {
+  width: 10px;
+  height: 10px;
+}
+
+.switch--lg .switch__spinner {
+  width: 14px;
+  height: 14px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.switch__spinner circle {
+  stroke-dasharray: 38;
+  stroke-dashoffset: 10;
+  stroke-linecap: round;
+  animation: spinner-dash 1.5s ease-in-out infinite;
+}
+
+@keyframes spinner-dash {
+  0% {
+    stroke-dashoffset: 38;
+  }
+  50% {
+    stroke-dashoffset: 10;
+  }
+  100% {
+    stroke-dashoffset: 38;
+  }
+}
+
+/* Label styles */
+.switch__label {
+  line-height: var(--nat-leading-normal);
+  color: inherit;
+}
+
+.switch__label:empty {
+  display: none;
+}
+
+/* Mist theme */
+:host-context(:root[data-theme='mist']) .switch__track {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Dark mode adjustments */
+@media (prefers-color-scheme: dark) {
+  .switch__thumb {
+    background: var(--nat-gray-200);
+  }
+
+  .switch__track {
+    background: var(--nat-gray-700);
+  }
+
+  .switch:hover:not(.switch--disabled):not(.switch--loading) .switch__track {
+    background: var(--nat-gray-600);
+  }
+}
