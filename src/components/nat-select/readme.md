@@ -54,6 +54,19 @@ Type: `Promise<void>`
 
 
 
+## Dependencies
+
+### Used by
+
+ - [nat-pagination](../nat-pagination)
+
+### Graph
+```mermaid
+graph TD;
+  nat-pagination --> nat-select
+  style nat-select fill:#f9f,stroke:#333,stroke-width:4px
+```
+
 ----------------------------------------------
 
 

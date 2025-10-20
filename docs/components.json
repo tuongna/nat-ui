@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-10-20T16:40:50",
+  "timestamp": "2025-10-20T17:34:12",
   "compiler": {
     "name": "@stencil/core",
     "version": "4.38.0",
@@ -10,6 +10,7 @@
       "filePath": "src/components/nat-alert/nat-alert.tsx",
       "encapsulation": "shadow",
       "tag": "nat-alert",
+      "readme": "# nat-alert\n\n\n",
       "docs": "Alert component for displaying important messages",
       "docsTags": [
         {
@@ -1325,6 +1326,7 @@
       "filePath": "src/components/nat-checkbox-group/nat-checkbox-group.tsx",
       "encapsulation": "shadow",
       "tag": "nat-checkbox-group",
+      "readme": "# nat-checkbox-group\n\n\n",
       "docs": "Checkbox group for multiple selections",
       "docsTags": [
         {
@@ -1988,11 +1990,19 @@
       ],
       "parts": [],
       "dependents": [
-        "nat-checkbox"
+        "nat-checkbox",
+        "nat-tabs",
+        "nat-toast"
       ],
       "dependencies": [],
       "dependencyGraph": {
         "nat-checkbox": [
+          "nat-icon"
+        ],
+        "nat-tabs": [
+          "nat-icon"
+        ],
+        "nat-toast": [
           "nat-icon"
         ]
       }
@@ -2817,6 +2827,7 @@
       "filePath": "src/components/nat-logo/nat-logo.tsx",
       "encapsulation": "shadow",
       "tag": "nat-logo",
+      "readme": "# nat-logo\n\n\n",
       "docs": "NAT-UI logo with liquid glass effect",
       "docsTags": [],
       "usage": {},
@@ -2923,6 +2934,7 @@
       "filePath": "src/components/nat-modal/nat-modal.tsx",
       "encapsulation": "shadow",
       "tag": "nat-modal",
+      "readme": "# nat-modal\n\n\n",
       "docs": "Modal dialog component",
       "docsTags": [
         {
@@ -3287,9 +3299,748 @@
       "dependencyGraph": {}
     },
     {
+      "filePath": "src/components/nat-pagination/nat-pagination.tsx",
+      "encapsulation": "shadow",
+      "tag": "nat-pagination",
+      "docs": "Pagination component for page navigation",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "- Custom content (optional)"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "compact",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "compact",
+          "reflectToAttr": false,
+          "docs": "Compact mode",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "current",
+          "type": "number",
+          "complexType": {
+            "original": "number",
+            "resolved": "number",
+            "references": {}
+          },
+          "mutable": true,
+          "attr": "current",
+          "reflectToAttr": false,
+          "docs": "Current active page",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "1"
+            }
+          ],
+          "default": "1",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Disabled state",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "labelFirst",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "label-first",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'First'"
+            }
+          ],
+          "default": "'First'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "labelLast",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "label-last",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'Last'"
+            }
+          ],
+          "default": "'Last'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "labelNext",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "label-next",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'Next'"
+            }
+          ],
+          "default": "'Next'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "labelOf",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "label-of",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'of'"
+            }
+          ],
+          "default": "'of'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "labelPage",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "label-page",
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'Page'"
+            }
+          ],
+          "default": "'Page'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "labelPrev",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "label-prev",
+          "reflectToAttr": false,
+          "docs": "i18n",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'Prev'"
+            }
+          ],
+          "default": "'Prev'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "pageSize",
+          "type": "number",
+          "complexType": {
+            "original": "number",
+            "resolved": "number",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "page-size",
+          "reflectToAttr": false,
+          "docs": "Current size",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "10"
+            }
+          ],
+          "default": "10",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "pageSizeOptions",
+          "type": "number[]",
+          "complexType": {
+            "original": "number[]",
+            "resolved": "number[]",
+            "references": {}
+          },
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Show page size selector",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "[10, 20, 50]"
+            }
+          ],
+          "default": "[10, 20, 50]",
+          "values": [
+            {
+              "type": "number[]"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "showEnds",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "show-ends",
+          "reflectToAttr": false,
+          "docs": "Show first/last buttons",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "true"
+            }
+          ],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "showJump",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "show-jump",
+          "reflectToAttr": false,
+          "docs": "Show jump-to-page",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "siblingCount",
+          "type": "number",
+          "complexType": {
+            "original": "number",
+            "resolved": "number",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "sibling-count",
+          "reflectToAttr": false,
+          "docs": "Number of page buttons to display around current",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "1"
+            }
+          ],
+          "default": "1",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "total",
+          "type": "number",
+          "complexType": {
+            "original": "number",
+            "resolved": "number",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "total",
+          "reflectToAttr": false,
+          "docs": "Total number of pages",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "1"
+            }
+          ],
+          "default": "1",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "natChange",
+          "detail": "{ page: number; pageSize: number; }",
+          "bubbles": true,
+          "complexType": {
+            "original": "{ page: number; pageSize: number }",
+            "resolved": "{ page: number; pageSize: number; }",
+            "references": {}
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when page changes",
+          "docsTags": []
+        },
+        {
+          "event": "natPageSizeChange",
+          "detail": "{ pageSize: number; }",
+          "bubbles": true,
+          "complexType": {
+            "original": "{ pageSize: number }",
+            "resolved": "{ pageSize: number; }",
+            "references": {}
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when page size changes",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [
+        {
+          "name": "",
+          "docs": "Custom content (optional)"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "nat-select"
+      ],
+      "dependencyGraph": {
+        "nat-pagination": [
+          "nat-select"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/nat-popover/nat-popover.tsx",
+      "encapsulation": "shadow",
+      "tag": "nat-popover",
+      "docs": "Popover component for contextual overlays",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "- Popover content"
+        },
+        {
+          "name": "slot",
+          "text": "trigger - Trigger element"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "closeOnOutside",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "close-on-outside",
+          "reflectToAttr": false,
+          "docs": "Whether to close when clicking outside",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "true"
+            }
+          ],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "open",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": true,
+          "attr": "open",
+          "reflectToAttr": false,
+          "docs": "When true, shows the popover",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "placement",
+          "type": "\"bottom\" | \"left\" | \"right\" | \"top\"",
+          "complexType": {
+            "original": "'top' | 'bottom' | 'left' | 'right'",
+            "resolved": "\"bottom\" | \"left\" | \"right\" | \"top\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "placement",
+          "reflectToAttr": false,
+          "docs": "Placement of the popover relative to trigger",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'bottom'"
+            }
+          ],
+          "default": "'bottom'",
+          "values": [
+            {
+              "value": "bottom",
+              "type": "string"
+            },
+            {
+              "value": "left",
+              "type": "string"
+            },
+            {
+              "value": "right",
+              "type": "string"
+            },
+            {
+              "value": "top",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "showArrow",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "show-arrow",
+          "reflectToAttr": false,
+          "docs": "Whether to show arrow",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "true"
+            }
+          ],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "size",
+          "type": "\"lg\" | \"md\" | \"sm\"",
+          "complexType": {
+            "original": "'sm' | 'md' | 'lg'",
+            "resolved": "\"lg\" | \"md\" | \"sm\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "Popover size",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'md'"
+            }
+          ],
+          "default": "'md'",
+          "values": [
+            {
+              "value": "lg",
+              "type": "string"
+            },
+            {
+              "value": "md",
+              "type": "string"
+            },
+            {
+              "value": "sm",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "natClose",
+          "detail": "void",
+          "bubbles": true,
+          "complexType": {
+            "original": "void",
+            "resolved": "void",
+            "references": {}
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when popover closes",
+          "docsTags": []
+        },
+        {
+          "event": "natOpen",
+          "detail": "void",
+          "bubbles": true,
+          "complexType": {
+            "original": "void",
+            "resolved": "void",
+            "references": {}
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when popover opens",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "click",
+          "target": "document",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [
+        {
+          "name": "",
+          "docs": "Popover content"
+        },
+        {
+          "name": "trigger",
+          "docs": "Trigger element"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
       "filePath": "src/components/nat-radio/nat-radio.tsx",
       "encapsulation": "shadow",
       "tag": "nat-radio",
+      "readme": "# nat-radio\n\n\n",
       "docs": "Radio button for single selection from multiple options",
       "docsTags": [
         {
@@ -3994,9 +4745,15 @@
       "styles": [],
       "slots": [],
       "parts": [],
-      "dependents": [],
+      "dependents": [
+        "nat-pagination"
+      ],
       "dependencies": [],
-      "dependencyGraph": {}
+      "dependencyGraph": {
+        "nat-pagination": [
+          "nat-select"
+        ]
+      }
     },
     {
       "filePath": "src/components/nat-spinner/nat-spinner.tsx",
@@ -4095,6 +4852,7 @@
       "filePath": "src/components/nat-switch/nat-switch.tsx",
       "encapsulation": "shadow",
       "tag": "nat-switch",
+      "readme": "# nat-switch\n\n\n",
       "docs": "Toggle switch for binary states",
       "docsTags": [
         {
@@ -4386,6 +5144,232 @@
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/nat-tabs/nat-tabs.tsx",
+      "encapsulation": "shadow",
+      "tag": "nat-tabs",
+      "docs": "Tabs navigation with animated indicator",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "- Tab panel content (one element per tab, use slot=\"panel-{tab.value}\")"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "color",
+          "type": "\"danger\" | \"info\" | \"primary\" | \"success\" | \"warning\"",
+          "complexType": {
+            "original": "'primary' | 'success' | 'info' | 'warning' | 'danger'",
+            "resolved": "\"danger\" | \"info\" | \"primary\" | \"success\" | \"warning\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "color",
+          "reflectToAttr": false,
+          "docs": "Color variant",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'primary'"
+            }
+          ],
+          "default": "'primary'",
+          "values": [
+            {
+              "value": "danger",
+              "type": "string"
+            },
+            {
+              "value": "info",
+              "type": "string"
+            },
+            {
+              "value": "primary",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "warning",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "size",
+          "type": "\"lg\" | \"md\" | \"sm\"",
+          "complexType": {
+            "original": "'sm' | 'md' | 'lg'",
+            "resolved": "\"lg\" | \"md\" | \"sm\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "Size variant",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'md'"
+            }
+          ],
+          "default": "'md'",
+          "values": [
+            {
+              "value": "lg",
+              "type": "string"
+            },
+            {
+              "value": "md",
+              "type": "string"
+            },
+            {
+              "value": "sm",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "tabs",
+          "type": "TabItem[]",
+          "complexType": {
+            "original": "TabItem[]",
+            "resolved": "TabItem[]",
+            "references": {
+              "TabItem": {
+                "location": "local",
+                "path": "D:/Proj/nat-ui-workspace/nat-ui/src/components/nat-tabs/nat-tabs.tsx",
+                "id": "src/components/nat-tabs/nat-tabs.tsx::TabItem"
+              }
+            }
+          },
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Tab items",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "[]"
+            }
+          ],
+          "default": "[]",
+          "values": [
+            {
+              "type": "TabItem[]"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "Current active tab value",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "vertical",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "vertical",
+          "reflectToAttr": false,
+          "docs": "Vertical mode",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "natChange",
+          "detail": "{ value: string; }",
+          "bubbles": true,
+          "complexType": {
+            "original": "{ value: string }",
+            "resolved": "{ value: string; }",
+            "references": {}
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when tab is changed",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "keydown",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [
+        {
+          "name": "",
+          "docs": "Tab panel content (one element per tab, use slot=\"panel-{tab.value}\")"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "nat-icon"
+      ],
+      "dependencyGraph": {
+        "nat-tabs": [
+          "nat-icon"
+        ]
+      }
     },
     {
       "filePath": "src/components/nat-textarea/nat-textarea.tsx",
@@ -5102,9 +6086,314 @@
       "dependencyGraph": {}
     },
     {
+      "filePath": "src/components/nat-toast/nat-toast.tsx",
+      "encapsulation": "shadow",
+      "tag": "nat-toast",
+      "docs": "Toast component for transient notifications",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "- Custom content (message, actions)"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "closable",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "closable",
+          "reflectToAttr": false,
+          "docs": "Show close (X) button",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "true"
+            }
+          ],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "closeLabel",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "close-label",
+          "reflectToAttr": false,
+          "docs": "ARIA label for close button",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'Close toast'"
+            }
+          ],
+          "default": "'Close toast'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "duration",
+          "type": "number",
+          "complexType": {
+            "original": "number",
+            "resolved": "number",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "duration",
+          "reflectToAttr": false,
+          "docs": "Dismiss automatically after X ms (0 = sticky)",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "3500"
+            }
+          ],
+          "default": "3500",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "message",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "message",
+          "reflectToAttr": false,
+          "docs": "Toast message (as fallback if not using slot)",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "open",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": true,
+          "attr": "open",
+          "reflectToAttr": false,
+          "docs": "Visiblity control",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "position",
+          "type": "\"bottom-center\" | \"bottom-left\" | \"bottom-right\" | \"top-center\" | \"top-left\" | \"top-right\"",
+          "complexType": {
+            "original": "'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' | 'top-center' | 'bottom-center'",
+            "resolved": "\"bottom-center\" | \"bottom-left\" | \"bottom-right\" | \"top-center\" | \"top-left\" | \"top-right\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "position",
+          "reflectToAttr": false,
+          "docs": "Position on viewport",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'bottom-right'"
+            }
+          ],
+          "default": "'bottom-right'",
+          "values": [
+            {
+              "value": "bottom-center",
+              "type": "string"
+            },
+            {
+              "value": "bottom-left",
+              "type": "string"
+            },
+            {
+              "value": "bottom-right",
+              "type": "string"
+            },
+            {
+              "value": "top-center",
+              "type": "string"
+            },
+            {
+              "value": "top-left",
+              "type": "string"
+            },
+            {
+              "value": "top-right",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "variant",
+          "type": "\"danger\" | \"info\" | \"success\" | \"warning\"",
+          "complexType": {
+            "original": "'info' | 'success' | 'warning' | 'danger'",
+            "resolved": "\"danger\" | \"info\" | \"success\" | \"warning\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "Toast type variant",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'info'"
+            }
+          ],
+          "default": "'info'",
+          "values": [
+            {
+              "value": "danger",
+              "type": "string"
+            },
+            {
+              "value": "info",
+              "type": "string"
+            },
+            {
+              "value": "success",
+              "type": "string"
+            },
+            {
+              "value": "warning",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "close",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "complexType": {
+            "signature": "() => Promise<void>",
+            "parameters": [],
+            "references": {
+              "Promise": {
+                "location": "global",
+                "id": "global::Promise"
+              }
+            },
+            "return": "Promise<void>"
+          },
+          "signature": "close() => Promise<void>",
+          "parameters": [],
+          "docs": "",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "natClose",
+          "detail": "void",
+          "bubbles": true,
+          "complexType": {
+            "original": "void",
+            "resolved": "void",
+            "references": {}
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when toast closes",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [
+        {
+          "name": "",
+          "docs": "Custom content (message, actions)"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "nat-icon"
+      ],
+      "dependencyGraph": {
+        "nat-toast": [
+          "nat-icon"
+        ]
+      }
+    },
+    {
       "filePath": "src/components/nat-tooltip/nat-tooltip.tsx",
       "encapsulation": "shadow",
       "tag": "nat-tooltip",
+      "readme": "# nat-tooltip\n\n\n",
       "docs": "Tooltip component for displaying helpful information on hover",
       "docsTags": [
         {
@@ -5451,6 +6740,11 @@
       "declaration": "export type SpinnerSize = 'sm' | 'md' | 'lg';",
       "docstring": "",
       "path": "src/components/nat-spinner/nat-spinner.tsx"
+    },
+    "src/components/nat-tabs/nat-tabs.tsx::TabItem": {
+      "declaration": "export interface TabItem {\n  value: string;\n  label: string;\n  icon?: string;\n  disabled?: boolean;\n}",
+      "docstring": "",
+      "path": "src/components/nat-tabs/nat-tabs.tsx"
     }
   }
 }

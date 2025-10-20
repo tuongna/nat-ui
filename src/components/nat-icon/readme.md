@@ -33,11 +33,15 @@ Supports loading icons from registered libraries or direct SVG URLs.
 ### Used by
 
  - [nat-checkbox](../nat-checkbox)
+ - [nat-tabs](../nat-tabs)
+ - [nat-toast](../nat-toast)
 
 ### Graph
 ```mermaid
 graph TD;
   nat-checkbox --> nat-icon
+  nat-tabs --> nat-icon
+  nat-toast --> nat-icon
   style nat-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
