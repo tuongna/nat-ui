@@ -336,12 +336,6 @@
             </div>
           </div>
         </div>
-
-        <!-- Current Theme Indicator -->
-        <nat-divider></nat-divider>
-        <div style="text-align: center; color: var(--nat-text-secondary); font-size: 0.875rem">
-          Current theme: <strong id="current-theme-label" style="color: var(--nat-primary)">System</strong>
-        </div>
       </nat-card>
     </div>
 
@@ -1224,6 +1218,80 @@
         </div>
       </nat-modal>
     </div>
+    <div class="section">
+      <h2>Checkbox Group Component</h2>
+
+      <h3>Basic Usage</h3>
+      <nat-checkbox-group name="permissions" label="Permissions" description="Select the permissions for this user" id="permissions-basic"> </nat-checkbox-group>
+
+      <h3>With Select All</h3>
+      <nat-checkbox-group name="features" label="Features" description="Choose which features to enable" show-select-all="true" id="features-group"> </nat-checkbox-group>
+
+      <h3>Horizontal Layout</h3>
+      <nat-checkbox-group name="categories" label="Categories" direction="horizontal" id="categories-group"> </nat-checkbox-group>
+
+      <h3>Sizes</h3>
+      <div style="display: grid; gap: 24px">
+        <nat-checkbox-group name="size-sm" label="Small Size" size="sm" id="size-sm-group"> </nat-checkbox-group>
+
+        <nat-checkbox-group name="size-md" label="Medium Size" size="md" id="size-md-group"> </nat-checkbox-group>
+
+        <nat-checkbox-group name="size-lg" label="Large Size" size="lg" id="size-lg-group"> </nat-checkbox-group>
+      </div>
+
+      <h3>Error State</h3>
+      <nat-checkbox-group
+        name="required-group"
+        label="Required Selection"
+        description="You must select at least one option"
+        required="true"
+        error="true"
+        error-message="Please select at least one option"
+        id="error-group"
+      >
+      </nat-checkbox-group>
+
+      <h3>Disabled</h3>
+      <nat-checkbox-group name="disabled-group" label="Disabled Group" description="This group is disabled" disabled="true" id="disabled-group"> </nat-checkbox-group>
+    </div>
+
+    <div class="section">
+      <h2>Tabs Component</h2>
+      <h3>Basic Usage</h3>
+      <nat-tabs id="tabs-demo" value="tab1"></nat-tabs>
+      <div id="tabs-demo-panels">
+        <div slot="panel-tab1">Content for Tab 1</div>
+        <div style="display: none" slot="panel-tab2">Content for Tab 2</div>
+        <div style="display: none" slot="panel-tab3">Content for Tab 3</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Pagination Component</h2>
+      <nat-pagination id="pagination-list"></nat-pagination>
+    </div>
+
+    <div class="section">
+      <h2>Toast Component</h2>
+      <nat-button id="show-toast">Show Success Toast</nat-button>
+    </div>
+
+    <div class="section">
+      <h2>Popover Component</h2>
+
+      <h3>Basic Usage</h3>
+      <nat-popover id="popover-demo" open="false" placement="top">
+        <nat-button slot="trigger">Show Popover</nat-button>
+        <div>
+          <strong>Popover Title</strong>
+          <p>
+            Custom rich content <br />
+            with <nat-button size="sm">Action</nat-button>
+          </p>
+        </div>
+      </nat-popover>
+    </div>
+
     <script>
       /**
        * NAT-UI Demo Scripts
@@ -1521,6 +1589,138 @@
         const savedTheme = localStorage.getItem('nat-ui-theme') || 'system';
         setTheme(savedTheme);
       });
+
+      // ============================================================================
+      // CHECKBOX GROUP COMPONENTS
+      // ============================================================================
+
+      function initCheckboxGroups() {
+        // Basic permissions group
+        const permissionsGroup = document.getElementById('permissions-basic');
+        if (permissionsGroup) {
+          permissionsGroup.options = [
+            { value: 'read', label: 'Read', description: 'View content and data' },
+            { value: 'write', label: 'Write', description: 'Create and edit content' },
+            { value: 'delete', label: 'Delete', description: 'Remove content and data' },
+            { value: 'admin', label: 'Admin', description: 'Full system access' },
+          ];
+          permissionsGroup.addEventListener('natChange', e => {
+            console.log('Permissions changed:', e.detail);
+          });
+        }
+
+        // Features with select all
+        const featuresGroup = document.getElementById('features-group');
+        if (featuresGroup) {
+          featuresGroup.options = [
+            { value: 'notifications', label: 'Push Notifications', description: 'Receive app notifications' },
+            { value: 'analytics', label: 'Analytics', description: 'Track usage data' },
+            { value: 'api', label: 'API Access', description: 'Use REST API endpoints' },
+            { value: 'export', label: 'Data Export', description: 'Export your data' },
+            { value: 'beta', label: 'Beta Features', description: 'Access experimental features', disabled: true },
+          ];
+          featuresGroup.addEventListener('natChange', e => {
+            console.log('Features changed:', e.detail);
+          });
+          featuresGroup.addEventListener('natSelectAll', e => {
+            console.log('Select all changed:', e.detail);
+          });
+        }
+
+        // Categories horizontal
+        const categoriesGroup = document.getElementById('categories-group');
+        if (categoriesGroup) {
+          categoriesGroup.options = [
+            { value: 'tech', label: 'Technology' },
+            { value: 'design', label: 'Design' },
+            { value: 'business', label: 'Business' },
+            { value: 'marketing', label: 'Marketing' },
+          ];
+        }
+
+        // Size examples
+        const sizeOptions = [
+          { value: 'option1', label: 'Option 1' },
+          { value: 'option2', label: 'Option 2' },
+        ];
+
+        ['sm', 'md', 'lg'].forEach(size => {
+          const group = document.getElementById(`size-${size}-group`);
+          if (group) {
+            group.options = sizeOptions;
+          }
+        });
+
+        // Error state
+        const errorGroup = document.getElementById('error-group');
+        if (errorGroup) {
+          errorGroup.options = [
+            { value: 'terms', label: 'I agree to the Terms of Service' },
+            { value: 'privacy', label: 'I agree to the Privacy Policy' },
+            { value: 'marketing', label: 'I want to receive marketing emails' },
+          ];
+        }
+
+        // Disabled
+        const disabledGroup = document.getElementById('disabled-group');
+        if (disabledGroup) {
+          disabledGroup.options = [
+            { value: 'disabled1', label: 'Disabled Option 1' },
+            { value: 'disabled2', label: 'Disabled Option 2' },
+          ];
+          disabledGroup.value = ['disabled1']; // Pre-selected
+        }
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        initCheckboxGroups();
+      });
+
+      const tabsEl = document.getElementById('tabs-demo');
+      const panelsEl = document.getElementById('tabs-demo-panels');
+      if (tabsEl) {
+        tabsEl.tabs = [
+          { value: 'tab1', label: 'Tab One', icon: 'home' },
+          { value: 'tab2', label: 'Tab Two', icon: 'user' },
+          { value: 'tab3', label: 'Tab Three', disabled: true },
+        ];
+        tabsEl.addEventListener('natChange', e => {
+          ['tab1', 'tab2', 'tab3'].forEach(tabValue => {
+            const panel = panelsEl.querySelector(`[slot="panel-${tabValue}"]`);
+
+            if (panel) {
+              panel.style.display = e.detail.value === tabValue ? 'block' : 'none';
+            }
+          });
+        });
+      }
+
+      function showToast(type, msg) {
+        // Create toast element
+        const toast = document.createElement('nat-toast');
+        toast.setAttribute('variant', type);
+        toast.setAttribute('message', msg);
+        toast.setAttribute('open', 'true');
+        toast.setAttribute('position', 'bottom-right');
+        toast.setAttribute('duration', '30000');
+        document.body.appendChild(toast);
+
+        toast.addEventListener('natClose', () => {
+          toast.remove();
+        });
+      }
+
+      // Example usage
+      document.getElementById('show-toast').onclick = () => showToast('success', 'Your changes have been saved!');
+
+      const popover = document.getElementById('popover-demo');
+      const trigger = popover.querySelector('[slot="trigger"]');
+
+      trigger.addEventListener('click', () => {
+        popover.open = !popover.open;
+      });
+      popover.addEventListener('natOpen', () => console.log('Popover open'));
+      popover.addEventListener('natClose', () => console.log('Popover close'));
     </script>
   </body>
 </html>
