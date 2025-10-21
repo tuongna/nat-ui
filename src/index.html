@@ -1292,6 +1292,23 @@
       </nat-popover>
     </div>
 
+    <div class="section">
+      <h2>Menu Component</h2>
+      <nat-menu id="menu-demo">
+        <nat-button slot="trigger">Menu</nat-button>
+      </nat-menu>
+    </div>
+
+    <div class="section">
+      <h2>Dropdown Component</h2>
+      <nat-dropdown id="dropdown-demo" label="Choose an option" clearable searchable></nat-dropdown>
+    </div>
+
+    <div class="section">
+      <h2>Stepper Component</h2>
+      <nat-stepper id="stepper-demo" clickable></nat-stepper>
+    </div>
+
     <script>
       /**
        * NAT-UI Demo Scripts
@@ -1721,6 +1738,41 @@
       });
       popover.addEventListener('natOpen', () => console.log('Popover open'));
       popover.addEventListener('natClose', () => console.log('Popover close'));
+
+      const menuDemo = document.getElementById('menu-demo');
+      menuDemo.items = [
+        { value: 'profile', label: 'Profile', icon: 'user' },
+        { value: 'settings', label: 'Settings', icon: 'settings' },
+        { separator: true },
+        { value: 'logout', label: 'Logout', icon: 'log-out', disabled: false },
+      ];
+      menuDemo.addEventListener('natSelect', e => {
+        alert('Selected: ' + e.detail.label);
+      });
+
+      const dropdown = document.getElementById('dropdown-demo');
+      dropdown.options = [
+        { value: 'javascript', label: 'JavaScript', icon: 'code' },
+        { value: 'typescript', label: 'TypeScript', icon: 'code', description: 'Typed JS' },
+        { value: 'vue', label: 'Vue.js' },
+        { value: 'react', label: 'React', disabled: true },
+        { value: 'svelte', label: 'Svelte' },
+      ];
+      dropdown.addEventListener('natChange', e => {
+        alert('You selected: ' + (e.detail.value || 'none'));
+      });
+
+      const stepper = document.getElementById('stepper-demo');
+      stepper.steps = [
+        { value: 'start', label: 'Start' },
+        { value: 'about', label: 'About', icon: 'info' },
+        { value: 'verify', label: 'Verify', error: true, description: 'Action needed' },
+        { value: 'done', label: 'Done', icon: 'check' },
+      ];
+      stepper.active = 1;
+      stepper.addEventListener('natChange', e => {
+        alert('Step changed to: ' + e.detail.value);
+      });
     </script>
   </body>
 </html>

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-10-20T17:34:12",
+  "timestamp": "2025-10-21T16:32:10",
   "compiler": {
     "name": "@stencil/core",
     "version": "4.38.0",
@@ -1832,6 +1832,365 @@
       "dependencyGraph": {}
     },
     {
+      "filePath": "src/components/nat-dropdown/nat-dropdown.tsx",
+      "encapsulation": "shadow",
+      "tag": "nat-dropdown",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "ariaLabel",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "aria-label",
+          "reflectToAttr": false,
+          "docs": "ARIA label",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "clearable",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "clearable",
+          "reflectToAttr": false,
+          "docs": "Allow clear",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "Disabled state",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Label for controlled input",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "multiple",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "multiple",
+          "reflectToAttr": false,
+          "docs": "Multi-select support",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "options",
+          "type": "DropdownOption[]",
+          "complexType": {
+            "original": "DropdownOption[]",
+            "resolved": "DropdownOption[]",
+            "references": {
+              "DropdownOption": {
+                "location": "local",
+                "path": "D:/Proj/nat-ui-workspace/nat-ui/src/components/nat-dropdown/nat-dropdown.tsx",
+                "id": "src/components/nat-dropdown/nat-dropdown.tsx::DropdownOption"
+              }
+            }
+          },
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "List of options",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "[]"
+            }
+          ],
+          "default": "[]",
+          "values": [
+            {
+              "type": "DropdownOption[]"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "placement",
+          "type": "\"auto\" | \"bottom\" | \"top\"",
+          "complexType": {
+            "original": "'auto' | 'bottom' | 'top'",
+            "resolved": "\"auto\" | \"bottom\" | \"top\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "placement",
+          "reflectToAttr": false,
+          "docs": "Placement of dropdown (bottom/top/auto)",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'auto'"
+            }
+          ],
+          "default": "'auto'",
+          "values": [
+            {
+              "value": "auto",
+              "type": "string"
+            },
+            {
+              "value": "bottom",
+              "type": "string"
+            },
+            {
+              "value": "top",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "searchable",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "searchable",
+          "reflectToAttr": false,
+          "docs": "Allow search/filter",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": false,
+          "docs": "Current selected value (single select)",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "values",
+          "type": "string[]",
+          "complexType": {
+            "original": "string[]",
+            "resolved": "string[]",
+            "references": {}
+          },
+          "mutable": true,
+          "reflectToAttr": false,
+          "docs": "",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "[]"
+            }
+          ],
+          "default": "[]",
+          "values": [
+            {
+              "type": "string[]"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "natChange",
+          "detail": "{ value: string | string[]; option?: DropdownOption; }",
+          "bubbles": true,
+          "complexType": {
+            "original": "{ value: string | string[]; option?: DropdownOption }",
+            "resolved": "{ value: string | string[]; option?: DropdownOption; }",
+            "references": {
+              "DropdownOption": {
+                "location": "local",
+                "path": "D:/Proj/nat-ui-workspace/nat-ui/src/components/nat-dropdown/nat-dropdown.tsx",
+                "id": "src/components/nat-dropdown/nat-dropdown.tsx::DropdownOption"
+              }
+            }
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emits when selection changes",
+          "docsTags": []
+        },
+        {
+          "event": "natClose",
+          "detail": "void",
+          "bubbles": true,
+          "complexType": {
+            "original": "void",
+            "resolved": "void",
+            "references": {}
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "",
+          "docsTags": []
+        },
+        {
+          "event": "natOpen",
+          "detail": "void",
+          "bubbles": true,
+          "complexType": {
+            "original": "void",
+            "resolved": "void",
+            "references": {}
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emits when dropdown opens/closes",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "nat-icon"
+      ],
+      "dependencyGraph": {
+        "nat-dropdown": [
+          "nat-icon"
+        ]
+      }
+    },
+    {
       "filePath": "src/components/nat-icon/nat-icon.tsx",
       "encapsulation": "shadow",
       "tag": "nat-icon",
@@ -1991,12 +2350,24 @@
       "parts": [],
       "dependents": [
         "nat-checkbox",
+        "nat-dropdown",
+        "nat-menu",
+        "nat-stepper",
         "nat-tabs",
         "nat-toast"
       ],
       "dependencies": [],
       "dependencyGraph": {
         "nat-checkbox": [
+          "nat-icon"
+        ],
+        "nat-dropdown": [
+          "nat-icon"
+        ],
+        "nat-menu": [
+          "nat-icon"
+        ],
+        "nat-stepper": [
           "nat-icon"
         ],
         "nat-tabs": [
@@ -2931,6 +3302,277 @@
       "dependencyGraph": {}
     },
     {
+      "filePath": "src/components/nat-menu/nat-menu.tsx",
+      "encapsulation": "shadow",
+      "tag": "nat-menu",
+      "docs": "Menu component (dropdown, context menu)",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "trigger - menu trigger button/icon/etc"
+        },
+        {
+          "name": "slot",
+          "text": "- custom menu items"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "items",
+          "type": "MenuItem[]",
+          "complexType": {
+            "original": "MenuItem[]",
+            "resolved": "MenuItem[]",
+            "references": {
+              "MenuItem": {
+                "location": "local",
+                "path": "D:/Proj/nat-ui-workspace/nat-ui/src/components/nat-menu/nat-menu.tsx",
+                "id": "src/components/nat-menu/nat-menu.tsx::MenuItem"
+              }
+            }
+          },
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Items prop (can use slot instead)",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "[]"
+            }
+          ],
+          "default": "[]",
+          "values": [
+            {
+              "type": "MenuItem[]"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "ARIA label",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'Menu'"
+            }
+          ],
+          "default": "'Menu'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "open",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": true,
+          "attr": "open",
+          "reflectToAttr": false,
+          "docs": "Is menu open",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "placement",
+          "type": "\"bottom-end\" | \"bottom-start\" | \"top-end\" | \"top-start\"",
+          "complexType": {
+            "original": "'bottom-start' | 'bottom-end' | 'top-start' | 'top-end'",
+            "resolved": "\"bottom-end\" | \"bottom-start\" | \"top-end\" | \"top-start\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "placement",
+          "reflectToAttr": false,
+          "docs": "Placement relative to trigger",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'bottom-start'"
+            }
+          ],
+          "default": "'bottom-start'",
+          "values": [
+            {
+              "value": "bottom-end",
+              "type": "string"
+            },
+            {
+              "value": "bottom-start",
+              "type": "string"
+            },
+            {
+              "value": "top-end",
+              "type": "string"
+            },
+            {
+              "value": "top-start",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "size",
+          "type": "\"lg\" | \"md\" | \"sm\"",
+          "complexType": {
+            "original": "'sm' | 'md' | 'lg'",
+            "resolved": "\"lg\" | \"md\" | \"sm\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "Size",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'md'"
+            }
+          ],
+          "default": "'md'",
+          "values": [
+            {
+              "value": "lg",
+              "type": "string"
+            },
+            {
+              "value": "md",
+              "type": "string"
+            },
+            {
+              "value": "sm",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "natClose",
+          "detail": "void",
+          "bubbles": true,
+          "complexType": {
+            "original": "void",
+            "resolved": "void",
+            "references": {}
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emits when menu closes",
+          "docsTags": []
+        },
+        {
+          "event": "natOpen",
+          "detail": "void",
+          "bubbles": true,
+          "complexType": {
+            "original": "void",
+            "resolved": "void",
+            "references": {}
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emits when menu opens",
+          "docsTags": []
+        },
+        {
+          "event": "natSelect",
+          "detail": "MenuItem",
+          "bubbles": true,
+          "complexType": {
+            "original": "MenuItem",
+            "resolved": "MenuItem",
+            "references": {
+              "MenuItem": {
+                "location": "local",
+                "path": "D:/Proj/nat-ui-workspace/nat-ui/src/components/nat-menu/nat-menu.tsx",
+                "id": "src/components/nat-menu/nat-menu.tsx::MenuItem"
+              }
+            }
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emits selected value",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "mousedown",
+          "target": "document",
+          "capture": false,
+          "passive": true
+        }
+      ],
+      "styles": [],
+      "slots": [
+        {
+          "name": "",
+          "docs": "custom menu items"
+        },
+        {
+          "name": "trigger",
+          "docs": "menu trigger button/icon/etc"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "nat-icon"
+      ],
+      "dependencyGraph": {
+        "nat-menu": [
+          "nat-icon"
+        ]
+      }
+    },
+    {
       "filePath": "src/components/nat-modal/nat-modal.tsx",
       "encapsulation": "shadow",
       "tag": "nat-modal",
@@ -3302,6 +3944,7 @@
       "filePath": "src/components/nat-pagination/nat-pagination.tsx",
       "encapsulation": "shadow",
       "tag": "nat-pagination",
+      "readme": "# nat-pagination\n\n\n",
       "docs": "Pagination component for page navigation",
       "docsTags": [
         {
@@ -3800,6 +4443,7 @@
       "filePath": "src/components/nat-popover/nat-popover.tsx",
       "encapsulation": "shadow",
       "tag": "nat-popover",
+      "readme": "# nat-popover\n\n\n",
       "docs": "Popover component for contextual overlays",
       "docsTags": [
         {
@@ -4849,6 +5493,167 @@
       "dependencyGraph": {}
     },
     {
+      "filePath": "src/components/nat-stepper/nat-stepper.tsx",
+      "encapsulation": "shadow",
+      "tag": "nat-stepper",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "active",
+          "type": "number",
+          "complexType": {
+            "original": "number",
+            "resolved": "number",
+            "references": {}
+          },
+          "mutable": true,
+          "attr": "active",
+          "reflectToAttr": false,
+          "docs": "Which step is active",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "0"
+            }
+          ],
+          "default": "0",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "clickable",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "clickable",
+          "reflectToAttr": false,
+          "docs": "Clickable steps",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "steps",
+          "type": "StepperStep[]",
+          "complexType": {
+            "original": "StepperStep[]",
+            "resolved": "StepperStep[]",
+            "references": {
+              "StepperStep": {
+                "location": "local",
+                "path": "D:/Proj/nat-ui-workspace/nat-ui/src/components/nat-stepper/nat-stepper.tsx",
+                "id": "src/components/nat-stepper/nat-stepper.tsx::StepperStep"
+              }
+            }
+          },
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Steps list",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "[]"
+            }
+          ],
+          "default": "[]",
+          "values": [
+            {
+              "type": "StepperStep[]"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "vertical",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "vertical",
+          "reflectToAttr": false,
+          "docs": "Layout orientation",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "natChange",
+          "detail": "{ index: number; value: string; }",
+          "bubbles": true,
+          "complexType": {
+            "original": "{ index: number; value: string }",
+            "resolved": "{ index: number; value: string; }",
+            "references": {}
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emits when step changes",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "nat-icon"
+      ],
+      "dependencyGraph": {
+        "nat-stepper": [
+          "nat-icon"
+        ]
+      }
+    },
+    {
       "filePath": "src/components/nat-switch/nat-switch.tsx",
       "encapsulation": "shadow",
       "tag": "nat-switch",
@@ -5149,6 +5954,7 @@
       "filePath": "src/components/nat-tabs/nat-tabs.tsx",
       "encapsulation": "shadow",
       "tag": "nat-tabs",
+      "readme": "# nat-tabs\n\n\n",
       "docs": "Tabs navigation with animated indicator",
       "docsTags": [
         {
@@ -6089,6 +6895,7 @@
       "filePath": "src/components/nat-toast/nat-toast.tsx",
       "encapsulation": "shadow",
       "tag": "nat-toast",
+      "readme": "# nat-toast\n\n\n",
       "docs": "Toast component for transient notifications",
       "docsTags": [
         {
@@ -6711,6 +7518,11 @@
       "docstring": "",
       "path": "src/components/nat-checkbox-group/nat-checkbox-group.tsx"
     },
+    "src/components/nat-dropdown/nat-dropdown.tsx::DropdownOption": {
+      "declaration": "export interface DropdownOption {\n  value: string;\n  label: string;\n  icon?: string;\n  description?: string;\n  disabled?: boolean;\n}",
+      "docstring": "",
+      "path": "src/components/nat-dropdown/nat-dropdown.tsx"
+    },
     "src/components/nat-input/nat-input.tsx::InputType": {
       "declaration": "export type InputType = 'text' | 'email' | 'password' | 'number' | 'tel' | 'url' | 'search';",
       "docstring": "",
@@ -6726,6 +7538,11 @@
       "docstring": "",
       "path": "src/components/nat-input/nat-input.tsx"
     },
+    "src/components/nat-menu/nat-menu.tsx::MenuItem": {
+      "declaration": "export interface MenuItem {\n  value: string;\n  label: string;\n  icon?: string;\n  description?: string;\n  disabled?: boolean;\n  separator?: boolean;\n}",
+      "docstring": "",
+      "path": "src/components/nat-menu/nat-menu.tsx"
+    },
     "src/components/nat-select/nat-select.tsx::SelectOption": {
       "declaration": "export interface SelectOption {\r\n  value: string;\r\n  label: string;\r\n  disabled?: boolean;\r\n}",
       "docstring": "Option type for select items",
@@ -6740,6 +7557,11 @@
       "declaration": "export type SpinnerSize = 'sm' | 'md' | 'lg';",
       "docstring": "",
       "path": "src/components/nat-spinner/nat-spinner.tsx"
+    },
+    "src/components/nat-stepper/nat-stepper.tsx::StepperStep": {
+      "declaration": "export interface StepperStep {\n  value: string;\n  label: string;\n  icon?: string;\n  description?: string;\n  error?: boolean;\n  disabled?: boolean;\n}",
+      "docstring": "",
+      "path": "src/components/nat-stepper/nat-stepper.tsx"
     },
     "src/components/nat-tabs/nat-tabs.tsx::TabItem": {
       "declaration": "export interface TabItem {\n  value: string;\n  label: string;\n  icon?: string;\n  disabled?: boolean;\n}",

@@ -1,0 +1,70 @@
+:host {
+  display: block;
+}
+
+.stepper {
+  position: relative;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  padding: 24px 0;
+}
+.stepper .step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 2px);
+  width: 32px;
+  height: 3px;
+  background: var(--nat-border-base);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+.step {
+  position: relative;
+  z-index: 2;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 10px 20px;
+  border-radius: 50px;
+  background: var(--nat-bg-elevated);
+  box-shadow: var(--nat-shadow-xs);
+  border: 2px solid var(--nat-border-base);
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  transition: background 0.16s, border-color 0.16s;
+}
+.step--active {
+  border-color: var(--nat-primary);
+  background: var(--nat-primary-light);
+}
+.step--completed {
+  border-color: var(--nat-success);
+  background: var(--nat-success-light);
+}
+.step--error {
+  border-color: var(--nat-error);
+  background: var(--nat-error-light);
+}
+.step .step-icon {
+  background: #fff;
+  border-radius: 50%;
+  padding: 6px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+.step .step-label {
+  font-weight: 600;
+}
+.step-desc {
+  font-size: 0.9em;
+  color: var(--nat-text-secondary);
+}
+
+:host-context(:root[data-theme='mist']) .step {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+}
