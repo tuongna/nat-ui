@@ -262,7 +262,7 @@
           <h1>NAT-UI</h1>
           <p>Web Components with Mist Aesthetic</p>
           <div class="hero-meta">
-            <span>22/35 Components</span>
+            <span>29/35 Components</span>
             <span>v0.0.1+dev</span>
             <span>MIT License</span>
           </div>
@@ -1309,6 +1309,46 @@
       <nat-stepper id="stepper-demo" clickable></nat-stepper>
     </div>
 
+    <div class="section">
+      <h2>Table Component</h2>
+      <nat-table id="table-demo" sortable></nat-table>
+    </div>
+
+    <div class="section" style="background-color: transparent; border: 1px solid var(--nat-border-base)">
+      <h2>Card Component</h2>
+
+      <div style="display: flex; flex-direction: column; row-gap: 16px">
+        <!-- Default card -->
+        <nat-card heading="Welcome" subheading="Getting Started" description="Learn about nat-ui components">
+          <p>Your content goes here</p>
+          <div slot="actions">
+            <nat-button>Continue</nat-button>
+          </div>
+        </nat-card>
+
+        <!-- Glass variant -->
+        <nat-card heading="Featured" variant="glass" clickable>
+          <p>Frosted glass effect card</p>
+        </nat-card>
+
+        <!-- Compact card -->
+        <nat-card heading="Quick Info" compact>
+          <p>Smaller padding for tight layouts</p>
+        </nat-card>
+
+        <!-- Outline card -->
+        <nat-card heading="Outlined" variant="outline">
+          <p>Transparent background with border</p>
+        </nat-card>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>List Component</h2>
+      <nat-list id="list-demo" dividers></nat-list>
+      <nat-list id="horizontal-list" horizontal compact></nat-list>
+    </div>
+
     <script>
       /**
        * NAT-UI Demo Scripts
@@ -1773,6 +1813,35 @@
       stepper.addEventListener('natChange', e => {
         alert('Step changed to: ' + e.detail.value);
       });
+
+      const table = document.getElementById('table-demo');
+      table.columns = [
+        { key: 'id', label: 'ID', align: 'right', sortable: true },
+        { key: 'name', label: 'Name', sortable: true },
+        { key: 'score', label: 'Score', align: 'center', sortable: true },
+      ];
+      table.rows = [
+        { id: 1, name: 'Alice', score: 98 },
+        { id: 2, name: 'Bob', score: 91 },
+        { id: 3, name: 'Carol', score: 87 },
+      ];
+
+      const list = document.getElementById('list-demo');
+      list.items = [
+        { value: '1', label: 'Dashboard', icon: 'home', description: 'Main overview' },
+        { value: '2', label: 'Settings', icon: 'settings', description: 'Configure app' },
+        { value: '3', label: 'Profile', icon: 'user' },
+        { value: '4', label: 'Logout', icon: 'log-out', disabled: true },
+      ];
+      list.addEventListener('natItemClick', e => {
+        alert('Clicked: ' + e.detail.label);
+      });
+
+      document.getElementById('horizontal-list').items = [
+        { value: 'a', label: 'Tag A' },
+        { value: 'b', label: 'Tag B' },
+        { value: 'c', label: 'Tag C' },
+      ];
     </script>
   </body>
 </html>

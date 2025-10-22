@@ -1,0 +1,99 @@
+:host {
+  display: block;
+}
+
+.card-inner {
+  background: var(--nat-bg-subtle);
+  border-radius: var(--nat-radius-2xl);
+  padding: var(--nat-space-8);
+  box-shadow: var(--nat-shadow-xl);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+/* Compact variant */
+.card--compact .card-inner {
+  padding: var(--nat-space-4);
+}
+
+/* Outline variant */
+.card--outline .card-inner {
+  border: 2px solid var(--nat-border-base);
+  box-shadow: var(--nat-shadow-sm);
+}
+
+/* Shadow variant (extra elevation) */
+.card--shadow .card-inner {
+  box-shadow: var(--nat-shadow-2xl);
+}
+
+/* Glass variant (Mist-like frosted glass) */
+.card--glass .card-inner {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Clickable hover effect */
+.card--clickable .card-inner {
+  cursor: pointer;
+}
+
+.card--clickable .card-inner:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--nat-shadow-2xl);
+}
+
+/* Card content structure */
+.card-title {
+  margin-top: 0;
+  color: var(--nat-text-primary);
+  font-size: var(--nat-text-2xl);
+  font-weight: var(--nat-font-semibold);
+  border-bottom: 2px solid var(--nat-primary);
+  padding-bottom: var(--nat-space-3);
+  margin-bottom: var(--nat-space-6);
+}
+
+.card-subtitle {
+  font-size: var(--nat-text-lg);
+  color: var(--nat-text-secondary);
+  margin-bottom: var(--nat-space-2);
+  font-weight: var(--nat-font-medium);
+}
+
+.card-desc {
+  color: var(--nat-text-tertiary);
+  font-size: var(--nat-text-base);
+  margin-bottom: var(--nat-space-4);
+  line-height: 1.6;
+}
+
+.card-content {
+  color: var(--nat-text-primary);
+  font-size: var(--nat-text-base);
+  margin-bottom: var(--nat-space-4);
+}
+
+.card-actions {
+  margin-top: var(--nat-space-6);
+  display: flex;
+  gap: var(--nat-space-3);
+  flex-wrap: wrap;
+}
+
+/* Mist theme enhancement */
+:host-context(:root[data-theme='mist']) .card-inner {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Dark theme adjustments */
+:host-context(:root[data-theme='dark']) .card-inner {
+  background: var(--nat-bg-subtle);
+}
+
+:host-context(:root[data-theme='dark']) .card-title {
+  color: var(--nat-text-primary);
+  border-bottom-color: var(--nat-primary);
+}
