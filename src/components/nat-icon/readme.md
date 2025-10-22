@@ -34,8 +34,10 @@ Supports loading icons from registered libraries or direct SVG URLs.
 
  - [nat-checkbox](../nat-checkbox)
  - [nat-dropdown](../nat-dropdown)
+ - [nat-list](../nat-list)
  - [nat-menu](../nat-menu)
  - [nat-stepper](../nat-stepper)
+ - [nat-table](../nat-table)
  - [nat-tabs](../nat-tabs)
  - [nat-toast](../nat-toast)
 
@@ -44,8 +46,10 @@ Supports loading icons from registered libraries or direct SVG URLs.
 graph TD;
   nat-checkbox --> nat-icon
   nat-dropdown --> nat-icon
+  nat-list --> nat-icon
   nat-menu --> nat-icon
   nat-stepper --> nat-icon
+  nat-table --> nat-icon
   nat-tabs --> nat-icon
   nat-toast --> nat-icon
   style nat-icon fill:#f9f,stroke:#333,stroke-width:4px

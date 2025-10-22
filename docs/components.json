@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-10-21T16:32:10",
+  "timestamp": "2025-10-22T17:36:27",
   "compiler": {
     "name": "@stencil/core",
     "version": "4.38.0",
@@ -969,6 +969,194 @@
       "dependencyGraph": {}
     },
     {
+      "filePath": "src/components/nat-card/nat-card.tsx",
+      "encapsulation": "shadow",
+      "tag": "nat-card",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "clickable",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "clickable",
+          "reflectToAttr": false,
+          "docs": "Hover effect",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "compact",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "compact",
+          "reflectToAttr": false,
+          "docs": "Compact style",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "description",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "description",
+          "reflectToAttr": false,
+          "docs": "Description / summary",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "heading",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "heading",
+          "reflectToAttr": false,
+          "docs": "Card heading",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "subheading",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "subheading",
+          "reflectToAttr": false,
+          "docs": "Card subheading",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "variant",
+          "type": "\"default\" | \"glass\" | \"outline\" | \"shadow\"",
+          "complexType": {
+            "original": "'default' | 'outline' | 'shadow' | 'glass'",
+            "resolved": "\"default\" | \"glass\" | \"outline\" | \"shadow\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "variant",
+          "reflectToAttr": false,
+          "docs": "Special appearance",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'default'"
+            }
+          ],
+          "default": "'default'",
+          "values": [
+            {
+              "value": "default",
+              "type": "string"
+            },
+            {
+              "value": "glass",
+              "type": "string"
+            },
+            {
+              "value": "outline",
+              "type": "string"
+            },
+            {
+              "value": "shadow",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
       "filePath": "src/components/nat-checkbox/nat-checkbox.tsx",
       "encapsulation": "shadow",
       "tag": "nat-checkbox",
@@ -1835,6 +2023,7 @@
       "filePath": "src/components/nat-dropdown/nat-dropdown.tsx",
       "encapsulation": "shadow",
       "tag": "nat-dropdown",
+      "readme": "# nat-dropdown\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -2351,8 +2540,10 @@
       "dependents": [
         "nat-checkbox",
         "nat-dropdown",
+        "nat-list",
         "nat-menu",
         "nat-stepper",
+        "nat-table",
         "nat-tabs",
         "nat-toast"
       ],
@@ -2364,10 +2555,16 @@
         "nat-dropdown": [
           "nat-icon"
         ],
+        "nat-list": [
+          "nat-icon"
+        ],
         "nat-menu": [
           "nat-icon"
         ],
         "nat-stepper": [
+          "nat-icon"
+        ],
+        "nat-table": [
           "nat-icon"
         ],
         "nat-tabs": [
@@ -3195,6 +3392,173 @@
       "dependencyGraph": {}
     },
     {
+      "filePath": "src/components/nat-list/nat-list.tsx",
+      "encapsulation": "shadow",
+      "tag": "nat-list",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "compact",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "compact",
+          "reflectToAttr": false,
+          "docs": "Compact spacing",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "dividers",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "dividers",
+          "reflectToAttr": false,
+          "docs": "Show dividers between items",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "horizontal",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "horizontal",
+          "reflectToAttr": false,
+          "docs": "Horizontal layout",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "items",
+          "type": "ListItem[]",
+          "complexType": {
+            "original": "ListItem[]",
+            "resolved": "ListItem[]",
+            "references": {
+              "ListItem": {
+                "location": "local",
+                "path": "D:/Proj/nat-ui-workspace/nat-ui/src/components/nat-list/nat-list.tsx",
+                "id": "src/components/nat-list/nat-list.tsx::ListItem"
+              }
+            }
+          },
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "List items data",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "[]"
+            }
+          ],
+          "default": "[]",
+          "values": [
+            {
+              "type": "ListItem[]"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "natItemClick",
+          "detail": "ListItem",
+          "bubbles": true,
+          "complexType": {
+            "original": "ListItem",
+            "resolved": "ListItem",
+            "references": {
+              "ListItem": {
+                "location": "local",
+                "path": "D:/Proj/nat-ui-workspace/nat-ui/src/components/nat-list/nat-list.tsx",
+                "id": "src/components/nat-list/nat-list.tsx::ListItem"
+              }
+            }
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emits when item is clicked",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "nat-icon"
+      ],
+      "dependencyGraph": {
+        "nat-list": [
+          "nat-icon"
+        ]
+      }
+    },
+    {
       "filePath": "src/components/nat-logo/nat-logo.tsx",
       "encapsulation": "shadow",
       "tag": "nat-logo",
@@ -3305,6 +3669,7 @@
       "filePath": "src/components/nat-menu/nat-menu.tsx",
       "encapsulation": "shadow",
       "tag": "nat-menu",
+      "readme": "# nat-menu\n\n\n",
       "docs": "Menu component (dropdown, context menu)",
       "docsTags": [
         {
@@ -5496,6 +5861,7 @@
       "filePath": "src/components/nat-stepper/nat-stepper.tsx",
       "encapsulation": "shadow",
       "tag": "nat-stepper",
+      "readme": "# nat-stepper\n\n\n",
       "docs": "",
       "docsTags": [],
       "usage": {},
@@ -5949,6 +6315,127 @@
       "dependents": [],
       "dependencies": [],
       "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/nat-table/nat-table.tsx",
+      "encapsulation": "shadow",
+      "tag": "nat-table",
+      "docs": "",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "columns",
+          "type": "TableColumn[]",
+          "complexType": {
+            "original": "TableColumn[]",
+            "resolved": "TableColumn[]",
+            "references": {
+              "TableColumn": {
+                "location": "local",
+                "path": "D:/Proj/nat-ui-workspace/nat-ui/src/components/nat-table/nat-table.tsx",
+                "id": "src/components/nat-table/nat-table.tsx::TableColumn"
+              }
+            }
+          },
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Columns definition",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "[]"
+            }
+          ],
+          "default": "[]",
+          "values": [
+            {
+              "type": "TableColumn[]"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "rows",
+          "type": "Record<string, any>[]",
+          "complexType": {
+            "original": "Record<string, any>[]",
+            "resolved": "Record<string, any>[]",
+            "references": {
+              "Record": {
+                "location": "global",
+                "id": "global::Record"
+              }
+            }
+          },
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Data rows",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "[]"
+            }
+          ],
+          "default": "[]",
+          "values": [
+            {
+              "type": "Record<string, any>[]"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "sortable",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "sortable",
+          "reflectToAttr": false,
+          "docs": "Enable sorting",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "nat-icon"
+      ],
+      "dependencyGraph": {
+        "nat-table": [
+          "nat-icon"
+        ]
+      }
     },
     {
       "filePath": "src/components/nat-tabs/nat-tabs.tsx",
@@ -7538,6 +8025,11 @@
       "docstring": "",
       "path": "src/components/nat-input/nat-input.tsx"
     },
+    "src/components/nat-list/nat-list.tsx::ListItem": {
+      "declaration": "export interface ListItem {\n  value: string;\n  label: string;\n  icon?: string;\n  description?: string;\n  disabled?: boolean;\n}",
+      "docstring": "",
+      "path": "src/components/nat-list/nat-list.tsx"
+    },
     "src/components/nat-menu/nat-menu.tsx::MenuItem": {
       "declaration": "export interface MenuItem {\n  value: string;\n  label: string;\n  icon?: string;\n  description?: string;\n  disabled?: boolean;\n  separator?: boolean;\n}",
       "docstring": "",
@@ -7562,6 +8054,11 @@
       "declaration": "export interface StepperStep {\n  value: string;\n  label: string;\n  icon?: string;\n  description?: string;\n  error?: boolean;\n  disabled?: boolean;\n}",
       "docstring": "",
       "path": "src/components/nat-stepper/nat-stepper.tsx"
+    },
+    "src/components/nat-table/nat-table.tsx::TableColumn": {
+      "declaration": "export interface TableColumn {\n  label: string;\n  key: string;\n  align?: 'left' | 'right' | 'center';\n  sortable?: boolean;\n  width?: string;\n}",
+      "docstring": "",
+      "path": "src/components/nat-table/nat-table.tsx"
     },
     "src/components/nat-tabs/nat-tabs.tsx::TabItem": {
       "declaration": "export interface TabItem {\n  value: string;\n  label: string;\n  icon?: string;\n  disabled?: boolean;\n}",
