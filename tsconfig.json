@@ -24,6 +24,8 @@
     "node_modules",
     "dist",
     "www",
-    "loader"
+    "loader",
+    "**/*.stories.ts",
+    "**/*.stories.tsx"
   ]
 }

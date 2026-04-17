@@ -1,0 +1,107 @@
+:host {
+  display: block;
+  width: 100%;
+  --slider-thumb-size: 20px;
+  --slider-track-height: 6px;
+  --slider-percent: 0%;
+}
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: var(--slider-thumb-size);
+  display: flex;
+  align-items: center;
+}
+
+/* The invisible native range input sitting on top */
+.slider-input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 10;
+}
+
+:host(.is-disabled) .slider-input {
+  cursor: not-allowed;
+}
+
+/* Custom Track */
+.slider-track {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: var(--slider-track-height);
+  background-color: var(--nat-bg-subtle, #e5e7eb);
+  border-radius: 9999px;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Custom Fill */
+.slider-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--slider-percent);
+  background-color: var(--nat-primary-500, #3b82f6);
+  border-radius: 9999px;
+  transition: width 0.1s linear;
+}
+
+/* Custom Thumb Element created using pseudo-element attached to the container
+   Since the input is invisible, we simulate the thumb here */
+.slider-container::after {
+  content: '';
+  position: absolute;
+  left: var(--slider-percent);
+  width: var(--slider-thumb-size);
+  height: var(--slider-thumb-size);
+  background-color: #ffffff;
+  border: 2px solid var(--nat-primary-500, #3b82f6);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+  z-index: 5;
+  transition: box-shadow 0.2s ease;
+  pointer-events: none; /* Let clicks pass through to input */
+}
+
+/* Focus and active states */
+.slider-input:focus-visible + .slider-track + .slider-container::after {
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+}
+
+.slider-input:active {
+  cursor: grabbing;
+}
+
+.slider-input:active ~ .slider-container::after,
+.slider-container:has(.slider-input:active)::after {
+  transform: translateX(-50%) scale(1.1);
+  background-color: #eff6ff;
+}
+
+/* Disabled state */
+:host(.is-disabled) {
+  opacity: 0.5;
+}
+:host(.is-disabled) .slider-container::after {
+  background-color: var(--nat-bg-subtle, #e5e7eb);
+  border-color: var(--nat-text-secondary, #9ca3af);
+}
+:host(.is-disabled) .slider-fill {
+  background-color: var(--nat-text-secondary, #9ca3af);
+}
+
+@media (prefers-color-scheme: dark) {
+  .slider-track {
+    background-color: var(--nat-bg-subtle, #374151);
+  }
+}

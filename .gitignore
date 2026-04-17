@@ -40,3 +40,9 @@ $RECYCLE.BIN/
 
 # Environment
 .env
+
+# Other
+.agent/
+
+*storybook.log
+storybook-static

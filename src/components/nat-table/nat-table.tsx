@@ -63,7 +63,7 @@ export class NatTable {
                     {col.label}
                     {this.sortable && col.sortable && (
                       <span class="table-sort">
-                        {this.sortKey === col.key ? this.sortAsc ? <nat-icon name="chevron-up" /> : <nat-icon name="chevron-up" /> : <nat-icon name="chevrons-up-down" />}
+                        {this.sortKey === col.key ? this.sortAsc ? <nat-icon name="chevron-up" /> : <nat-icon name="chevron-down" /> : <nat-icon name="chevrons-up-down" />}
                       </span>
                     )}
                   </th>

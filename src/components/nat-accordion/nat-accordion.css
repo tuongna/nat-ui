@@ -1,0 +1,96 @@
+:host {
+  display: block;
+  border-bottom: 1px solid var(--nat-border-base, #e5e7eb);
+}
+
+.accordion-item {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Button */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.25rem 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: var(--nat-text-primary, #111827);
+  transition: color 0.2s ease;
+}
+
+.header:focus-visible {
+  outline: none;
+  border-radius: 4px;
+  box-shadow: 0 0 0 2px var(--nat-primary-500, #3b82f6);
+}
+
+.heading-text {
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+/* Icon Animation */
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--nat-text-secondary, #6b7280);
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:host(.is-expanded) .icon-wrapper {
+  transform: rotate(180deg);
+}
+
+/* Content Grid Animation */
+.content-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+:host(.is-expanded) .content-wrapper {
+  grid-template-rows: 1fr;
+}
+
+.content-inner {
+  overflow: hidden;
+  color: var(--nat-text-secondary, #4b5563);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Add padding specifically inside the inner content so it animated smoothly */
+:host(.is-expanded) .content-inner {
+  padding-bottom: 1.5rem;
+}
+
+/* Disabled state */
+:host(.is-disabled) {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Dark theme overrides */
+@media (prefers-color-scheme: dark) {
+  :host {
+    border-bottom-color: var(--nat-border-base, #374151);
+  }
+  
+  .header {
+    color: #f9fafb;
+  }
+  
+  .icon-wrapper {
+    color: #9ca3af;
+  }
+  
+  .content-inner {
+    color: #d1d5db;
+  }
+}

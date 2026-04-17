@@ -5,3 +5,83 @@
 .tooltip-wrapper {
   display: inline-block;
 }
+
+.nat-tooltip {
+  position: fixed;
+  z-index: 1600;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  background: var(--nat-bg-tooltip, #1a1a1a);
+  color: var(--nat-text-tooltip, #ffffff);
+  border-radius: 10px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1), transform 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nat-tooltip--visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.nat-tooltip--sm {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  max-width: 150px;
+}
+
+.nat-tooltip--md {
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+  max-width: 250px;
+}
+
+.nat-tooltip--lg {
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  max-width: 350px;
+}
+
+.nat-tooltip__content {
+  line-height: 1.375;
+  word-wrap: break-word;
+}
+
+.nat-tooltip__arrow {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: var(--nat-bg-tooltip, #1a1a1a);
+  transform: rotate(45deg);
+}
+
+.nat-tooltip--top .nat-tooltip__arrow {
+  bottom: -4px;
+  left: 50%;
+  margin-left: -4px;
+}
+
+.nat-tooltip--bottom .nat-tooltip__arrow {
+  top: -4px;
+  left: 50%;
+  margin-left: -4px;
+}
+
+.nat-tooltip--left .nat-tooltip__arrow {
+  right: -4px;
+  top: 50%;
+  margin-top: -4px;
+}
+
+.nat-tooltip--right .nat-tooltip__arrow {
+  left: -4px;
+  top: 50%;
+  margin-top: -4px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .nat-tooltip, .nat-tooltip__arrow {
+    background: #2d2d2d;
+  }
+}

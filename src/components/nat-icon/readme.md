@@ -33,7 +33,6 @@ Supports loading icons from registered libraries or direct SVG URLs.
 ### Used by
 
  - [nat-checkbox](../nat-checkbox)
- - [nat-dropdown](../nat-dropdown)
  - [nat-list](../nat-list)
  - [nat-menu](../nat-menu)
  - [nat-stepper](../nat-stepper)
@@ -45,7 +44,6 @@ Supports loading icons from registered libraries or direct SVG URLs.
 ```mermaid
 graph TD;
   nat-checkbox --> nat-icon
-  nat-dropdown --> nat-icon
   nat-list --> nat-icon
   nat-menu --> nat-icon
   nat-stepper --> nat-icon
