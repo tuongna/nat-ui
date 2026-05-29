@@ -1,0 +1,112 @@
+:host {
+  display: inline-block;
+}
+
+/* ============================================
+ * CONTAINER
+ * ============================================ */
+.nat-pin {
+  display: inline-flex;
+  gap: var(--nat-space-2);
+  align-items: center;
+}
+
+.nat-pin--disabled {
+  opacity: var(--nat-opacity-50);
+  pointer-events: none;
+}
+
+/* ============================================
+ * CELL
+ * ============================================ */
+.nat-pin__cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background: var(--nat-bg-base, #fff);
+  border: 1.5px solid var(--nat-border-base);
+  border-radius: var(--nat-radius-lg);
+  border-bottom-width: 2.5px;
+
+  font-family: var(--nat-font-mono);
+  font-weight: var(--nat-font-semibold);
+  color: var(--nat-text-primary);
+
+  transition:
+    border-color var(--nat-transition-fast),
+    box-shadow var(--nat-transition-fast),
+    background var(--nat-transition-fast);
+
+  outline: none;
+  cursor: text;
+}
+
+.nat-pin__cell::placeholder {
+  color: var(--nat-border-base);
+  font-weight: var(--nat-font-normal);
+}
+
+.nat-pin__cell:focus {
+  border-color: var(--nat-primary);
+  box-shadow: 0 0 0 3px var(--nat-focus-ring, rgba(91, 111, 232, 0.2));
+  background: var(--nat-primary-lighter, rgba(91, 111, 232, 0.04));
+}
+
+.nat-pin__cell--filled {
+  border-color: var(--nat-border-strong);
+  border-bottom-color: var(--nat-border-strong);
+}
+
+/* ============================================
+ * INVALID STATE
+ * ============================================ */
+.nat-pin--invalid .nat-pin__cell {
+  border-color: var(--nat-error);
+}
+
+.nat-pin--invalid .nat-pin__cell:focus {
+  border-color: var(--nat-error);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+/* ============================================
+ * SIZES
+ * ============================================ */
+.nat-pin--sm .nat-pin__cell {
+  width: 36px;
+  height: 40px;
+  font-size: var(--nat-text-base);
+}
+
+.nat-pin--md .nat-pin__cell {
+  width: 44px;
+  height: 52px;
+  font-size: var(--nat-text-xl);
+}
+
+.nat-pin--lg .nat-pin__cell {
+  width: 56px;
+  height: 64px;
+  font-size: var(--nat-text-2xl);
+}
+
+/* Remove number input spin buttons */
+.nat-pin__cell::-webkit-outer-spin-button,
+.nat-pin__cell::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.nat-pin__cell[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* ============================================
+ * DARK THEME
+ * ============================================ */
+@media (prefers-color-scheme: dark) {
+  .nat-pin__cell {
+    background: var(--nat-bg-surface);
+  }
+}

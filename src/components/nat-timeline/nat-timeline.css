@@ -1,0 +1,175 @@
+:host {
+  display: block;
+}
+
+/* ============================================
+ * TIMELINE LIST
+ * ============================================ */
+.nat-timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================
+ * TIMELINE ITEM
+ * ============================================ */
+.nat-timeline__item {
+  display: flex;
+  gap: var(--nat-space-4);
+  position: relative;
+}
+
+.nat-timeline__item + .nat-timeline__item {
+  margin-top: 0;
+}
+
+/* ============================================
+ * TRACK (marker + line)
+ * ============================================ */
+.nat-timeline__track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ============================================
+ * MARKER
+ * ============================================ */
+.nat-timeline__marker {
+  --nat-tl-color: var(--nat-primary);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.nat-timeline__marker--dot {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--nat-radius-full);
+  background: var(--nat-tl-color);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.8), 0 0 0 4px var(--nat-tl-color);
+  margin-top: 6px;
+}
+
+.nat-timeline__marker--icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--nat-radius-full);
+  background: color-mix(in srgb, var(--nat-tl-color) 15%, transparent);
+  border: 1.5px solid var(--nat-tl-color);
+  color: var(--nat-tl-color);
+}
+
+.nat-timeline__marker--numbered {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--nat-radius-full);
+  background: var(--nat-tl-color);
+  color: white;
+  font-size: var(--nat-text-xs);
+  font-weight: var(--nat-font-bold);
+  margin-top: 2px;
+}
+
+/* ============================================
+ * CONNECTOR LINE
+ * ============================================ */
+.nat-timeline__line {
+  width: 2px;
+  flex: 1;
+  min-height: var(--nat-space-6);
+  background: var(--nat-border-base);
+  margin: var(--nat-space-2) 0;
+}
+
+.nat-timeline--dashed .nat-timeline__line {
+  background: none;
+  border-left: 2px dashed var(--nat-border-base);
+}
+
+/* ============================================
+ * CONTENT
+ * ============================================ */
+.nat-timeline__content {
+  flex: 1;
+  padding-bottom: var(--nat-space-6);
+  padding-top: 2px;
+  min-width: 0;
+}
+
+.nat-timeline__item--last .nat-timeline__content {
+  padding-bottom: 0;
+}
+
+.nat-timeline__header {
+  display: flex;
+  align-items: baseline;
+  gap: var(--nat-space-3);
+  flex-wrap: wrap;
+}
+
+.nat-timeline__title {
+  font-size: var(--nat-text-base);
+  font-weight: var(--nat-font-semibold);
+  color: var(--nat-text-primary);
+}
+
+.nat-timeline__subtitle {
+  font-size: var(--nat-text-xs);
+  color: var(--nat-text-tertiary);
+  font-variant-numeric: tabular-nums;
+}
+
+.nat-timeline__description {
+  margin: var(--nat-space-1) 0 0;
+  font-size: var(--nat-text-sm);
+  color: var(--nat-text-secondary);
+  line-height: 1.6;
+}
+
+/* ============================================
+ * ALTERNATE (zigzag) LAYOUT
+ * ============================================ */
+.nat-timeline--alternate .nat-timeline__item {
+  flex-direction: row;
+}
+
+.nat-timeline--alternate .nat-timeline__item--alt {
+  flex-direction: row-reverse;
+}
+
+.nat-timeline--alternate .nat-timeline__item--alt .nat-timeline__content {
+  text-align: right;
+}
+
+.nat-timeline--alternate .nat-timeline__item--alt .nat-timeline__header {
+  flex-direction: row-reverse;
+}
+
+/* ============================================
+ * STATUS COLORS
+ * ============================================ */
+.nat-timeline__item--success .nat-timeline__marker--dot {
+  background: var(--nat-success);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.8), 0 0 0 4px var(--nat-success);
+}
+
+.nat-timeline__item--warning .nat-timeline__marker--dot {
+  background: var(--nat-warning);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.8), 0 0 0 4px var(--nat-warning);
+}
+
+.nat-timeline__item--error .nat-timeline__marker--dot {
+  background: var(--nat-error);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.8), 0 0 0 4px var(--nat-error);
+}
+
+.nat-timeline__item--info .nat-timeline__marker--dot {
+  background: var(--nat-info);
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.8), 0 0 0 4px var(--nat-info);
+}

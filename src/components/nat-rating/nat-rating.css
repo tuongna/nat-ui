@@ -1,0 +1,106 @@
+:host {
+  display: inline-block;
+}
+
+.nat-rating {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--nat-space-1);
+  --nat-rating-color: var(--nat-warning, #f59e0b);
+}
+
+/* ============================================
+ * SIZES
+ * ============================================ */
+.nat-rating--sm .nat-rating__star {
+  width: 16px;
+  height: 16px;
+}
+
+.nat-rating--md .nat-rating__star {
+  width: 22px;
+  height: 22px;
+}
+
+.nat-rating--lg .nat-rating__star {
+  width: 28px;
+  height: 28px;
+}
+
+.nat-rating--xl .nat-rating__star {
+  width: 36px;
+  height: 36px;
+}
+
+/* ============================================
+ * STAR
+ * ============================================ */
+.nat-rating__star {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+  transition: transform var(--nat-transition-fast), color var(--nat-transition-fast);
+  outline: none;
+}
+
+.nat-rating__star svg {
+  width: 100%;
+  height: 100%;
+}
+
+.nat-rating__star--interactive {
+  cursor: pointer;
+}
+
+.nat-rating__star--interactive:hover,
+.nat-rating__star--interactive:focus-visible {
+  transform: scale(1.15);
+}
+
+.nat-rating__star:focus-visible {
+  outline: 2px solid var(--nat-focus-ring);
+  border-radius: var(--nat-radius-sm);
+}
+
+/* Filled star */
+.nat-rating__star--full {
+  color: var(--nat-rating-color);
+}
+
+/* Half star */
+.nat-rating__star--half {
+  color: var(--nat-rating-color);
+}
+
+/* Empty star */
+.nat-rating__star--empty {
+  color: var(--nat-border-base, rgba(0, 0, 0, 0.2));
+}
+
+/* ============================================
+ * STATES
+ * ============================================ */
+.nat-rating--disabled {
+  opacity: var(--nat-opacity-40);
+  pointer-events: none;
+}
+
+/* ============================================
+ * VALUE LABEL
+ * ============================================ */
+.nat-rating__value {
+  margin-left: var(--nat-space-2);
+  font-size: var(--nat-text-sm);
+  color: var(--nat-text-tertiary);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================
+ * DARK THEME
+ * ============================================ */
+@media (prefers-color-scheme: dark) {
+  .nat-rating__star--empty {
+    color: rgba(255, 255, 255, 0.18);
+  }
+}

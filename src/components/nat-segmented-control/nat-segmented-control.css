@@ -1,0 +1,133 @@
+:host {
+  display: inline-block;
+}
+
+:host([full-width]) {
+  display: block;
+}
+
+/* ============================================
+ * TRACK
+ * ============================================ */
+.nat-seg {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  background: var(--nat-bg-subtle, rgba(0, 0, 0, 0.07));
+  border-radius: var(--nat-radius-xl);
+  padding: 3px;
+  gap: 1px;
+}
+
+.nat-seg--full-width {
+  display: flex;
+  width: 100%;
+}
+
+.nat-seg--glass {
+  background: var(--nat-glass-bg, rgba(255, 255, 255, 0.5));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--nat-glass-border, rgba(255, 255, 255, 0.3));
+}
+
+/* ============================================
+ * SLIDING PILL
+ * ============================================ */
+.nat-seg__pill {
+  position: absolute;
+  top: 3px;
+  height: calc(100% - 6px);
+  background: var(--nat-bg-base, #ffffff);
+  border-radius: calc(var(--nat-radius-xl) - 3px);
+  box-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.12),
+    0 0 0 0.5px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: left var(--nat-transition-smooth, 250ms) cubic-bezier(0.34, 1.56, 0.64, 1),
+              width var(--nat-transition-smooth, 250ms) cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============================================
+ * OPTION BUTTONS
+ * ============================================ */
+.nat-seg__option {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--nat-space-1-5, 6px);
+
+  background: transparent;
+  border: none;
+  border-radius: calc(var(--nat-radius-xl) - 3px);
+  cursor: pointer;
+
+  font-family: var(--nat-font-sans);
+  font-weight: var(--nat-font-medium);
+  color: var(--nat-text-secondary);
+  white-space: nowrap;
+
+  transition: color var(--nat-transition-fast);
+  user-select: none;
+}
+
+.nat-seg--full-width .nat-seg__option {
+  flex: 1;
+}
+
+.nat-seg__option--active {
+  color: var(--nat-text-primary);
+  font-weight: var(--nat-font-semibold);
+}
+
+.nat-seg__option--disabled {
+  opacity: var(--nat-opacity-40);
+  cursor: not-allowed;
+}
+
+.nat-seg__option:focus-visible {
+  outline: 2px solid var(--nat-focus-ring);
+  outline-offset: 1px;
+}
+
+/* ============================================
+ * SIZES
+ * ============================================ */
+.nat-seg--sm .nat-seg__option {
+  height: 28px;
+  padding: 0 var(--nat-space-3);
+  font-size: var(--nat-text-xs);
+}
+
+.nat-seg--md .nat-seg__option {
+  height: 36px;
+  padding: 0 var(--nat-space-4);
+  font-size: var(--nat-text-sm);
+}
+
+.nat-seg--lg .nat-seg__option {
+  height: 44px;
+  padding: 0 var(--nat-space-5);
+  font-size: var(--nat-text-base);
+}
+
+/* ============================================
+ * DARK THEME
+ * ============================================ */
+@media (prefers-color-scheme: dark) {
+  .nat-seg {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .nat-seg__pill {
+    background: var(--nat-bg-elevated, rgba(60, 65, 90, 1));
+    box-shadow:
+      0 1px 4px rgba(0, 0, 0, 0.4),
+      0 0 0 0.5px rgba(255, 255, 255, 0.06),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+}

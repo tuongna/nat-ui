@@ -1,0 +1,59 @@
+:host {
+  display: inline-block;
+}
+
+.nat-kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--nat-bg-base, #ffffff);
+  border: 1px solid var(--nat-border-base, rgba(0, 0, 0, 0.2));
+  border-bottom-width: 2px;
+  border-radius: var(--nat-radius-md);
+
+  font-family: var(--nat-font-mono);
+  font-weight: var(--nat-font-medium);
+  color: var(--nat-text-secondary);
+  line-height: 1;
+
+  box-shadow: 0 1px 0 var(--nat-border-strong, rgba(0, 0, 0, 0.1));
+
+  user-select: none;
+}
+
+/* ============================================
+ * SIZES
+ * ============================================ */
+.nat-kbd--sm {
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  font-size: 10px;
+}
+
+.nat-kbd--md {
+  min-width: 22px;
+  height: 22px;
+  padding: 0 5px;
+  font-size: var(--nat-text-xs);
+}
+
+.nat-kbd--lg {
+  min-width: 28px;
+  height: 28px;
+  padding: 0 var(--nat-space-2);
+  font-size: var(--nat-text-sm);
+}
+
+/* ============================================
+ * DARK THEME
+ * ============================================ */
+@media (prefers-color-scheme: dark) {
+  .nat-kbd {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.18);
+    border-bottom-color: rgba(255, 255, 255, 0.28);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.12);
+  }
+}
