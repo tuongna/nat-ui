@@ -46,7 +46,12 @@ jobs:
         run: npm run build-storybook
 
       - name: Setup Pages
+        # enablement: true turns on GitHub Pages (with "GitHub Actions" as the
+        # build source) automatically via the API, so no manual repo-settings
+        # step is required on the first run.
         uses: actions/configure-pages@v5
+        with:
+          enablement: true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
