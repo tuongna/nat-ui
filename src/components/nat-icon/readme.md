@@ -34,6 +34,7 @@ Supports loading icons from registered libraries or direct SVG URLs.
 
  - [nat-checkbox](../nat-checkbox)
  - [nat-command](../nat-command)
+ - [nat-context-menu](../nat-context-menu)
  - [nat-list](../nat-list)
  - [nat-menu](../nat-menu)
  - [nat-segmented-control](../nat-segmented-control)
@@ -48,6 +49,7 @@ Supports loading icons from registered libraries or direct SVG URLs.
 graph TD;
   nat-checkbox --> nat-icon
   nat-command --> nat-icon
+  nat-context-menu --> nat-icon
   nat-list --> nat-icon
   nat-menu --> nat-icon
   nat-segmented-control --> nat-icon

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-29T03:20:30",
+  "timestamp": "2026-05-29T03:33:44",
   "compiler": {
     "name": "@stencil/core",
     "version": "4.38.0",
@@ -363,6 +363,408 @@
           "docs": "Alert title"
         }
       ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
+      "filePath": "src/components/nat-autocomplete/nat-autocomplete.tsx",
+      "encapsulation": "shadow",
+      "tag": "nat-autocomplete",
+      "readme": "# nat-autocomplete\n\n\n",
+      "docs": "Autocomplete / combobox — a text input with a filtered dropdown list.\nSupports single and multiple selection, keyboard navigation, and clearable mode.",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "clearable",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "clearable",
+          "reflectToAttr": false,
+          "docs": "Show a clear button when a value is selected",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "true"
+            }
+          ],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "If true, the component is disabled",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Input label",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "maxOptions",
+          "type": "number",
+          "complexType": {
+            "original": "number",
+            "resolved": "number",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "max-options",
+          "reflectToAttr": false,
+          "docs": "Maximum number of results to show",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "8"
+            }
+          ],
+          "default": "8",
+          "values": [
+            {
+              "type": "number"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "multiple",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "multiple",
+          "reflectToAttr": false,
+          "docs": "Allow selecting multiple values",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "options",
+          "type": "AutocompleteOption[]",
+          "complexType": {
+            "original": "AutocompleteOption[]",
+            "resolved": "AutocompleteOption[]",
+            "references": {
+              "AutocompleteOption": {
+                "location": "local",
+                "path": "/home/user/nat-ui/src/components/nat-autocomplete/nat-autocomplete.tsx",
+                "id": "src/components/nat-autocomplete/nat-autocomplete.tsx::AutocompleteOption"
+              }
+            }
+          },
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "List of available options",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "[]"
+            }
+          ],
+          "default": "[]",
+          "values": [
+            {
+              "type": "AutocompleteOption[]"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "Input placeholder",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'Search…'"
+            }
+          ],
+          "default": "'Search…'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "size",
+          "type": "\"lg\" | \"md\" | \"sm\"",
+          "complexType": {
+            "original": "'sm' | 'md' | 'lg'",
+            "resolved": "\"lg\" | \"md\" | \"sm\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "Size variant",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'md'"
+            }
+          ],
+          "default": "'md'",
+          "values": [
+            {
+              "value": "lg",
+              "type": "string"
+            },
+            {
+              "value": "md",
+              "type": "string"
+            },
+            {
+              "value": "sm",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "Currently selected value (single mode)",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "''"
+            }
+          ],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "values",
+          "type": "string[]",
+          "complexType": {
+            "original": "string[]",
+            "resolved": "string[]",
+            "references": {}
+          },
+          "mutable": true,
+          "reflectToAttr": false,
+          "docs": "Currently selected values (multiple mode)",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "[]"
+            }
+          ],
+          "default": "[]",
+          "values": [
+            {
+              "type": "string[]"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "clear",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "complexType": {
+            "signature": "() => Promise<void>",
+            "parameters": [],
+            "references": {
+              "Promise": {
+                "location": "global",
+                "id": "global::Promise"
+              }
+            },
+            "return": "Promise<void>"
+          },
+          "signature": "clear() => Promise<void>",
+          "parameters": [],
+          "docs": "Clear the current selection",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "natChange",
+          "detail": "{ value: string; option: AutocompleteOption; }",
+          "bubbles": true,
+          "complexType": {
+            "original": "{ value: string; option: AutocompleteOption }",
+            "resolved": "{ value: string; option: AutocompleteOption; }",
+            "references": {
+              "AutocompleteOption": {
+                "location": "local",
+                "path": "/home/user/nat-ui/src/components/nat-autocomplete/nat-autocomplete.tsx",
+                "id": "src/components/nat-autocomplete/nat-autocomplete.tsx::AutocompleteOption"
+              }
+            }
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the selection changes",
+          "docsTags": []
+        },
+        {
+          "event": "natMultiChange",
+          "detail": "{ values: string[]; options: AutocompleteOption[]; }",
+          "bubbles": true,
+          "complexType": {
+            "original": "{ values: string[]; options: AutocompleteOption[] }",
+            "resolved": "{ values: string[]; options: AutocompleteOption[]; }",
+            "references": {
+              "AutocompleteOption": {
+                "location": "local",
+                "path": "/home/user/nat-ui/src/components/nat-autocomplete/nat-autocomplete.tsx",
+                "id": "src/components/nat-autocomplete/nat-autocomplete.tsx::AutocompleteOption"
+              }
+            }
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when multiple selection changes",
+          "docsTags": []
+        },
+        {
+          "event": "natSearch",
+          "detail": "string",
+          "bubbles": true,
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the input text changes",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "click",
+          "target": "window",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
       "parts": [],
       "dependents": [],
       "dependencies": [],
@@ -2083,6 +2485,190 @@
       }
     },
     {
+      "filePath": "src/components/nat-color-picker/nat-color-picker.tsx",
+      "encapsulation": "shadow",
+      "tag": "nat-color-picker",
+      "readme": "# nat-color-picker\n\n\n",
+      "docs": "Full-featured color picker with hue/saturation/value spectrum,\nalpha slider, hex input, and preset swatches.",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "glass",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "glass",
+          "reflectToAttr": false,
+          "docs": "Glass style picker panel",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "showAlpha",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "show-alpha",
+          "reflectToAttr": false,
+          "docs": "Show alpha (opacity) slider",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "showSwatches",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "show-swatches",
+          "reflectToAttr": false,
+          "docs": "Show preset color swatches",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "true"
+            }
+          ],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "swatches",
+          "type": "string[]",
+          "complexType": {
+            "original": "string[]",
+            "resolved": "string[]",
+            "references": {}
+          },
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Custom swatch colors (hex strings)",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "['#ef4444', '#f97316', '#eab308', '#22c55e', '#06b6d4', '#3b82f6', '#8b5cf6', '#ec4899', '#6b7280', '#000000', '#ffffff']"
+            }
+          ],
+          "default": "['#ef4444', '#f97316', '#eab308', '#22c55e', '#06b6d4', '#3b82f6', '#8b5cf6', '#ec4899', '#6b7280', '#000000', '#ffffff']",
+          "values": [
+            {
+              "type": "string[]"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "Current color value as a hex string",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'#5b6fe8'"
+            }
+          ],
+          "default": "'#5b6fe8'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "natChange",
+          "detail": "{ hex: string; rgba: string; rgb: RGB; }",
+          "bubbles": true,
+          "complexType": {
+            "original": "{ hex: string; rgba: string; rgb: RGB }",
+            "resolved": "{ hex: string; rgba: string; rgb: RGB; }",
+            "references": {
+              "RGB": {
+                "location": "global",
+                "id": "global::RGB"
+              }
+            }
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted on every color change",
+          "docsTags": []
+        }
+      ],
+      "listeners": [],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
       "filePath": "src/components/nat-command/nat-command.tsx",
       "encapsulation": "shadow",
       "tag": "nat-command",
@@ -2339,6 +2925,473 @@
           "nat-icon"
         ]
       }
+    },
+    {
+      "filePath": "src/components/nat-context-menu/nat-context-menu.tsx",
+      "encapsulation": "shadow",
+      "tag": "nat-context-menu",
+      "readme": "# nat-context-menu\n\n\n",
+      "docs": "Context menu — triggered by right-click on the default slot.\nSupports icons, keyboard shortcuts, separators, danger items, and sub-menus.",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "- The element that triggers the context menu on right-click"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "glass",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "glass",
+          "reflectToAttr": false,
+          "docs": "Glass style menu",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "items",
+          "type": "ContextMenuItem[]",
+          "complexType": {
+            "original": "ContextMenuItem[]",
+            "resolved": "ContextMenuItem[]",
+            "references": {
+              "ContextMenuItem": {
+                "location": "local",
+                "path": "/home/user/nat-ui/src/components/nat-context-menu/nat-context-menu.tsx",
+                "id": "src/components/nat-context-menu/nat-context-menu.tsx::ContextMenuItem"
+              }
+            }
+          },
+          "mutable": false,
+          "reflectToAttr": false,
+          "docs": "Menu items array",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "[]"
+            }
+          ],
+          "default": "[]",
+          "values": [
+            {
+              "type": "ContextMenuItem[]"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "close",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "complexType": {
+            "signature": "() => Promise<void>",
+            "parameters": [],
+            "references": {
+              "Promise": {
+                "location": "global",
+                "id": "global::Promise"
+              }
+            },
+            "return": "Promise<void>"
+          },
+          "signature": "close() => Promise<void>",
+          "parameters": [],
+          "docs": "Close the context menu",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "natSelect",
+          "detail": "ContextMenuItem",
+          "bubbles": true,
+          "complexType": {
+            "original": "ContextMenuItem",
+            "resolved": "ContextMenuItem",
+            "references": {
+              "ContextMenuItem": {
+                "location": "local",
+                "path": "/home/user/nat-ui/src/components/nat-context-menu/nat-context-menu.tsx",
+                "id": "src/components/nat-context-menu/nat-context-menu.tsx::ContextMenuItem"
+              }
+            }
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when a menu item is selected",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "contextmenu",
+          "target": "window",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "click",
+          "target": "window",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "keydown",
+          "target": "window",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [
+        {
+          "name": "",
+          "docs": "The element that triggers the context menu on right-click"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [
+        "nat-icon"
+      ],
+      "dependencyGraph": {
+        "nat-context-menu": [
+          "nat-icon"
+        ]
+      }
+    },
+    {
+      "filePath": "src/components/nat-date-picker/nat-date-picker.tsx",
+      "encapsulation": "shadow",
+      "tag": "nat-date-picker",
+      "readme": "# nat-date-picker\n\n\n",
+      "docs": "Date picker with an inline calendar popup.\nSupports single date selection, min/max constraints, and disabled dates.",
+      "docsTags": [],
+      "usage": {},
+      "props": [
+        {
+          "name": "disabled",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "disabled",
+          "reflectToAttr": false,
+          "docs": "If true, the input is disabled",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "displayFormat",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "display-format",
+          "reflectToAttr": false,
+          "docs": "Display format for the input field (uses simple token replacement)",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'MMM D, YYYY'"
+            }
+          ],
+          "default": "'MMM D, YYYY'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "glass",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "glass",
+          "reflectToAttr": false,
+          "docs": "Glass style popup",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "label",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "label",
+          "reflectToAttr": false,
+          "docs": "Input label",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "max",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "max",
+          "reflectToAttr": false,
+          "docs": "Maximum selectable date (YYYY-MM-DD)",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "min",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "min",
+          "reflectToAttr": false,
+          "docs": "Minimum selectable date (YYYY-MM-DD)",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "placeholder",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "placeholder",
+          "reflectToAttr": false,
+          "docs": "Input placeholder",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'Select date…'"
+            }
+          ],
+          "default": "'Select date…'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "size",
+          "type": "\"lg\" | \"md\" | \"sm\"",
+          "complexType": {
+            "original": "'sm' | 'md' | 'lg'",
+            "resolved": "\"lg\" | \"md\" | \"sm\"",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "size",
+          "reflectToAttr": false,
+          "docs": "Size variant",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'md'"
+            }
+          ],
+          "default": "'md'",
+          "values": [
+            {
+              "value": "lg",
+              "type": "string"
+            },
+            {
+              "value": "md",
+              "type": "string"
+            },
+            {
+              "value": "sm",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "value",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": true,
+          "attr": "value",
+          "reflectToAttr": true,
+          "docs": "Selected date as ISO string (YYYY-MM-DD)",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "''"
+            }
+          ],
+          "default": "''",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [],
+      "events": [
+        {
+          "event": "natChange",
+          "detail": "{ value: string; date: Date; }",
+          "bubbles": true,
+          "complexType": {
+            "original": "{ value: string; date: Date }",
+            "resolved": "{ value: string; date: Date; }",
+            "references": {
+              "Date": {
+                "location": "global",
+                "id": "global::Date"
+              }
+            }
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the selected date changes",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "click",
+          "target": "window",
+          "capture": false,
+          "passive": false
+        },
+        {
+          "event": "keydown",
+          "target": "window",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
     },
     {
       "filePath": "src/components/nat-dialog/nat-dialog.tsx",
@@ -3004,6 +4057,7 @@
       "dependents": [
         "nat-checkbox",
         "nat-command",
+        "nat-context-menu",
         "nat-list",
         "nat-menu",
         "nat-segmented-control",
@@ -3019,6 +4073,9 @@
           "nat-icon"
         ],
         "nat-command": [
+          "nat-icon"
+        ],
+        "nat-context-menu": [
           "nat-icon"
         ],
         "nat-list": [
@@ -7384,6 +8441,374 @@
       }
     },
     {
+      "filePath": "src/components/nat-sheet/nat-sheet.tsx",
+      "encapsulation": "shadow",
+      "tag": "nat-sheet",
+      "readme": "# nat-sheet\n\n\n",
+      "docs": "Slide-in sheet panel — bottom sheet for mobile, side sheet for desktop.\nGlass variant available for Apple liquid glass aesthetic.",
+      "docsTags": [
+        {
+          "name": "slot",
+          "text": "- Main sheet content"
+        },
+        {
+          "name": "slot",
+          "text": "header - Sheet header area (above content)"
+        },
+        {
+          "name": "slot",
+          "text": "footer - Sheet footer area (below content, e.g. action buttons)"
+        }
+      ],
+      "usage": {},
+      "props": [
+        {
+          "name": "dismissible",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "dismissible",
+          "reflectToAttr": false,
+          "docs": "If true, clicking the backdrop closes the sheet",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "true"
+            }
+          ],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "glass",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "glass",
+          "reflectToAttr": false,
+          "docs": "Apply liquid glass styling",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "heading",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "heading",
+          "reflectToAttr": false,
+          "docs": "Sheet title (shown in header if no header slot)",
+          "docsTags": [],
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": true,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "open",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": true,
+          "attr": "open",
+          "reflectToAttr": true,
+          "docs": "Whether the sheet is open",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "false"
+            }
+          ],
+          "default": "false",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "position",
+          "type": "\"bottom\" | \"left\" | \"right\"",
+          "complexType": {
+            "original": "SheetPosition",
+            "resolved": "\"bottom\" | \"left\" | \"right\"",
+            "references": {
+              "SheetPosition": {
+                "location": "local",
+                "path": "/home/user/nat-ui/src/components/nat-sheet/nat-sheet.tsx",
+                "id": "src/components/nat-sheet/nat-sheet.tsx::SheetPosition"
+              }
+            }
+          },
+          "mutable": false,
+          "attr": "position",
+          "reflectToAttr": false,
+          "docs": "Slide direction",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'bottom'"
+            }
+          ],
+          "default": "'bottom'",
+          "values": [
+            {
+              "value": "bottom",
+              "type": "string"
+            },
+            {
+              "value": "left",
+              "type": "string"
+            },
+            {
+              "value": "right",
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "sheetHeight",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "sheet-height",
+          "reflectToAttr": false,
+          "docs": "Height for bottom sheet (CSS value)",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'auto'"
+            }
+          ],
+          "default": "'auto'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "sheetWidth",
+          "type": "string",
+          "complexType": {
+            "original": "string",
+            "resolved": "string",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "sheet-width",
+          "reflectToAttr": false,
+          "docs": "Width for side sheets (CSS value)",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "'400px'"
+            }
+          ],
+          "default": "'400px'",
+          "values": [
+            {
+              "type": "string"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        },
+        {
+          "name": "showHandle",
+          "type": "boolean",
+          "complexType": {
+            "original": "boolean",
+            "resolved": "boolean",
+            "references": {}
+          },
+          "mutable": false,
+          "attr": "show-handle",
+          "reflectToAttr": false,
+          "docs": "Shows a drag handle for bottom sheets",
+          "docsTags": [
+            {
+              "name": "default",
+              "text": "true"
+            }
+          ],
+          "default": "true",
+          "values": [
+            {
+              "type": "boolean"
+            }
+          ],
+          "optional": false,
+          "required": false,
+          "getter": false,
+          "setter": false
+        }
+      ],
+      "methods": [
+        {
+          "name": "hide",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "complexType": {
+            "signature": "() => Promise<void>",
+            "parameters": [],
+            "references": {
+              "Promise": {
+                "location": "global",
+                "id": "global::Promise"
+              }
+            },
+            "return": "Promise<void>"
+          },
+          "signature": "hide() => Promise<void>",
+          "parameters": [],
+          "docs": "Close the sheet",
+          "docsTags": []
+        },
+        {
+          "name": "show",
+          "returns": {
+            "type": "Promise<void>",
+            "docs": ""
+          },
+          "complexType": {
+            "signature": "() => Promise<void>",
+            "parameters": [],
+            "references": {
+              "Promise": {
+                "location": "global",
+                "id": "global::Promise"
+              }
+            },
+            "return": "Promise<void>"
+          },
+          "signature": "show() => Promise<void>",
+          "parameters": [],
+          "docs": "Open the sheet",
+          "docsTags": []
+        }
+      ],
+      "events": [
+        {
+          "event": "natClose",
+          "detail": "void",
+          "bubbles": true,
+          "complexType": {
+            "original": "void",
+            "resolved": "void",
+            "references": {}
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the sheet closes",
+          "docsTags": []
+        },
+        {
+          "event": "natOpen",
+          "detail": "void",
+          "bubbles": true,
+          "complexType": {
+            "original": "void",
+            "resolved": "void",
+            "references": {}
+          },
+          "cancelable": true,
+          "composed": true,
+          "docs": "Emitted when the sheet opens",
+          "docsTags": []
+        }
+      ],
+      "listeners": [
+        {
+          "event": "keydown",
+          "target": "window",
+          "capture": false,
+          "passive": false
+        }
+      ],
+      "styles": [],
+      "slots": [
+        {
+          "name": "",
+          "docs": "Main sheet content"
+        },
+        {
+          "name": "footer",
+          "docs": "Sheet footer area (below content, e.g. action buttons)"
+        },
+        {
+          "name": "header",
+          "docs": "Sheet header area (above content)"
+        }
+      ],
+      "parts": [],
+      "dependents": [],
+      "dependencies": [],
+      "dependencyGraph": {}
+    },
+    {
       "filePath": "src/components/nat-skeleton/nat-skeleton.tsx",
       "encapsulation": "shadow",
       "tag": "nat-skeleton",
@@ -10628,11 +12053,11 @@
       "events": [
         {
           "event": "natFileRejected",
-          "detail": "{ file: File; reason: \"size\" | \"count\" | \"type\"; }",
+          "detail": "{ file: File; reason: \"size\" | \"type\" | \"count\"; }",
           "bubbles": true,
           "complexType": {
             "original": "{ file: File; reason: 'size' | 'type' | 'count' }",
-            "resolved": "{ file: File; reason: \"size\" | \"count\" | \"type\"; }",
+            "resolved": "{ file: File; reason: \"size\" | \"type\" | \"count\"; }",
             "references": {
               "File": {
                 "location": "global",
@@ -10700,6 +12125,11 @@
     }
   ],
   "typeLibrary": {
+    "src/components/nat-autocomplete/nat-autocomplete.tsx::AutocompleteOption": {
+      "declaration": "export interface AutocompleteOption {\n  /** Displayed label */\n  label: string;\n  /** Value submitted/emitted on selection */\n  value: string;\n  /** Optional description shown below label */\n  description?: string;\n  /** If true, option is disabled */\n  disabled?: boolean;\n  /** Group header label */\n  group?: string;\n}",
+      "docstring": "",
+      "path": "src/components/nat-autocomplete/nat-autocomplete.tsx"
+    },
     "src/components/nat-avatar/nat-avatar.tsx::AvatarSize": {
       "declaration": "export type AvatarSize = 'sm' | 'md' | 'lg';",
       "docstring": "",
@@ -10739,6 +12169,11 @@
       "declaration": "export interface CommandItem {\n  /** Unique identifier */\n  id: string;\n  /** Display label */\n  label: string;\n  /** Optional description or shortcut hint */\n  description?: string;\n  /** Icon name (nat-icon compatible) */\n  icon?: string;\n  /** Group/category name */\n  group?: string;\n  /** Keyboard shortcut display string */\n  shortcut?: string;\n  /** If true, item is disabled */\n  disabled?: boolean;\n  /** Arbitrary metadata */\n  meta?: Record<string, unknown>;\n}",
       "docstring": "",
       "path": "src/components/nat-command/nat-command.tsx"
+    },
+    "src/components/nat-context-menu/nat-context-menu.tsx::ContextMenuItem": {
+      "declaration": "export interface ContextMenuItem {\n  /** Unique identifier */\n  id: string;\n  /** Display label */\n  label?: string;\n  /** Icon name (nat-icon compatible) */\n  icon?: string;\n  /** Keyboard shortcut display */\n  shortcut?: string;\n  /** If true, renders a visual separator instead of a menu item */\n  separator?: boolean;\n  /** If true, item is disabled */\n  disabled?: boolean;\n  /** Danger/destructive action styling */\n  danger?: boolean;\n  /** Sub-menu items */\n  children?: ContextMenuItem[];\n}",
+      "docstring": "",
+      "path": "src/components/nat-context-menu/nat-context-menu.tsx"
     },
     "src/components/nat-input/nat-input.tsx::InputType": {
       "declaration": "export type InputType = 'text' | 'email' | 'password' | 'number' | 'tel' | 'url' | 'search';",
@@ -10789,6 +12224,11 @@
       "declaration": "export type SelectSize = 'sm' | 'md' | 'lg';",
       "docstring": "",
       "path": "src/components/nat-select/nat-select.tsx"
+    },
+    "src/components/nat-sheet/nat-sheet.tsx::SheetPosition": {
+      "declaration": "export type SheetPosition = 'bottom' | 'right' | 'left';",
+      "docstring": "",
+      "path": "src/components/nat-sheet/nat-sheet.tsx"
     },
     "src/components/nat-spinner/nat-spinner.tsx::SpinnerSize": {
       "declaration": "export type SpinnerSize = 'sm' | 'md' | 'lg';",

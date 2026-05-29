@@ -28,7 +28,7 @@ Drag-and-drop file upload zone with preview, progress, and multiple file support
 
 | Event             | Description                                              | Type                                                                |
 | ----------------- | -------------------------------------------------------- | ------------------------------------------------------------------- |
-| `natFileRejected` | Emitted when file exceeds maxSize or type is not allowed | `CustomEvent<{ file: File; reason: "size" \| "count" \| "type"; }>` |
+| `natFileRejected` | Emitted when file exceeds maxSize or type is not allowed | `CustomEvent<{ file: File; reason: "size" \| "type" \| "count"; }>` |
 | `natFileRemoved`  | Emitted when a file is removed                           | `CustomEvent<UploadFile>`                                           |
 | `natFilesAdded`   | Emitted when files are added (before upload)             | `CustomEvent<File[]>`                                               |
 
