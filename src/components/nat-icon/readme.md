@@ -33,22 +33,30 @@ Supports loading icons from registered libraries or direct SVG URLs.
 ### Used by
 
  - [nat-checkbox](../nat-checkbox)
+ - [nat-command](../nat-command)
+ - [nat-context-menu](../nat-context-menu)
  - [nat-list](../nat-list)
  - [nat-menu](../nat-menu)
+ - [nat-segmented-control](../nat-segmented-control)
  - [nat-stepper](../nat-stepper)
  - [nat-table](../nat-table)
  - [nat-tabs](../nat-tabs)
+ - [nat-timeline](../nat-timeline)
  - [nat-toast](../nat-toast)
 
 ### Graph
 ```mermaid
 graph TD;
   nat-checkbox --> nat-icon
+  nat-command --> nat-icon
+  nat-context-menu --> nat-icon
   nat-list --> nat-icon
   nat-menu --> nat-icon
+  nat-segmented-control --> nat-icon
   nat-stepper --> nat-icon
   nat-table --> nat-icon
   nat-tabs --> nat-icon
+  nat-timeline --> nat-icon
   nat-toast --> nat-icon
   style nat-icon fill:#f9f,stroke:#333,stroke-width:4px
 ```

@@ -1,0 +1,246 @@
+:host {
+  display: inline-block;
+}
+
+/* ============================================
+ * PANEL
+ * ============================================ */
+.nat-cp {
+  display: flex;
+  flex-direction: column;
+  width: 240px;
+  background: var(--nat-bg-surface);
+  border: 1px solid var(--nat-border-subtle);
+  border-radius: var(--nat-radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--nat-shadow-lg);
+  user-select: none;
+}
+
+.nat-cp--glass {
+  background: var(--nat-glass-bg-strong, rgba(255, 255, 255, 0.85));
+  backdrop-filter: var(--nat-glass-blur, blur(18px)) saturate(1.8);
+  -webkit-backdrop-filter: var(--nat-glass-blur, blur(18px)) saturate(1.8);
+  border-color: var(--nat-glass-border, rgba(255, 255, 255, 0.3));
+  box-shadow:
+    var(--nat-glass-shadow, 0 8px 32px rgba(31, 38, 135, 0.15)),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* ============================================
+ * SPECTRUM (SV plane)
+ * ============================================ */
+.nat-cp__spectrum {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  cursor: crosshair;
+  flex-shrink: 0;
+}
+
+.nat-cp__spectrum-white,
+.nat-cp__spectrum-black {
+  position: absolute;
+  inset: 0;
+}
+
+.nat-cp__spectrum-white {
+  background: linear-gradient(to right, #fff, transparent);
+}
+
+.nat-cp__spectrum-black {
+  background: linear-gradient(to bottom, transparent, #000);
+}
+
+.nat-cp__thumb {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ============================================
+ * SLIDERS ROW
+ * ============================================ */
+.nat-cp__sliders {
+  display: flex;
+  align-items: center;
+  gap: var(--nat-space-3);
+  padding: var(--nat-space-3) var(--nat-space-4);
+}
+
+.nat-cp__preview {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  border: 2px solid var(--nat-border-base);
+  background-image:
+    linear-gradient(45deg, #ccc 25%, transparent 25%),
+    linear-gradient(-45deg, #ccc 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #ccc 75%),
+    linear-gradient(-45deg, transparent 75%, #ccc 75%);
+  background-size: 8px 8px;
+  background-position: 0 0, 0 4px, 4px -4px, -4px 0;
+  background-origin: border-box;
+  position: relative;
+}
+
+.nat-cp__preview::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50%;
+  background: inherit;
+  border: inherit;
+}
+
+.nat-cp__slider-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--nat-space-2);
+}
+
+/* Hue track */
+.nat-cp__hue-track {
+  position: relative;
+  height: 10px;
+  border-radius: var(--nat-radius-full);
+  cursor: pointer;
+  background: linear-gradient(to right, #f00 0%, #ff0 17%, #0f0 33%, #0ff 50%, #00f 67%, #f0f 83%, #f00 100%);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Alpha track */
+.nat-cp__alpha-track {
+  position: relative;
+  height: 10px;
+  border-radius: var(--nat-radius-full);
+  cursor: pointer;
+  background-image:
+    linear-gradient(45deg, #ccc 25%, transparent 25%),
+    linear-gradient(-45deg, #ccc 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #ccc 75%),
+    linear-gradient(-45deg, transparent 75%, #ccc 75%);
+  background-size: 8px 8px;
+  background-position: 0 0, 0 4px, 4px -4px, -4px 0;
+  overflow: hidden;
+}
+
+.nat-cp__alpha-gradient {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--nat-radius-full);
+}
+
+/* Slider thumb */
+.nat-cp__slider-thumb {
+  position: absolute;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* ============================================
+ * HEX INPUT
+ * ============================================ */
+.nat-cp__hex-row {
+  display: flex;
+  align-items: center;
+  gap: var(--nat-space-1);
+  padding: 0 var(--nat-space-4) var(--nat-space-3);
+}
+
+.nat-cp__hex-hash {
+  font-family: var(--nat-font-mono);
+  font-size: var(--nat-text-sm);
+  color: var(--nat-text-tertiary);
+  flex-shrink: 0;
+}
+
+.nat-cp__hex-input {
+  flex: 1;
+  background: var(--nat-bg-subtle);
+  border: 1px solid var(--nat-border-base);
+  border-radius: var(--nat-radius-md);
+  padding: var(--nat-space-1) var(--nat-space-2);
+  font-family: var(--nat-font-mono);
+  font-size: var(--nat-text-sm);
+  color: var(--nat-text-primary);
+  text-transform: uppercase;
+  outline: none;
+  min-width: 0;
+}
+
+.nat-cp__hex-input:focus {
+  border-color: var(--nat-primary);
+  box-shadow: 0 0 0 2px var(--nat-focus-ring);
+}
+
+.nat-cp__alpha-label {
+  font-size: var(--nat-text-sm);
+  color: var(--nat-text-secondary);
+  min-width: 36px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================
+ * SWATCHES
+ * ============================================ */
+.nat-cp__swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--nat-space-1-5, 6px);
+  padding: 0 var(--nat-space-4) var(--nat-space-4);
+}
+
+.nat-cp__swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: var(--nat-radius-sm);
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: transform var(--nat-transition-fast), border-color var(--nat-transition-fast);
+  outline: none;
+}
+
+.nat-cp__swatch:hover {
+  transform: scale(1.2);
+}
+
+.nat-cp__swatch:focus-visible {
+  outline: 2px solid var(--nat-focus-ring);
+  outline-offset: 1px;
+}
+
+.nat-cp__swatch--active {
+  border-color: var(--nat-primary);
+  transform: scale(1.15);
+  box-shadow: 0 0 0 2px var(--nat-bg-surface), 0 0 0 3.5px var(--nat-primary);
+}
+
+/* ============================================
+ * DARK THEME
+ * ============================================ */
+@media (prefers-color-scheme: dark) {
+  .nat-cp {
+    background: var(--nat-bg-elevated);
+  }
+
+  .nat-cp__hex-input {
+    background: rgba(255, 255, 255, 0.06);
+  }
+}

@@ -11,6 +11,13 @@ const config: StorybookConfig = {
     "@storybook/addon-a11y",
     "@storybook/addon-docs"
   ],
-  "framework": "@storybook/web-components-vite"
+  "framework": "@storybook/web-components-vite",
+  // When deploying to GitHub Pages as a project site (tuongna.github.io/nat-ui),
+  // assets must be served from the /nat-ui/ sub-path. STORYBOOK_BASE_PATH is set
+  // by the CI workflow; locally it defaults to '/' for the dev server.
+  "viteFinal": async config => {
+    config.base = process.env.STORYBOOK_BASE_PATH || '/';
+    return config;
+  }
 };
 export default config;

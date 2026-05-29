@@ -1,0 +1,260 @@
+:host {
+  display: block;
+}
+
+/* Hidden native input */
+.nat-upload__input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+/* ============================================
+ * DROP ZONE
+ * ============================================ */
+.nat-upload__zone {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  padding: var(--nat-space-8);
+
+  background: var(--nat-bg-subtle);
+  border: 2px dashed var(--nat-border-base);
+  border-radius: var(--nat-radius-2xl);
+
+  cursor: pointer;
+  transition:
+    background var(--nat-transition-fast),
+    border-color var(--nat-transition-fast),
+    box-shadow var(--nat-transition-fast);
+
+  outline: none;
+}
+
+.nat-upload__zone:hover:not(.nat-upload__zone--disabled),
+.nat-upload__zone:focus-visible {
+  background: var(--nat-primary-lighter, rgba(91, 111, 232, 0.05));
+  border-color: var(--nat-primary);
+}
+
+.nat-upload__zone--dragging {
+  background: var(--nat-primary-lighter, rgba(91, 111, 232, 0.08));
+  border-color: var(--nat-primary);
+  box-shadow: 0 0 0 4px var(--nat-focus-ring, rgba(91, 111, 232, 0.15));
+  transform: scale(1.01);
+}
+
+.nat-upload__zone--disabled {
+  opacity: var(--nat-opacity-50);
+  cursor: not-allowed;
+}
+
+/* Glass variant */
+.nat-upload__zone--glass {
+  background: var(--nat-glass-bg, rgba(255, 255, 255, 0.5));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px dashed rgba(255, 255, 255, 0.4);
+}
+
+/* Minimal variant */
+.nat-upload__zone--minimal {
+  min-height: 80px;
+  background: transparent;
+  border-style: solid;
+  border-width: 1px;
+}
+
+/* ============================================
+ * DEFAULT CONTENT
+ * ============================================ */
+.nat-upload__default-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--nat-space-2);
+  text-align: center;
+  pointer-events: none;
+}
+
+.nat-upload__icon {
+  width: 48px;
+  height: 48px;
+  color: var(--nat-text-tertiary);
+  margin-bottom: var(--nat-space-2);
+  transition: color var(--nat-transition-fast), transform var(--nat-transition-fast);
+}
+
+.nat-upload__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.nat-upload__zone:hover:not(.nat-upload__zone--disabled) .nat-upload__icon,
+.nat-upload__zone--dragging .nat-upload__icon {
+  color: var(--nat-primary);
+  transform: translateY(-4px);
+}
+
+.nat-upload__label {
+  margin: 0;
+  font-size: var(--nat-text-base);
+  font-weight: var(--nat-font-medium);
+  color: var(--nat-text-secondary);
+}
+
+.nat-upload__hint {
+  margin: 0;
+  font-size: var(--nat-text-sm);
+  color: var(--nat-text-tertiary);
+}
+
+/* ============================================
+ * FILE LIST
+ * ============================================ */
+.nat-upload__file-list {
+  list-style: none;
+  margin: var(--nat-space-3) 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--nat-space-2);
+}
+
+.nat-upload__file {
+  display: flex;
+  align-items: center;
+  gap: var(--nat-space-3);
+  padding: var(--nat-space-3) var(--nat-space-4);
+  background: var(--nat-bg-surface);
+  border: 1px solid var(--nat-border-subtle);
+  border-radius: var(--nat-radius-lg);
+  transition: background var(--nat-transition-fast);
+}
+
+.nat-upload__file--error {
+  background: rgba(239, 68, 68, 0.05);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+.nat-upload__file--done {
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.nat-upload__preview {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: var(--nat-radius-md);
+  flex-shrink: 0;
+}
+
+.nat-upload__file-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--nat-bg-subtle);
+  border-radius: var(--nat-radius-md);
+  flex-shrink: 0;
+  color: var(--nat-text-tertiary);
+}
+
+.nat-upload__file-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.nat-upload__file-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nat-upload__file-name {
+  font-size: var(--nat-text-sm);
+  font-weight: var(--nat-font-medium);
+  color: var(--nat-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.nat-upload__file-size {
+  font-size: var(--nat-text-xs);
+  color: var(--nat-text-tertiary);
+}
+
+.nat-upload__file-error {
+  font-size: var(--nat-text-xs);
+  color: var(--nat-error);
+}
+
+/* ============================================
+ * PROGRESS BAR
+ * ============================================ */
+.nat-upload__progress-bar {
+  height: 3px;
+  background: var(--nat-bg-elevated);
+  border-radius: var(--nat-radius-full);
+  overflow: hidden;
+  margin-top: var(--nat-space-1);
+}
+
+.nat-upload__progress-fill {
+  height: 100%;
+  background: var(--nat-primary);
+  border-radius: var(--nat-radius-full);
+  transition: width var(--nat-transition-smooth);
+}
+
+/* ============================================
+ * REMOVE BUTTON
+ * ============================================ */
+.nat-upload__remove {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  background: transparent;
+  border: none;
+  border-radius: var(--nat-radius-md);
+  cursor: pointer;
+  color: var(--nat-text-tertiary);
+  transition: color var(--nat-transition-fast), background var(--nat-transition-fast);
+}
+
+.nat-upload__remove svg {
+  width: 14px;
+  height: 14px;
+}
+
+.nat-upload__remove:hover {
+  color: var(--nat-error);
+  background: rgba(239, 68, 68, 0.08);
+}
+
+/* ============================================
+ * DARK THEME
+ * ============================================ */
+@media (prefers-color-scheme: dark) {
+  .nat-upload__zone {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .nat-upload__zone:hover:not(.nat-upload__zone--disabled) {
+    background: rgba(91, 111, 232, 0.1);
+  }
+}

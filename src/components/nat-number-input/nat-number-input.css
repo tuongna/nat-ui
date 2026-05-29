@@ -1,0 +1,166 @@
+:host {
+  display: inline-block;
+}
+
+.nat-number-input__label {
+  display: block;
+  margin-bottom: var(--nat-space-1-5, 6px);
+  font-size: var(--nat-text-sm);
+  font-weight: var(--nat-font-medium);
+  color: var(--nat-text-secondary);
+}
+
+/* ============================================
+ * CONTAINER
+ * ============================================ */
+.nat-number-input {
+  display: inline-flex;
+  align-items: center;
+  background: var(--nat-bg-base, #fff);
+  border: 1.5px solid var(--nat-border-base);
+  border-radius: var(--nat-radius-lg);
+  overflow: hidden;
+  transition: border-color var(--nat-transition-fast), box-shadow var(--nat-transition-fast);
+}
+
+.nat-number-input--focused {
+  border-color: var(--nat-primary);
+  box-shadow: 0 0 0 3px var(--nat-focus-ring, rgba(91, 111, 232, 0.2));
+}
+
+.nat-number-input--disabled {
+  opacity: var(--nat-opacity-50);
+  background: var(--nat-bg-subtle);
+  cursor: not-allowed;
+}
+
+/* ============================================
+ * SIZES
+ * ============================================ */
+.nat-number-input--sm {
+  height: var(--nat-size-sm);
+}
+
+.nat-number-input--md {
+  height: var(--nat-size-md);
+}
+
+.nat-number-input--lg {
+  height: var(--nat-size-lg);
+}
+
+/* ============================================
+ * STEPPER BUTTONS
+ * ============================================ */
+.nat-number-input__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--nat-text-tertiary);
+  transition: color var(--nat-transition-fast), background var(--nat-transition-fast);
+  flex-shrink: 0;
+}
+
+.nat-number-input--sm .nat-number-input__btn {
+  width: 28px;
+  padding: 0 var(--nat-space-2);
+}
+
+.nat-number-input--md .nat-number-input__btn {
+  width: 36px;
+  padding: 0 var(--nat-space-3);
+}
+
+.nat-number-input--lg .nat-number-input__btn {
+  width: 44px;
+  padding: 0 var(--nat-space-4);
+}
+
+.nat-number-input__btn svg {
+  width: 12px;
+  height: 12px;
+}
+
+.nat-number-input__btn:hover:not(:disabled) {
+  color: var(--nat-text-primary);
+  background: var(--nat-bg-subtle);
+}
+
+.nat-number-input__btn:active:not(:disabled) {
+  background: var(--nat-bg-elevated);
+}
+
+.nat-number-input__btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.nat-number-input__btn--dec {
+  border-right: 1px solid var(--nat-border-subtle);
+}
+
+.nat-number-input__btn--inc {
+  border-left: 1px solid var(--nat-border-subtle);
+}
+
+/* ============================================
+ * INPUT FIELD
+ * ============================================ */
+.nat-number-input__field {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.nat-number-input__input {
+  flex: 1;
+  min-width: 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-family: var(--nat-font-sans);
+  font-weight: var(--nat-font-medium);
+  color: var(--nat-text-primary);
+
+  /* Hide browser native spin buttons */
+  -moz-appearance: textfield;
+}
+
+.nat-number-input--sm .nat-number-input__input {
+  font-size: var(--nat-text-sm);
+}
+
+.nat-number-input--md .nat-number-input__input {
+  font-size: var(--nat-text-base);
+}
+
+.nat-number-input--lg .nat-number-input__input {
+  font-size: var(--nat-text-lg);
+}
+
+.nat-number-input__input::-webkit-outer-spin-button,
+.nat-number-input__input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.nat-number-input__affix {
+  flex-shrink: 0;
+  font-size: var(--nat-text-sm);
+  color: var(--nat-text-tertiary);
+  padding: 0 var(--nat-space-1);
+}
+
+/* ============================================
+ * DARK THEME
+ * ============================================ */
+@media (prefers-color-scheme: dark) {
+  .nat-number-input {
+    background: var(--nat-bg-surface);
+  }
+}
