@@ -48,6 +48,6 @@ describe('nat-number-input', () => {
       html: '<nat-number-input value="10" min="0" max="10"></nat-number-input>',
     });
     const incBtn = page.root.shadowRoot.querySelector('.nat-number-input__btn--inc') as HTMLButtonElement;
-    expect(incBtn.disabled).toBe(true);
+    expect(incBtn.hasAttribute('disabled')).toBe(true);
   });
 });

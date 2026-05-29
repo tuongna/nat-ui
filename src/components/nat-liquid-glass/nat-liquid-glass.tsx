@@ -154,10 +154,14 @@ export class NatLiquidGlass {
   }
 
   private initWebGL() {
-    if (!this.canvasEl) return;
+    if (!this.canvasEl || typeof this.canvasEl.getContext !== 'function') return;
 
-    const gl = this.canvasEl.getContext('webgl', { alpha: true, premultipliedAlpha: false });
-    if (!gl) return;
+    const gl = this.canvasEl.getContext('webgl', { alpha: true, premultipliedAlpha: false }) as WebGLRenderingContext | null;
+
+    // Bail out gracefully when WebGL is unavailable (e.g. SSR, test env, or
+    // browsers without WebGL support). The CSS backdrop-filter still renders
+    // the frosted glass base, so the component degrades gracefully.
+    if (!gl || typeof gl.createShader !== 'function') return;
 
     this.glContext = gl;
 

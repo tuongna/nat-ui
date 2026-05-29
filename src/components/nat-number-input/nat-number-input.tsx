@@ -192,13 +192,13 @@ export class NatNumberInput {
             <input
               class="nat-number-input__input"
               type="number"
+              min={this.min}
+              max={this.max}
+              step={this.step}
               value={this.inputValue}
               placeholder={this.placeholder}
               disabled={this.disabled}
               readOnly={this.readonly}
-              min={this.min}
-              max={this.max}
-              step={this.step}
               onInput={this.handleInput}
               onBlur={this.handleBlur}
               onFocus={this.handleFocus}

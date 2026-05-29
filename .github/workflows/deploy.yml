@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy Storybook to GitHub Pages
 
 on:
   push:
@@ -6,11 +6,20 @@ on:
       - main
   workflow_dispatch:
 
+# Allow this workflow to deploy to GitHub Pages
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the
+# run in-progress and latest queued. Do not cancel in-progress runs.
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -25,11 +34,32 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      # Build the Stencil component library first so Storybook can load
+      # the compiled custom elements from the loader output.
+      - name: Build component library
         run: npm run build
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Build Storybook
+        # Serve assets from the /nat-ui/ sub-path for the project Pages site.
+        env:
+          STORYBOOK_BASE_PATH: /nat-ui/
+        run: npm run build-storybook
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./www
+          path: ./storybook-static
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
